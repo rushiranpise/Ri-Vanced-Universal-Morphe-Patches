@@ -223,4 +223,4 @@ jobs:
             --title "chore: update universal patches from ReVanced" \
             --body "Automated universal/shared patch update from ReVanced ${UPSTREAM_BRANCH} at ${UPSTREAM_COMMIT}.
 
-This PR only syncs universal/shared patch and extension areas, applies the RIVanced/Morphe namespace adaptation, and requires the Gradle build to pass before opening."
+            This PR only syncs universal/shared patch and extension areas, applies the RIVanced/Morphe namespace adaptation, and requires the Gradle build to pass before opening."
