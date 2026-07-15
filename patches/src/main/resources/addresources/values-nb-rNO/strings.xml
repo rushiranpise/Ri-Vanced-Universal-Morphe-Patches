@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">Deaktiver fete ikoner</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Ikoner er ikke fete</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Ikoner er fete</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Innstillinger relatert til GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Se etter GmsCore-oppdateringer</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Søk etter oppdateringer er aktivert</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Søk etter oppdateringer er deaktivert</string>
+            <string name="rivanced_gms_core_settings_title">Åpne GmsCore-innstillinger</string>
+            <string name="rivanced_gms_core_settings_summary">Innstillinger for GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore er ikke installert. Installer det.</string>
+            <string name="rivanced_gms_core_dialog_title">Handling nødvendig</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Klarte ikke å søke etter MicroG GmsCore-oppdateringer</string>
+            <string name="rivanced_gms_core_update_available_message">En ny versjon (%1$s) av MicroG GmsCore er tilgjengelig. Du bruker for øyeblikket versjon %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore har ikke tillatelse til å kjøre i bakgrunnen.
+
+Følg guiden \"Ikke drep appen min\" for telefonen din, og følg instruksjonene for din MicroG-installasjon.
+
+Dette er nødvendig for at appen skal fungere."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Åpne nettside</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Avbryt</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Optimaliseringer for MicroG GmsCore-batteri må deaktiveres for å forhindre problemer.
+
+Deaktivering av batterioptimaliseringer for MicroG vil ikke påvirke batteribruken negativt.
+
+Trykk på fortsett-knappen og tillat optimaliseringsendringer."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Fortsett</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Start appen på nytt for å bruke denne funksjonen</string>
+            <string name="rivanced_debug_protocolbuffer_title">Logg protokollbuffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Feilsøkingslogger inkluderer protokollbuffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Feilsøkingslogger inkluderer ikke protokollbuffer</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Aktivering av denne innstillingen vil logge ytterligere layoutdata, inkludert tekst på skjermen for enkelte UI-komponenter.
+
+Dette kan hjelpe med å identifisere komponenter når du oppretter egendefinerte filtre.
+
+Imidlertid vil aktivering av dette også logge noen brukerdata som din IP-adresse."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

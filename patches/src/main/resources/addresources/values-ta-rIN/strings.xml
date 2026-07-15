@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">தடித்த ஐகான்களை முடக்கு</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">ஐகான்கள் தடிமனாக இல்லை</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">ஐகான்கள் தடிமனாக உள்ளன</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">GmsCore தொடர்பான அமைப்புகள்</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore புதுப்பிப்புகளைச் சரிபார்க்கவும்</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">புதுப்பிப்புகளைச் சரிபார்த்தல் செயல்படுத்தப்பட்டது</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">புதுப்பிப்புகளைச் சரிபார்ப்பது முடக்கப்பட்டுள்ளது</string>
+            <string name="rivanced_gms_core_settings_title">GmsCore அமைப்புகளைத் திறக்கவும்</string>
+            <string name="rivanced_gms_core_settings_summary">GmsCore இன் அமைப்புகள்</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore நிறுவப்படவில்லை. அதை நிறுவவும்.</string>
+            <string name="rivanced_gms_core_dialog_title">நடவடிக்கை தேவை</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore புதுப்பிப்புகளைச் சரிபார்க்க முடியவில்லை</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore இன் புதிய பதிப்பு (%1$s) கிடைக்கிறது. தற்போது, நீங்கள் பதிப்பு %2$s ஐப் பயன்படுத்துகிறீர்கள்.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore பின்னணியில் இயங்க அனுமதி இல்லை.
+
+உங்கள் மொபைலுக்கான \"எனது பயன்பாட்டை முடக்காதீர்\" வழிகாட்டியைப் பின்பற்றி, உங்கள் MicroG நிறுவலுக்கு வழிமுறைகளைப் பயன்படுத்தவும்.
+
+பயன்பாடு செயல்பட இது தேவை."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">வலைத்தளத்தைத் திறக்கவும்</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">ரத்துசெய்</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"சிக்கல்களைத் தடுக்க MicroG GmsCore பேட்டரி மேம்படுத்தல்கள் முடக்கப்பட வேண்டும்.
+
+MicroG க்கான பேட்டரி மேம்படுத்தல்களை முடக்குவது பேட்டரி பயன்பாட்டை எதிர்மறையாக பாதிக்காது.
+
+தொடரவும் பொத்தானைத் தட்டி, மேம்படுத்தல் மாற்றங்களை அனுமதிக்கவும்."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">தொடரவும்</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">இந்த அம்சத்தைப் பயன்படுத்த, பயன்பாட்டை மறுதொடக்கம் செய்யவும்</string>
+            <string name="rivanced_debug_protocolbuffer_title">நெறிமுறை இடையகத்தைப் பதிவுசெய்</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">பிழைத்திருத்தப் பதிவுகளில் புரோட்டோ இடையகம் அடங்கும்</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">பிழைத்திருத்தப் பதிவுகளில் புரோட்டோ இடையகம் அடங்காது</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"இந்த அமைப்பை இயக்குவது, சில UI கூறுகளுக்கான திரையில் உள்ள உரை உட்பட, கூடுதல் தளவமைப்புத் தரவை பதிவு செய்யும்.\n\nதனிப்பயன் வடிப்பான்களை உருவாக்கும்போது கூறுகளை அடையாளம் காண இது உதவும்.\n\nஇருப்பினும், இதை இயக்குவது உங்கள் IP முகவரி போன்ற சில பயனர் தரவுகளையும் பதிவு செய்யும்."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

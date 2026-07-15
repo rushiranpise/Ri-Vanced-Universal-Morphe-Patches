@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">Emri i aplikacionit</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">Personalizuar</string>
+            <string name="rivanced_custom_branding_icon_title">Ikona e aplikacionit</string>
+            <string name="rivanced_custom_branding_icon_entry_1">Origjinal</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced i shkallëzuar</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">Personalizuar</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">Kontrollat ​​dështu</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">Hap faqen zyrtare</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">Injoro</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;Kjo aplikacion nuk duket të jetë e rregulluar nga ju.&lt;/h5&gt;&lt;br&gt;Kjo aplikacion mund të mos funksionojë siç duhet, &lt;b&gt;mund të jetë e dëmshme ose edhe e rrezikshme për t\'u përdorur&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Këto verifikime tregojnë se kjo aplikacion është e rregulluar paraprakisht ose është marrë nga dikush tjetër:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt;Rekomandohet fuqishëm &lt;b&gt;dezinstalimi i kësaj aplikacioni dhe rregullimi i saj vetë&lt;/b&gt; për të siguruar që përdorni një aplikacion të vlefshëm dhe të sigurt.&lt;p&gt;&lt;br&gt;Nëse injorohet, ky paralajmërim do të tregohet vetëm dy herë.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">E rregulluar në një pajisje tjetër</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">Nuk është instaluar nga RIVanced Manager</string>
+            <string name="rivanced_check_environment_not_near_patch_time">E rregulluar më shumë se 10 minuta më parë</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">E rregulluar para %s ditësh</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">Data e ndërtimit të APK është e korruptuar</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">Njoftim RIVanced</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">Historia juaj e shikimit nuk po ruhet.&lt;br&gt;&lt;br&gt;Kjo me shumë mundësi shkaktohet nga një bllokues DNS reklamash ose një prokuri rrjeti.&lt;br&gt;&lt;br&gt;Për të zgjidhur këtë, shto në listën e bardhë &lt;b&gt;s.youtube.com&lt;/b&gt; ose çaktivizo të gjithë bllokuesit DNS dhe prokuritë.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">Mos shfaq përsëri</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">Cilësimet</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">A jeni i sigurt që dëshironi të vazhdoni?</string>
+            <string name="rivanced_settings_save">Ruaj</string>
+            <string name="rivanced_settings_reset">Rivendos</string>
+            <string name="rivanced_settings_reset_color">Rikthe ngjyrën</string>
+            <string name="rivanced_settings_color_invalid">Ngjyrë e pavlefshme</string>
+            <string name="rivanced_settings_restart_title">Kërkohet Ristartim</string>
+            <string name="rivanced_settings_restart_dialog_message">Rindizeni aplikacionin që ky ndryshim të hyjë në fuqi.</string>
+            <string name="rivanced_settings_restart">Rifillo</string>
+            <string name="rivanced_settings_import">Importo</string>
+            <string name="rivanced_settings_import_copy">Kopjo</string>
+            <string name="rivanced_settings_import_reset">Cilësimet e RIVanced u rivendosën në cilësimet e parazgjedhura</string>
+            <string name="rivanced_settings_import_success">Importuan %d cilësime</string>
+            <string name="rivanced_settings_import_failure_parse">Importimi dështoi: %s</string>
+            <string name="rivanced_settings_search_hint">Kërko cilësimet</string>
+            <string name="rivanced_settings_search_no_results_title">Nuk u gjet asnjë rezultat për \'%s\'</string>
+            <string name="rivanced_settings_search_no_results_summary">Provo një fjalë kyçe tjetër</string>
+            <string name="rivanced_settings_search_recent_searches">Kërkime të fundit</string>
+            <string name="rivanced_settings_search_remove_message">Hiq nga historiku i kërkimit?</string>
+            <string name="rivanced_settings_search_clear_history">Pastro historikun e kërkimeve</string>
+            <string name="rivanced_settings_search_clear_history_message">Jeni i sigurt që dëshironi të pastroni të gjithë historikun e kërkimeve?</string>
+            <string name="rivanced_settings_search_tips_title">Këshilla për kërkim</string>
+            <string name="rivanced_settings_search_tips_summary">"• Prek një shteg për të lundruar te ai
+• Shtyp gjatë një cilësim për të lundruar te ai
+• Shtyp Enter për të ruajtur një pyetje kërkimi në histori
+• Kërkimi injoron shkronjat e mëdha/vogla dhe shenjat e pikësimit
+• Cilësimet prindërore shfaqen mbi cilësimet fëmijë të çaktivizuara"</string>
+            <string name="rivanced_settings_search_empty_history_title">Historia e kërkimit është bosh</string>
+            <string name="rivanced_settings_search_empty_history_summary">Për të ruajtur historinë e kërkimit, shkruaj një pyetje kërkimi dhe shtyp Enter</string>
+            <string name="rivanced_settings_search_history_title">Shfaq historikun e kërkimeve të cilësimeve</string>
+            <string name="rivanced_settings_search_history_summary_on">Historiku i kërkimeve të cilësimeve është shfaqur</string>
+            <string name="rivanced_settings_search_history_summary_off">Historia e kërkimit të cilësimeve nuk shfaqet</string>
+            <string name="rivanced_settings_disable_bold_icons_title">Çaktivizo ikonat e theksuara</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Ikonat nuk janë të theksuara</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Ikonat janë të theksuara</string>
+            <string name="rivanced_show_menu_icons_title">Shfaq ikonat e cilësimeve të RIVanced</string>
+            <string name="rivanced_show_menu_icons_summary_on">Ikonat e cilësimeve shfaqen</string>
+            <string name="rivanced_show_menu_icons_summary_off">Ikonat e cilësimeve nuk shfaqen</string>
+            <string name="rivanced_language_title">Gjuha e RIVanced</string>
+            <string name="rivanced_language_user_dialog_message">"Përkthimet për disa gjuhë mund të mungojnë ose të jenë të paplota.
+
+Për të përkthyer gjuhë të reja ose për të përmirësuar përkthimet ekzistuese, vizito the RIVanced repository"</string>
+            <string name="rivanced_language_DEFAULT">Gjuha e aplikacionit</string>
+            <string name="rivanced_pref_import_export_title">Importo / Eksporto</string>
+            <string name="rivanced_pref_import_export_summary">Importo / Eksporto cilësimet e RIVanced</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">Po përdorni RIVanced Patches versionin &lt;i&gt;%s&lt;/i&gt;</string>
+            <string name="rivanced_settings_about_links_dev_header">Shënim</string>
+            <string name="rivanced_settings_about_links_dev_body">Ky version është një version parapublikimi dhe mund të përjetoni probleme të papritura</string>
+            <string name="rivanced_settings_about_links_header">Lidhjet zyrtare</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Cilësimet lidhur me GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Kontrollo për azhurnime të GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Kontrollimi për azhurnime është aktivizuar</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Kontrolli për përditësime është çaktivizuar</string>
+            <string name="rivanced_gms_core_settings_title">Hap Cilësimet e GmsCore</string>
+            <string name="rivanced_gms_core_settings_summary">Cilësimet e GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore nuk është instaluar. Instalojeni.</string>
+            <string name="rivanced_gms_core_dialog_title">Veprim i nevojshëm</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Dështoi kontrolli për përditësimet e MicroG GmsCore</string>
+            <string name="rivanced_gms_core_update_available_message">Një version i ri (%1$s) i MicroG GmsCore është i disponueshëm. Aktualisht, po përdorni versionin %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore nuk ka leje të funksionojë në sfond.\n\nNdiqni udhëzuesin \"Mos e vrisni aplikacionin tim\" për telefonin tuaj dhe aplikoni udhëzimet në instalimin tuaj MicroG.\n\nKjo është e nevojshme që aplikacioni të funksionojë."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Hap faqen e internetit</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Anulo</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Optimizimet e baterisë së MicroG GmsCore duhet të çaktivizohen për të parandaluar problemet.\n\nÇaktivizimi i optimizimeve të baterisë për MicroG nuk do të ndikojë negativisht në përdorimin e baterisë.\n\nPrekni butonin vazhdo dhe lejoni ndryshimet e optimizimit."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Vazhdo</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">Falsifiko transmetimet video</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">Falsifiko transmetimet video të klientit për të parandaluar problemet e riprodhimit</string>
+            <string name="rivanced_spoof_video_streams_title">Mashtro rrjedhat e videos</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"Transmetimet video janë falsifikuar
+
+Nëse jeni përdorues i YouTube Premium, ky cilësim mund të mos jetë i nevojshëm"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"Transmetimet video nuk janë falsifikuar
+
+Riprodhimi mund të mos funksionojë"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">Fikja e këtij cilësimi mund të shkaktojë probleme riprodhimi.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">Klient i përdoruesit</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">Forco gjuhën origjinale të audios</string>
+            <string name="rivanced_force_original_audio_summary_on">Duke përdorur gjuhën origjinale audio</string>
+            <string name="rivanced_force_original_audio_summary_off">Përdorimi i Zërit Parazgjedhur</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">Për të përdorur këtë veçori, ndryshoni \'Falsifiko transmetimet e videos\' në çdo klient përveç Android Studio</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">Depurimi</string>
+            <string name="rivanced_debug_screen_summary">Aktivizo ose çaktivizo opsionet e depurimit</string>
+            <string name="rivanced_debug_title">Regjistrimi i depurimit</string>
+            <string name="rivanced_debug_summary_on">Regjistrimet e depurimit janë të aktivizuara</string>
+            <string name="rivanced_debug_summary_off">Regjistrimet e depurimit janë të çaktivizuara</string>
+            <string name="rivanced_debug_stacktrace_title">Regjistro gjurmët e grumbullimit</string>
+            <string name="rivanced_debug_stacktrace_summary_on">Regjistrimet e depurimit përfshijnë gjurmë grumbullimi</string>
+            <string name="rivanced_debug_stacktrace_summary_off">Regjistrimet e depurimit nuk përfshijnë gjurmë grumbullimi</string>
+            <string name="rivanced_debug_toast_on_error_title">Shfaqni toast për gabimet e RIVanced</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">Shfaqet një toast nëse ndodh një gabim</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">Nuk shfaqet toast nëse ndodh një gabim</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"Fshirja e toast-eve të gabimit fsheh të gjitha njoftimet e gabimeve të RIVanced.
+
+Ju nuk do të njoftoheni për ndonjë ngjarje të papritur."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">Eksporto regjistrat e korrigjimit</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">Kopjon regjistrat e korrigjimit të RIVanced në kujtesën e shkurtër</string>
+            <string name="rivanced_debug_logs_disabled">Regjistrimi i korrigjimeve është çaktivizuar</string>
+            <string name="rivanced_debug_logs_none_found">Nuk u gjetën regjistra</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">Regjistrat u kopjuan</string>
+            <string name="rivanced_debug_logs_failed_to_export">Dështoi eksportimi i regjistrave: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">Pastro regjistrat e korrigjimit</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">Pastro të gjithë regjistrat e ruajtur të korrigjimit të RIVanced</string>
+            <string name="rivanced_debug_logs_clear_toast">Regjistrat u pastruan</string>
+            <string name="rivanced_debug_feature_flags_manager_title">Manager i sinjaleve të veçorive</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">Menaxhoni sinjalet boolean të veçorive</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">Flamuj aktivë (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">Flamuj të bllokuar (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">Kërko flamuj...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">Flamujt u ruajtën</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">Flamujt u rivendosën</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">Flamujt u kopjuan në kujtesën e punës</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Rinisni aplikacionin për të përdorur këtë veçori</string>
+            <string name="rivanced_debug_protocolbuffer_title">Regjistro protokol buffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Regjistrimet e depurimit përfshijnë proto buffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Regjistrimet e depurimit nuk përfshijnë proto buffer</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Aktivizimi i këtij opsioni do të regjistrojë të dhëna shtesë të paraqitjes, duke përfshirë tekstin në ekran për disa komponentë të ndërfaqes përdoruese.
+
+Kjo mund të ndihmojë në identifikimin e komponentëve kur krijoni filtra të personalizuar.
+
+Gjithsesi, aktivizimi i këtij opsioni do të regjistrojë edhe disa të dhëna të përdoruesit, siç është adresa juaj IP."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">Pastro lidhjet e ndarjes</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">Parametri i kërkesës së gjurmimit hiqet nga lidhjet e ndara</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">Parametri i kërkesës së gjurmimit nuk hiqet nga lidhjet e ndara</string>
+            <string name="rivanced_replace_music_with_youtube_title">Ndrysho lidhjet e ndarjes në youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">Lidhjet e ndara përdorin youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">Lidhjet e ndara përdorin music.youtube.com</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">Filtri i personalizuar</string>
+            <string name="rivanced_custom_filter_screen_summary">Fsheh komponentë duke përdorur filtre të personalizuara</string>
+            <string name="rivanced_custom_filter_title">Aktivizo filtrin e personalizuar</string>
+            <string name="rivanced_custom_filter_summary_on">Filtri i personalizuar është i aktivizuar</string>
+            <string name="rivanced_custom_filter_summary_off">Filtri i personalizuar është i çaktivizuar</string>
+            <string name="rivanced_custom_filter_strings_title">Filtri i personalizuar</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">Lista e stringjeve të ndërtuesit të rrugës së komponentit për të filtruar, të ndara me një rresht të ri</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">Filtri i personalizuar i pavlefshëm: %s</string>
+        </patch>
+    </app>
+</resources>

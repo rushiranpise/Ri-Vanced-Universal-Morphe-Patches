@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">Назва праграмы</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">Карыстальніцкая</string>
+            <string name="rivanced_custom_branding_icon_title">Значок праграмы</string>
+            <string name="rivanced_custom_branding_icon_entry_1">Арыгінал</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_3">RIVanced мінімальны</string>
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced маштабаваны</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">Карыстальніцкі</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">Праверкі не пройдзены</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">Адкрыць афіцыйны вэб-сайт</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">Ігнараваць</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;Гэта дадатак відавочна не з\'яўляецца патчам.&lt;/h5&gt;&lt;br&gt;Гэта дадатак можа працаваць няправільна, а таксама можа быць &lt;b&gt;небяспечным або нават небяспечным у выкарыстанні&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Гэтыя праверкі азначаюць, што гэта дадатак было загаддзя перароблена або атрымана ад кагосьці іншага:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt;Настойліва рэкамендуецца &lt;b&gt;выдаліць гэты дадатак і перарабіць яго самастойна&lt;/b&gt;, каб пераканацца, што вы выкарыстоўваеце правераны і бяспечны дадатак.&lt;p&gt;&lt;br&gt;Калі ігнараваць, гэта папярэджанне будзе паказана толькі два разы.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">Адкарэктавана на іншай прыладзе</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">Не ўстаноўлена RIVanced Manager</string>
+            <string name="rivanced_check_environment_not_near_patch_time">Адкарэктавана больш чым 10 хвілін таму</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">Адкарэктавана %s дзён таму</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">Дата стварэння APK пашкоджана</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">Заўвага RIVanced</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">Ваша гісторыя прагляду не захоўваецца.&lt;br&gt;&lt;br&gt;Гэта, хутчэй за ўсё, выклікана DNS-блакіроўшчыкам рэкламы або сеткавым праксі.&lt;br&gt;&lt;br&gt;Каб выправіць гэта, дадайце &lt;b&gt;s.youtube.com&lt;/b&gt; у белы спіс або адключыце ўсе DNS-блакіроўшчыкі і праксі.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">Больш не паказваць</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">Налады</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">Вы ўпэўнены, што хочаце працягнуць?</string>
+            <string name="rivanced_settings_save">Захаваць</string>
+            <string name="rivanced_settings_reset">Скінуць</string>
+            <string name="rivanced_settings_reset_color">Скінуць колер</string>
+            <string name="rivanced_settings_color_invalid">Несапраўдны колер</string>
+            <string name="rivanced_settings_restart_title">Неабходны перазапуск</string>
+            <string name="rivanced_settings_restart_dialog_message">Перазапусціце праграму, каб змены ўступілі ў сілу.</string>
+            <string name="rivanced_settings_restart">Перазапуск</string>
+            <string name="rivanced_settings_import">Імпарт</string>
+            <string name="rivanced_settings_import_copy">Копія</string>
+            <string name="rivanced_settings_import_reset">Налады RIVanced скінуты да стандартных</string>
+            <string name="rivanced_settings_import_success">Імпартавана %d налад</string>
+            <string name="rivanced_settings_import_failure_parse">Памылка імпарту: %s</string>
+            <string name="rivanced_settings_search_hint">Пошук налад</string>
+            <string name="rivanced_settings_search_no_results_title">Нічога не знойдзена для \",%s\"</string>
+            <string name="rivanced_settings_search_no_results_summary">Паспрабуйце іншае ключавое слова</string>
+            <string name="rivanced_settings_search_recent_searches">Апошнія пошукі</string>
+            <string name="rivanced_settings_search_remove_message">Выдаліць з гісторыі пошуку?</string>
+            <string name="rivanced_settings_search_clear_history">Ачысціць гісторыю пошуку</string>
+            <string name="rivanced_settings_search_clear_history_message">Вы ўпэўнены, што хочаце ачысціць усю гісторыю пошуку?</string>
+            <string name="rivanced_settings_search_tips_title">Парады па пошуку</string>
+            <string name="rivanced_settings_search_tips_summary">"• Націсніце шлях, каб перайсці да яго
+• Доўга націсніце настройку, каб перайсці да яе
+• Націсніце Enter, каб захаваць пошукавы запыт у гісторыю
+• Пошук ігнаруе рэгістр і пунктуацыю
+• Бацькоўскія налады з'яўляюцца над адключанымі даччынымі наладамі"</string>
+            <string name="rivanced_settings_search_empty_history_title">Гісторыя пошуку пустая</string>
+            <string name="rivanced_settings_search_empty_history_summary">Каб захаваць гісторыю пошуку, увядзіце пошукавы запыт і націсніце Enter</string>
+            <string name="rivanced_settings_search_history_title">Паказваць гісторыю пошуку ў наладах</string>
+            <string name="rivanced_settings_search_history_summary_on">Паказваецца гісторыя пошуку ў наладах</string>
+            <string name="rivanced_settings_search_history_summary_off">Гісторыя пошуку налад не паказваецца</string>
+            <string name="rivanced_settings_disable_bold_icons_title">Адключыць тлустыя значкі</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Значкі не тлустыя</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Значкі тлустыя</string>
+            <string name="rivanced_show_menu_icons_title">Паказваць значкі налад RIVanced</string>
+            <string name="rivanced_show_menu_icons_summary_on">Значкі налад паказваюцца</string>
+            <string name="rivanced_show_menu_icons_summary_off">Значкі налад не паказваюцца</string>
+            <string name="rivanced_language_title">Мова RIVanced</string>
+            <string name="rivanced_language_user_dialog_message">"Пераклады для некаторых моў могуць адсутнічаць або быць няпоўнымі.
+
+Каб перакласці новыя мовы або палепшыць існуючыя пераклады, наведайце the RIVanced repository"</string>
+            <string name="rivanced_language_DEFAULT">Мова праграмы</string>
+            <string name="rivanced_pref_import_export_title">Імпарт / Экспарт</string>
+            <string name="rivanced_pref_import_export_summary">Імпарт / Экспарт налад RIVanced</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">Вы выкарыстоўваеце версію RIVanced Patches &lt;i&gt;%s&lt;/i&gt;</string>
+            <string name="rivanced_settings_about_links_dev_header">Нататка</string>
+            <string name="rivanced_settings_about_links_dev_body">Гэтая версія з\"яўляецца папярэдняй версіяй, і вы можаце сутыкнуцца з непрадбачанымі праблемамі</string>
+            <string name="rivanced_settings_about_links_header">Афіцыйныя спасылкі</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Налады, звязаныя з GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Праверыць наяўнасць абнаўленняў GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Праверка наяўнасці абнаўленняў уключана</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Праверка абнаўленняў адключана</string>
+            <string name="rivanced_gms_core_settings_title">Адкрыць Налады GmsCore</string>
+            <string name="rivanced_gms_core_settings_summary">Налады для GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore не ўсталяваны. Усталюйце яго.</string>
+            <string name="rivanced_gms_core_dialog_title">Патрабуецца дзеянне</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Не атрымалася праверыць абнаўленні MicroG GmsCore</string>
+            <string name="rivanced_gms_core_update_available_message">Даступна новая версія MicroG GmsCore (%1$s). Зараз вы выкарыстоўваеце версію %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore не мае дазволу на працу ў фонавым рэжыме.
+
+Выконвайце інструкцыі \"Не забівай маё прыкладанне\" для вашага тэлефона і прымяніце іх да вашай ўстаноўкі MicroG.
+
+Гэта неабходна для працы прыкладання."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Адкрыць сайт</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Адмена</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Неабходна адключыць аптымізацыю батарэі для MicroG GmsCore, каб пазбегнуць праблем.
+
+Адключэнне аптымізацыі батарэі для MicroG не паўплывае на выкарыстанне батарэі.
+
+Націсніце кнопку \"Працягнуць\" і дазвольце змяніць аптымізацыю."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Працягнуць</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">Падмена відэапатокаў</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">Падмена відэапатокаў кліента для прадухілення праблем з прайграваннем</string>
+            <string name="rivanced_spoof_video_streams_title">Подделывать потоки видео</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"Відэаструмені падроблены
+
+Калі вы карыстаецеся YouTube Premium, гэтая налада можа не спатрэбіцца"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"Відэапатокі не падменены
+
+Прайграванне можа не працаваць"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">Адключэнне гэтай налады можа выклікаць праблемы з прайграваннем.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">Клиент по умолчанию</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">Вымушаная арыгінальная мова аўдыё</string>
+            <string name="rivanced_force_original_audio_summary_on">Выкарыстоўваць арыгінальную мову аўдыя</string>
+            <string name="rivanced_force_original_audio_summary_off">Выкарыстанне аўдыё па змаўчанні</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">Каб выкарыстаць гэтую функцыю, змяніце \'Падмена відэаструменяў\' на любога кліента, акрамя Android Studio</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">Адладка</string>
+            <string name="rivanced_debug_screen_summary">Уключыць або выключыць параметры адладкі</string>
+            <string name="rivanced_debug_title">Запіс адладкі</string>
+            <string name="rivanced_debug_summary_on">Журналы адладкі ўключаны</string>
+            <string name="rivanced_debug_summary_off">Журналы адладкі адключаны</string>
+            <string name="rivanced_debug_stacktrace_title">Сляды стэка журнала</string>
+            <string name="rivanced_debug_stacktrace_summary_on">Журналы адладкі ўключаюць трасіроўку стэка</string>
+            <string name="rivanced_debug_stacktrace_summary_off">Журналы адладкі не ўключаюць трасіроўку стэка</string>
+            <string name="rivanced_debug_toast_on_error_title">Паказаць тост пры памылцы RIVanced</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">Паказваць toast у выпадку памылкі</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">Не паказваць toast у выпадку памылкі</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"Адключэнне паведамленняў пра памылкі схавае ўсе апавяшчэнні RIVanced пра памылкі.
+
+Вы не будзеце атрымліваць апавяшчэнні пра нечаканыя падзеі."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">Экспартаваць адладачныя лагі</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">Капіруе адладачныя лагі RIVanced у буфер абмену</string>
+            <string name="rivanced_debug_logs_disabled">Адладачнае лагаванне адключана</string>
+            <string name="rivanced_debug_logs_none_found">Лагі не знойдзены</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">Лагі скапіяваны</string>
+            <string name="rivanced_debug_logs_failed_to_export">Не ўдалося экспартаваць журналы: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">Ачысціць адладачныя лагі</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">Ачышчае ўсе захаваныя адладачныя лагі RIVanced</string>
+            <string name="rivanced_debug_logs_clear_toast">Лагі ачышчаны</string>
+            <string name="rivanced_debug_feature_flags_manager_title">Менеджэр функцыйных сцягоў</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">Кіраванне лагічнымі функцыйнымі сцягамі</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">Актыўныя сцягі (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">Заблакаваныя сцягі (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">Пошук сцягоў...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">Сцягі захаваны</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">Сцягі скінуты</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">Сцягі скапіяваны ў буфер абмену</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Перазапусціце праграму, каб выкарыстоўваць гэтую функцыю</string>
+            <string name="rivanced_debug_protocolbuffer_title">Буфер пратаколу часопіса</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Журналы адладкі ўключаюць пратабуфер</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Журналы адладкі не ўключаюць пратабуфер</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Уключэнне гэтага параметра будзе запісваць дадатковыя даныя макета, у тым ліку тэкст на экране для некаторых кампанентаў інтэрфейсу.
+
+Гэта можа дапамагчы ідэнтыфікаваць кампаненты пры стварэнні карыстацкіх фільтраў.
+
+Аднак уключэнне гэтага параметра таксама будзе запісваць некаторыя даныя карыстальніка, такія як ваш IP-адрас."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">Ачысціць спасылкі для абагульвання</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">Параметр запыту адсочвання выдалены з абагуленых спасылак</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">Параметр запыту адсочвання не выдалены з абагуленых спасылак</string>
+            <string name="rivanced_replace_music_with_youtube_title">Змяніць спасылкі для абагульвання на youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">Агульныя спасылкі выкарыстоўваюць youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">Агульныя спасылкі выкарыстоўваюць music.youtube.com</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">Карыстальніцкі фільтр</string>
+            <string name="rivanced_custom_filter_screen_summary">Схавайце кампаненты з дапамогай карыстацкіх фільтраў</string>
+            <string name="rivanced_custom_filter_title">Уключыць карыстальніцкі фільтр</string>
+            <string name="rivanced_custom_filter_summary_on">Карыстальніцкі фільтр уключаны</string>
+            <string name="rivanced_custom_filter_summary_off">Карыстальніцкі фільтр адключаны</string>
+            <string name="rivanced_custom_filter_strings_title">Карыстальніцкі фільтр</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">Спіс радкоў канструктара шляхоў кампанентаў для фільтрацыі, раздзеленых новым радком</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">Няправільны карыстацкі фільтр: %s</string>
+        </patch>
+    </app>
+</resources>

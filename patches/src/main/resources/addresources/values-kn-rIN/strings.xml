@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">ಅಧಿಕೃತ ಜಾಲತಾಣ ತೆರೆಯಿರಿ</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">ನಿರ್ಲಕ್ಷಿಸು</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನೀವು ಪ್ಯಾಚ್ ಮಾಡಿದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ.&lt;/h5&gt;&lt;br&gt;ಈ ಅಪ್ಲಿಕೇಶನ್ ಸರಿಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸದೇ ಇರಬಹುದು, &lt;b&gt; ಹಾಗು ಉಪಯೋಗಿಸಲು ಹಾನಿಕಾರಕ ಅಥವಾ ಅಪಾಯಕಾರಿಯಾಗಿರಬಹುದು&lt;/b&gt;.&lt;br&gt;&lt;br&gt;ಈ ಅಪ್ಲಿಕೇಶನ್ ಮೊದಲೇ ಪ್ಯಾಚ್ ಆಗಿದೆ ಅಥವಾ ಬೇರೆಯವರಿಂದ ಪಡೆದದ್ದು ಎಂದು ಈ ಪರಿಶೀಲನೆಗಳು ಸೂಚಿಸುತ್ತವೆ:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt;ನೀವು ದೃಢೀಕೃತ ಮತ್ತು ಸುರಕ್ಷಿತ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಬಳಸುತ್ತಿರುವಿರಿ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು &lt;b&gt;ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಅನ್‌ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ ಮತ್ತು ನೀವೇ ಪ್ಯಾಚ್ ಮಾಡಿ&lt;/b&gt; ಎಂದು ಬಲವಾಗಿ ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ.&lt;p&gt;&lt;br&gt;ನಿರ್ಲಕ್ಷಿಸಿದರೆ, ಈ ಎಚ್ಚರಿಕೆಯನ್ನು ಎರಡು ಬಾರಿ ಮಾತ್ರ ತೋರಿಸಲಾಗುತ್ತದೆ.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">ಬೇರೆ ಸಾಧನದಲ್ಲಿ ಪ್ಯಾಚ್ ಮಾಡಲಾಗಿದೆ</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">RIVanced Manager ನಿಂದ ಸ್ಥಾಪಿಸಿದ್ದಲ್ಲ</string>
+            <string name="rivanced_check_environment_not_near_patch_time">10 ನಿಮಿಷಗಳಿಗಿಂತ ಮುಂಚೆ ಪ್ಯಾಚ್ ಮಾಡಲಾಗಿದೆ</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">%s ದಿನಗಳ ಹಿಂದೆ ಪ್ಯಾಚ್ ಮಾಡಲಾಗಿದೆ</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">APK ನಿರ್ಮಾಣ ದಿನಾಂಕವು ಭ್ರಷ್ಟಗೊಂಡಿದೆ</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">ಸಂಯೋಜನೆಗಳು</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">ನೀವು ಮುಂದುವರಿಯಲು ಖಚಿತವಾಗಿ ಬಯಸುತ್ತೀರಾ?</string>
+            <string name="rivanced_settings_reset">ಮರುಹೊಂದಿಸಿ</string>
+            <string name="rivanced_settings_reset_color">ಬಣ್ಣ ಮರುಹೊಂದಿಸಿ</string>
+            <string name="rivanced_settings_color_invalid">ಅಮಾನ್ಯ ಬಣ್ಣ</string>
+            <string name="rivanced_settings_restart_title">ಮರುಪ್ರಾರಂಭದ ಅಗತ್ಯವಿದೆ</string>
+            <string name="rivanced_settings_disable_bold_icons_title">ದಪ್ಪ ಐಕಾನ್‌ಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">ಐಕಾನ್‌ಗಳು ದಪ್ಪವಾಗಿಲ್ಲ</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">ಐಕಾನ್‌ಗಳು ದಪ್ಪವಾಗಿವೆ</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">GmsCore ಗೆ ಸಂಬಂಧಿಸಿದ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">ನವೀಕರಣಗಳ ಪರಿಶೀಲನೆ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">ಅಪ್‌ಡೇಟ್‌ಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸುವುದನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
+            <string name="rivanced_gms_core_settings_title">GmsCore ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ</string>
+            <string name="rivanced_gms_core_settings_summary">GmsCore ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore ಸ್ಥಾಪಿಸಿಲ್ಲ. ಅದನ್ನು ಸ್ಥಾಪಿಸಿ.</string>
+            <string name="rivanced_gms_core_dialog_title">ಕ್ರಮದ ಅಗತ್ಯವಿದೆ</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore ಅಪ್‌ಡೇಟ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore ನ ಹೊಸ ಆವೃತ್ತಿ (%1$s) ಲಭ್ಯವಿದೆ. ಪ್ರಸ್ತುತ, ನೀವು %2$s ಆವೃತ್ತಿಯನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಚಲಾಯಿಸಲು ಅನುಮತಿ ಹೊಂದಿಲ್ಲ.\n\nನಿಮ್ಮ ಫೋನ್‌ಗಾಗಿ \"ನನ್ನ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಕೊಲ್ಲಬೇಡಿ\" ಮಾರ್ಗದರ್ಶಿಯನ್ನು ಅನುಸರಿಸಿ ಮತ್ತು ನಿಮ್ಮ MicroG ಸ್ಥಾಪನೆಗೆ ಸೂಚನೆಗಳನ್ನು ಅನ್ವಯಿಸಿ.\n\nಅಪ್ಲಿಕೇಶನ್ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ಇದು ಅಗತ್ಯವಿದೆ."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">ವೆಬ್‌ಸೈಟ್ ತೆರೆಯಿರಿ</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">ರದ್ದುಮಾಡಿ</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"ಸಮಸ್ಯೆಗಳನ್ನು ತಡೆಗಟ್ಟಲು MicroG GmsCore ಬ್ಯಾಟರಿ ಆಪ್ಟಿಮೈಸೇಶನ್‌ಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬೇಕು.\n\nMicroG ಗಾಗಿ ಬ್ಯಾಟರಿ ಆಪ್ಟಿಮೈಸೇಶನ್‌ಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವುದು ಬ್ಯಾಟರಿ ಬಳಕೆಗೆ ನಕಾರಾತ್ಮಕವಾಗಿ ಪರಿಣಾಮ ಬೀರುವುದಿಲ್ಲ.\n\nಮುಂದುವರಿ ಬಟನ್ ಅನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಮತ್ತು ಆಪ್ಟಿಮೈಸೇಶನ್ ಬದಲಾವಣೆಗಳನ್ನು ಅನುಮತಿಸಿ."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">ಮುಂದುವರಿಸಿ</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ</string>
+            <string name="rivanced_debug_protocolbuffer_title">ಲಾಗ್ ಪ್ರೋಟೋಕಾಲ್ ಬಫರ್</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">ಡೀಬಗ್ ಲಾಗ್‌ಗಳು ಪ್ರೋಟೋ ಬಫರ್ ಅನ್ನು ಒಳಗೊಂಡಿವೆ</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">ಡೀಬಗ್ ಲಾಗ್‌ಗಳು ಪ್ರೋಟೋ ಬಫರ್ ಅನ್ನು ಒಳಗೊಂಡಿರುವುದಿಲ್ಲ</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"ಈ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ಕೆಲವು UI ಘಟಕಗಳ ಆನ್-ಸ್ಕ್ರೀನ್ ಪಠ್ಯ ಸೇರಿದಂತೆ ಹೆಚ್ಚುವರಿ ವಿನ್ಯಾಸ ಡೇಟಾವನ್ನು ಲಾಗ್ ಮಾಡಲಾಗುತ್ತದೆ.
+
+ಕಸ್ಟಮ್ ಫಿಲ್ಟರ್‌ಗಳನ್ನು ರಚಿಸುವಾಗ ಘಟಕಗಳನ್ನು ಗುರುತಿಸಲು ಇದು ಸಹಾಯ ಮಾಡುತ್ತದೆ.
+
+ಆದಾಗ್ಯೂ, ಇದನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ನಿಮ್ಮ IP ವಿಳಾಸದಂತಹ ಕೆಲವು ಬಳಕೆದಾರ ಡೇಟಾವನ್ನು ಸಹ ಲಾಗ್ ಮಾಡಲಾಗುತ್ತದೆ."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">Tətbiq adı</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">Fərdi</string>
+            <string name="rivanced_custom_branding_icon_title">Tətbiq simvolu</string>
+            <string name="rivanced_custom_branding_icon_entry_1">Orijinal</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_3">RIVanced ən kiçik</string>
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced ölçüləndirilmiş</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">Fərdi</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">Yoxlamalar uğursuz oldu</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">Xidməti veb saytı aç</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">Məhəl qoyma</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;Bu tətbiq sizin tərəfinizdən yamaqlanmayıb.&lt;/h5&gt;&lt;br&gt;Bu tətbiq düzgün işləməyə bilər, &lt;b&gt;istifadə etmək zərərli və ya hətta təhlükəli ola bilər&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Bu yoxlamalar bu tətbiqin əvvəl yamaqlandığını və ya başqasından əldə edildiyini bildirir:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt; &lt;br&gt;onu silməyiniz və özünüz yamaqlamağınız tövsiyə olunur. &lt;/b&gt;təsdiqlənmiş və təhlükəsiz tətbiq istifadə etdiyinizə əmin olmaq üçün. &lt;p&gt;&lt;br&gt; Ləğv edilməzsə, bu xəbərdarlıq yalnız iki dəfə göstəriləcək.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">Fərqli cihazda yamaqlanıb</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">RIVanced Manager tərəfindən quraşdırılmayıb</string>
+            <string name="rivanced_check_environment_not_near_patch_time">10 dəqiqədən çox əvvəl yamaqlanıb</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">%s gün əvvəl yamaqlanıb</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">APK qurulma vaxtı pozulub</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">RIVanced Bildiriş</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">Baxış tarixçəniz saxlanmır.&lt;br&gt;&lt;br&gt;Bu çox güman ki, DNS reklam bloklayıcı və ya şəbəkə proksisinə görədir.&lt;br&gt;&lt;br&gt;.Bunu düzəltmək üçün s.youtube.com-u&lt;/b&gt; &lt;b&gt;ağ siyahıya salın və ya bütün DNS bloklayıcıları və proksiləri bağlayın.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">Təkrar göstərmə</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">Tənzimləmələr</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">Davam etmək istədiyinizə əminsiniz?</string>
+            <string name="rivanced_settings_save">Saxla</string>
+            <string name="rivanced_settings_reset">Sıfırla</string>
+            <string name="rivanced_settings_reset_color">Rəngi sıfırla</string>
+            <string name="rivanced_settings_color_invalid">Yanlış rəng</string>
+            <string name="rivanced_settings_restart_title">Yenidən başlatma tələb olunur</string>
+            <string name="rivanced_settings_restart_dialog_message">Bu dəyişikliyin təsir etməsi üçün tətbiqi yenidən başladın.</string>
+            <string name="rivanced_settings_restart">Yenidən başlat</string>
+            <string name="rivanced_settings_import">İdxal et</string>
+            <string name="rivanced_settings_import_copy">Köçür</string>
+            <string name="rivanced_settings_import_reset">RIVanced tənzimləmələr standarta təyin edildi</string>
+            <string name="rivanced_settings_import_success">%d tənzimləmə idxal edildi</string>
+            <string name="rivanced_settings_import_failure_parse">Uğursuz idxal prosesi: %s</string>
+            <string name="rivanced_settings_search_hint">Tənzimləmələri axtar</string>
+            <string name="rivanced_settings_search_no_results_title">‘%s’ üçün nəticə tapılmadı</string>
+            <string name="rivanced_settings_search_no_results_summary">Başqa açar sözü yoxla</string>
+            <string name="rivanced_settings_search_recent_searches">Son axtarışlar</string>
+            <string name="rivanced_settings_search_remove_message">Axtarış tarixçəsindən silinsin?</string>
+            <string name="rivanced_settings_search_clear_history">Axtarış tarixçəsini təmizlə</string>
+            <string name="rivanced_settings_search_clear_history_message">Bütün axtarış tarixçəsini təmizləmək istədiyinizə əminsiniz?</string>
+            <string name="rivanced_settings_search_tips_title">Axtarış Tövsiyələri</string>
+            <string name="rivanced_settings_search_tips_summary">"• Buna keçmək üçün yola toxun
+• Buna keçmək üçün tənzimləməni uzun basın
+• Axtarış sorğusunu tarixçəyə qeyd etmək üçün Daxil Et düyməsini bas
+• Axtarış böyük/kiçik hərfləri və durğu işarələrini nəzərə almır
+• Valideyn tənzimləmələri qapadılan uşaq tənzimləmələrin üstündə görünür"</string>
+            <string name="rivanced_settings_search_empty_history_title">Axtarış tarixçəsi boşdur</string>
+            <string name="rivanced_settings_search_empty_history_summary">Axtarış tarixçəsini saxlamaq üçün axtarış sorğusu yazın və Daxil Et basın</string>
+            <string name="rivanced_settings_search_history_title">Tənzimləmə axtarış tarixçəsin göstər</string>
+            <string name="rivanced_settings_search_history_summary_on">Tənzimləmə axtarış tarixçəsi göstərilir</string>
+            <string name="rivanced_settings_search_history_summary_off">Tənzimləmə axtarış tarixçəsi görünmür</string>
+            <string name="rivanced_settings_disable_bold_icons_title">Qalın nişanları qapat</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Nişanlar qalın deyil</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Nişanlar qalındır</string>
+            <string name="rivanced_show_menu_icons_title">RIVanced tənzimləmə nişanların göstər</string>
+            <string name="rivanced_show_menu_icons_summary_on">Tənzimləmə nişanları göstərilir</string>
+            <string name="rivanced_show_menu_icons_summary_off">Tənzimləmə nişanları göstərilmir</string>
+            <string name="rivanced_language_title">RIVanced dili</string>
+            <string name="rivanced_language_user_dialog_message">"Bəzi dillər üçün tərcümələr çatışmayan və ya natamam ola bilər.
+
+Yeni dilləri tərcümə etmək və ya mövcud tərcümələri təkmilləşdirmək üçün the RIVanced repository saytın ziyarət edin"</string>
+            <string name="rivanced_language_DEFAULT">Tətbiq dili</string>
+            <string name="rivanced_pref_import_export_title">İdxal/İxrac et</string>
+            <string name="rivanced_pref_import_export_summary">RIVanced tənzimləmələrin idxal/ixrac et</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">RIVanced Patches &lt;i&gt;%s&lt;/i&gt; versiyasını istifadə edirsiniz</string>
+            <string name="rivanced_settings_about_links_dev_header">Qeyd</string>
+            <string name="rivanced_settings_about_links_dev_body">Bu versiya ilkin buraxılışdır və gözlənilməz problemlərlə üzləşə bilərsiniz</string>
+            <string name="rivanced_settings_about_links_header">Rəsmi bağlantılar</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">GmsCore ilə əlaqədar tənzimləmələr</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore yeniləmələrini yoxla</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Yeniləmələrin yoxlanılması aktivdir</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Yeniləmələrin yoxlanılması deaktiv edilib</string>
+            <string name="rivanced_gms_core_settings_title">GmsCore Tənzimləmələrini Aç</string>
+            <string name="rivanced_gms_core_settings_summary">GmsCore Tənzimləmələri</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore quraşdırılmayıb. Bunu quraşdır.</string>
+            <string name="rivanced_gms_core_dialog_title">Fəaliyyət lazımdır</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore yeniləmələrini yoxlamaq uğursuz oldu</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore-un yeni versiyası (%1$s) mövcuddur. Hal-hazırda siz %2$s versiyasından istifadə edirsiniz.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore-un arxa planda işləməsi üçün icazəsi yoxdur.
+
+Telefonunuz üçün \"Tətbiqimi dayandırma\" bələdçisinə əməl edin və təlimatları MicroG quraşdırmanıza tətbiq edin.
+
+Bu, tətbiqin işləməsi üçün tələb olunur."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Veb saytı aç</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Ləğv et</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Problemlərin olmaması üçün MicroG GmsCore batareya optimallaşması qapadılmalıdır.
+
+MicroG üçün batareya optimallaşmasın qapatma batareya istifadəsinə mənfi təsir etməyəcək.
+
+Davam et düyməsinə toxun və optimallaşdırma dəyişikliklərin qəbul et."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Davam et</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">Video yayımların saxtalaşdır</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">Oynatma problemlərin önləmək üçün qəbuledici video yayımların saxtalaşdır</string>
+            <string name="rivanced_spoof_video_streams_title">Video yayımları saxtalaşdır</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"Video yayımları saxtalaşdırılıb
+
+Əgər YouTube Premium istifadəçisisinizsə, bu tənzimlənmə tələb olunmaya bilər"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"Video yayımları saxtalaşmayıb
+
+Oynatma işləməyə bilər"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">Bu tənzimləməni qapatmaq oynatma problemlərinə səbəb ola bilər.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">İlkin qəbuledici</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">Orijinal səs dilini zorla</string>
+            <string name="rivanced_force_original_audio_summary_on">Orijinal səs dilini istifadə</string>
+            <string name="rivanced_force_original_audio_summary_off">İlkin səs istifadəsi</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">Bu funksiyanı istifadə etmək üçün \"Video yayımları saxtalaşdırı\" Android Studio savayı istənilən qəbulediciyə dəyiş</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">Sazlama</string>
+            <string name="rivanced_debug_screen_summary">Sazlama seçimlərini aktiv/qeyri-aktiv et</string>
+            <string name="rivanced_debug_title">Sazlama jurnalı</string>
+            <string name="rivanced_debug_summary_on">Sazlama jurnalı işləkdir</string>
+            <string name="rivanced_debug_summary_off">Sazlama jurnalı qeyri-aktivdir</string>
+            <string name="rivanced_debug_stacktrace_title">Yığın izləri jurnalı</string>
+            <string name="rivanced_debug_stacktrace_summary_on">Sazlama jurnalına yığın izləri daxildir</string>
+            <string name="rivanced_debug_stacktrace_summary_off">Sazlama jurnalına yığın izləri daxil deyil</string>
+            <string name="rivanced_debug_toast_on_error_title">RIVanced xətasında ani bildiriş göstər</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">Xəta baş verərsə ani bildiriş görünür</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">Xəta baş verərsə ani bildiriş görünmür</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"Xəta ani bildirişlərin qapatmaq, bütün RIVanced xəta bildirişlərin gizlədir.
+
+Gözlənilməz hallardan xəbərdar olmayacaqsınız."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">Sazlama qeydlərini ixrac edin</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">RIVanced sazlama qeydlərini buferə köçürür</string>
+            <string name="rivanced_debug_logs_disabled">Sazlama qeydi qapalıdır</string>
+            <string name="rivanced_debug_logs_none_found">Qeydlər tapılmadı</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">Qeydlər köçürüldü</string>
+            <string name="rivanced_debug_logs_failed_to_export">Qeydləri ixrac etmək alınmadı: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">Sazlama qeydlərini təmizlə</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">Saxlanılan bütün RIVanced sazlama qeydlərini təmizləyir</string>
+            <string name="rivanced_debug_logs_clear_toast">Qeydlər silindi</string>
+            <string name="rivanced_debug_feature_flags_manager_title">Xüsusiyyət nişançıları idarəedicisi</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">Boolean xüsusiyyət nişançıların idarə et</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">Aktiv nişançılar (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">Bloklanmış nişançılar (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">Nişançıları axtarın...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">Nişançılar saxlandı</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">Nişançılar sıfırlandı</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">Nişançılar buferə köçürüldü</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Bu xüsusiyyətdən istifadə etmək üçün tətbiqi yenidən başladın</string>
+            <string name="rivanced_debug_protocolbuffer_title">Bufer protokol jurnalı</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Sazlama jurnallarına protokol buferi daxildir</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Sazlama jurnallarına protokol buferi daxil deyil</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Bu seçimi aktivləşdirmə bəzi UI quruluşları üçün ekran mətni də olmaqla əlavə tərtibat bazasını daxil edəcək.
+
+Bu, xüsusi filtrlər yaradarkən quruluşları müəyyən etməyə kömək edə bilər.
+
+Hər halda, bunu aktivləşdirmə IP ünvanınız kimi bəzi istifadəçi məlumatın da daxil edəcək."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">Paylaşım linklərin təmizlə</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">İzləmə sorğusu faktoru paylaşılan linklərdən silinir</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">İzləmə sorğusu faktoru paylaşılan linklərdən silinmir</string>
+            <string name="rivanced_replace_music_with_youtube_title">Paylaşma keçidlərini youtube.com-a dəyişdir</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">Paylaşılan keçidlər youtube.com istifadə edir</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">Paylaşılan keçidlər music.youtube.com istifadə edir</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">Şəxsi filtr</string>
+            <string name="rivanced_custom_filter_screen_summary">Fərdi filtrlər işlədərək elementləri gizlət</string>
+            <string name="rivanced_custom_filter_title">Fərdi filtri aktivləşdir</string>
+            <string name="rivanced_custom_filter_summary_on">Fərdi filtr aktivdir</string>
+            <string name="rivanced_custom_filter_summary_off">Fərdi filtr qeyri-aktivdir</string>
+            <string name="rivanced_custom_filter_strings_title">Fərdi filtr</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">Yeni sətirlə ayrılmış filtr üçün element yol qurucusu sətirlərinin siyahısı</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">Etibarsız fərdi filtr: %s</string>
+        </patch>
+    </app>
+</resources>

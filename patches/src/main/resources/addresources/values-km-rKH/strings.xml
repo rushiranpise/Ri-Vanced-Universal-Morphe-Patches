@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">បិទ​រូប​តំណាង​ដិត</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">រូប​តំណាង​មិន​ដិត</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">រូប​តំណាង​ដិត</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">ការកំណត់ទាក់ទងនឹង GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">ពិនិត្យរកមើលការអាប់ដេត GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">ការពិនិត្យរកមើលការអាប់ដេតត្រូវបានបើកដំណើរការ</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">ការពិនិត្យមើលបច្ចុប្បន្នភាពត្រូវបានបិទ</string>
+            <string name="rivanced_gms_core_settings_title">បើកការកំណត់ GmsCore</string>
+            <string name="rivanced_gms_core_settings_summary">ការកំណត់របស់ GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore មិនត្រូវបានដំឡើងទេ។ សូមដំឡើងវា។</string>
+            <string name="rivanced_gms_core_dialog_title">ត្រូវការសកម្មភាព</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">ការត្រួតពិនិត្យបច្ចុប្បន្នភាព MicroG GmsCore បរាជ័យ</string>
+            <string name="rivanced_gms_core_update_available_message">មានកំណែថ្មី (%1$s) របស់ MicroG GmsCore អាចប្រើបានហើយ។ បច្ចុប្បន្ន អ្នកកំពុងប្រើកំណែ %2$s។</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore មិនមានការអនុញ្ញាតឱ្យដំណើរការក្នុងផ្ទៃខាងក្រោយទេ។
+
+អនុវត្តតាមការណែនាំ \"កុំបិទកម្មវិធីរបស់ខ្ញុំ\" សម្រាប់ទូរស័ព្ទរបស់អ្នក ហើយអនុវត្តការណែនាំទៅការដំឡើង MicroG របស់អ្នក។
+
+នេះតម្រូវឱ្យកម្មវិធីដំណើរការ។"</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">បើកគេហទំព័រ</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">បោះបង់</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"ការបង្កើនប្រសិទ្ធភាពថ្ម MicroG GmsCore ត្រូវតែបិទដើម្បីការពារបញ្ហា។
+
+ការបិទការបង្កើនប្រសិទ្ធភាពថ្មសម្រាប់ MicroG នឹងមិនប៉ះពាល់ដល់ការប្រើប្រាស់ថ្មទេ។
+
+ចុចប៊ូតុងបន្ត ហើយអនុញ្ញាតឱ្យមានការផ្លាស់ប្តូរការបង្កើនប្រសិទ្ធភាព។"</string>
+            <string name="rivanced_gms_core_dialog_continue_text">បន្ត</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">ចាប់ផ្ដើមកម្មវិធីឡើងវិញដើម្បីប្រើមុខងារនេះ</string>
+            <string name="rivanced_debug_protocolbuffer_title">កំណត់ហេតុប្រូតូកូលបណ្ដោះអាសន្ន</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">កំណត់ហេតុដោះស្រាយកំហុសរួមបញ្ចូលប្រូតូកូលបណ្ដោះអាសន្ន</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">កំណត់ហេតុដោះស្រាយកំហុសមិនរួមបញ្ចូលប្រូតូកូលបណ្ដោះអាសន្ន</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"ការបើកការកំណត់នេះនឹងកត់ត្រាទិន្នន័យប្លង់បន្ថែម រួមទាំងអត្ថបទនៅលើអេក្រង់សម្រាប់សមាសធាតុ UI មួយចំនួន។
+
+នេះអាចជួយកំណត់អត្តសញ្ញាណសមាសធាតុនៅពេលបង្កើតតម្រងផ្ទាល់ខ្លួន។
+
+ទោះជាយ៉ាងណាក៏ដោយ ការបើកដំណើរការនេះក៏នឹងកត់ត្រាទិន្នន័យអ្នកប្រើប្រាស់មួយចំនួនដូចជាអាសយដ្ឋាន IP របស់អ្នកផងដែរ។"</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

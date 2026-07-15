@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">Pangalan ng app</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">Pasadyang</string>
+            <string name="rivanced_custom_branding_icon_title">Icon ng app</string>
+            <string name="rivanced_custom_branding_icon_entry_1">Orihinal</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced naka-scale</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">Pasadyang</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">Nabigo ang mga pagsusuri</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">Buksan ang Opisyal na Website</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">Balewalain</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;Ang app na ito ay tila hindi mo na-patch.&lt;/h5&gt;&lt;br&gt;Ang app na ito ay maaaring hindi gumana nang maayos, &lt;b&gt;maaaring mapanganib o maging delikado gamitin&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Ang mga tseke na ito ay nagpapahiwatig na ang app na ito ay na-pre-patch o nakuha mula sa ibang tao:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt;Malakas na inirerekomenda na &lt;b&gt;i-uninstall ang app na ito at i-patch ito sa iyong sarili&lt;/b&gt; upang matiyak na gumagamit ka ng isang na-validate at ligtas na app.&lt;p&gt;&lt;br&gt;Kung hindi papansinin, ang babalang ito ay ipapakita lamang nang dalawang beses.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">Naka-patch sa ibang device</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">Hindi naka-install sa pamamagitan ng RIVanced Manager</string>
+            <string name="rivanced_check_environment_not_near_patch_time">Naka-patch mahigit sa 10 minuto ang nakararaan</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">Naka-patch %s araw ang nakalipas</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">Ang petsa ng pagbuo ng APK ay sira</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">Paunawa ng RIVanced</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">Hindi nai-save ang iyong kasaysayan ng panonood.&lt;br&gt;&lt;br&gt;Karaniwang sanhi nito ay ang DNS ad blocker o network proxy.&lt;br&gt;&lt;br&gt;Para maayos ito, i-whitelist ang &lt;b&gt;s.youtube.com&lt;/b&gt; o i-off ang lahat ng DNS blocker at proxy.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">Huwag ipakitang muli</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">Mga Setting</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">Sigurado ka bang gusto mong magpatuloy?</string>
+            <string name="rivanced_settings_save">I-save</string>
+            <string name="rivanced_settings_reset">I-reset</string>
+            <string name="rivanced_settings_reset_color">I-reset ang kulay</string>
+            <string name="rivanced_settings_color_invalid">Hindi wasto ang kulay</string>
+            <string name="rivanced_settings_restart_title">Kinakailangan ang pag-restart</string>
+            <string name="rivanced_settings_restart_dialog_message">I-restart ang app para magkabisa ang pagbabagong ito.</string>
+            <string name="rivanced_settings_restart">I-restart</string>
+            <string name="rivanced_settings_import">Angkat</string>
+            <string name="rivanced_settings_import_copy">Kopya</string>
+            <string name="rivanced_settings_import_reset">I-reset ang mga RIVanced na setting sa default</string>
+            <string name="rivanced_settings_import_success">Na-import ang %d na mga setting</string>
+            <string name="rivanced_settings_import_failure_parse">Nabigo ang pag-import: %s</string>
+            <string name="rivanced_settings_search_hint">Maghanap ng mga setting</string>
+            <string name="rivanced_settings_search_no_results_title">Walang nakitang resulta para sa 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	\'%s\'</string>
+            <string name="rivanced_settings_search_no_results_summary">Subukan ang ibang keyword</string>
+            <string name="rivanced_settings_search_recent_searches">Mga kamakailang paghahanap</string>
+            <string name="rivanced_settings_search_remove_message">Alisin sa history ng paghahanap?</string>
+            <string name="rivanced_settings_search_clear_history">I-clear ang history ng paghahanap</string>
+            <string name="rivanced_settings_search_clear_history_message">Sigurado ka bang gusto mong i-clear ang lahat ng history ng paghahanap?</string>
+            <string name="rivanced_settings_search_tips_title">Mga Tip sa Paghahanap</string>
+            <string name="rivanced_settings_search_tips_summary">"• I-tap ang isang landas upang mag-navigate dito
+• Pindutin nang matagal ang isang setting upang mag-navigate dito
+• Pindutin ang Enter upang i-save ang isang query sa paghahanap sa kasaysayan
+• Hindi isinasaalang-alang ng paghahanap ang casing at bantas
+• Lumilitaw ang mga setting ng magulang sa itaas ng mga disabled na setting ng anak"</string>
+            <string name="rivanced_settings_search_empty_history_title">Walang laman ang kasaysayan ng paghahanap</string>
+            <string name="rivanced_settings_search_empty_history_summary">Upang i-save ang kasaysayan ng paghahanap, mag-type ng query sa paghahanap at pindutin ang Enter</string>
+            <string name="rivanced_settings_search_history_title">Ipakita ang history ng paghahanap sa mga setting</string>
+            <string name="rivanced_settings_search_history_summary_on">Ipinapakita ang history ng paghahanap sa mga setting</string>
+            <string name="rivanced_settings_search_history_summary_off">Hindi ipinapakita ang kasaysayan ng paghahanap sa Mga Setting</string>
+            <string name="rivanced_settings_disable_bold_icons_title">Huwag paganahin ang matatapang na icon</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Hindi matatapang ang mga icon</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Matatapang ang mga icon</string>
+            <string name="rivanced_show_menu_icons_title">Ipakita ang mga icon ng setting ng RIVanced</string>
+            <string name="rivanced_show_menu_icons_summary_on">Ipinapakita ang mga icon ng setting</string>
+            <string name="rivanced_show_menu_icons_summary_off">Hindi ipinapakita ang mga icon ng setting</string>
+            <string name="rivanced_language_title">Wika ng RIVanced</string>
+            <string name="rivanced_language_user_dialog_message">"Maaaring nawawala o hindi kumpleto ang mga pagsasalin para sa ilang wika.
+
+Upang isalin ang mga bagong wika o pagbutihin ang kasalukuyang mga pagsasalin, bisitahin ang the RIVanced repository"</string>
+            <string name="rivanced_language_DEFAULT">Wika ng app</string>
+            <string name="rivanced_pref_import_export_title">Mag-import / Mag-export</string>
+            <string name="rivanced_pref_import_export_summary">I-import / I-export ang mga setting ng RIVanced</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">Gumagamit ka ng bersyon ng RIVanced Patches &lt;i&gt;%s&lt;/i&gt;</string>
+            <string name="rivanced_settings_about_links_dev_header">Tandaan</string>
+            <string name="rivanced_settings_about_links_dev_body">Ang bersyon na ito ay isang pre-release at maaari kang makaranas ng mga hindi inaasahang isyu</string>
+            <string name="rivanced_settings_about_links_header">Mga opisyal na link</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Mga setting para sa GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Suriin ang mga update para sa GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Ang pagsusuri ng mga update ay pinagana</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Hindi pinagana ang pagsuri para sa mga update</string>
+            <string name="rivanced_gms_core_settings_title">Buksan ang Mga Setting ng GmsCore</string>
+            <string name="rivanced_gms_core_settings_summary">Mga Setting ng GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">Hindi naka-install ang MicroG GmsCore. I-install ito.</string>
+            <string name="rivanced_gms_core_dialog_title">Kailangan ng aksyon</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Nabigo ang pagsuri para sa mga update ng MicroG GmsCore</string>
+            <string name="rivanced_gms_core_update_available_message">May bagong bersyon (%1$s) ng MicroG GmsCore na available. Sa kasalukuyan, ginagamit mo ang bersyon %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"Ang MicroG GmsCore ay walang pahintulot na tumakbo sa background.\n\nSundin ang gabay na \"Huwag patayin ang aking app\" para sa iyong telepono, at ilapat ang mga tagubilin sa iyong pag-install ng MicroG.\n\nKinakailangan ito para gumana ang app."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Buksan ang website</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Kanselahin</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Ang mga pag-optimize ng baterya ng MicroG GmsCore ay dapat na hindi pinagana upang maiwasan ang mga problema.\n\nAng pag-disable ng mga pag-optimize ng baterya para sa MicroG ay hindi makakaapekto sa paggamit ng baterya.\n\nTapikin ang pindutan ng pagpapatuloy at payagan ang mga pagbabago sa pag-optimize."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Magpatuloy</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">Pekein ang mga video stream</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">Pekein ang mga video stream ng client upang maiwasan ang mga isyu sa pag-playback</string>
+            <string name="rivanced_spoof_video_streams_title">Spoof ng mga video stream</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"Ang mga video stream ay pinapanggap.
+
+Kung ikaw ay isang user ng YouTube Premium, maaaring hindi kailangan ang setting na ito"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"Hindi pinepeke ang mga video stream
+
+Maaaring hindi gumana ang pag-playback"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">Ang pag-off sa setting na ito ay maaaring magdulot ng mga isyu sa pag-playback.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">Default na kliyente</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">Pilitin ang orihinal na wika ng audio</string>
+            <string name="rivanced_force_original_audio_summary_on">Ginagamit ang orihinal na wika ng audio</string>
+            <string name="rivanced_force_original_audio_summary_off">Gumagamit ng default audio</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">Para magamit ang feature na ito, palitan ang \'Panggagaya ng mga video stream\' sa anumang client maliban sa Android Studio</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">Pagde-debug</string>
+            <string name="rivanced_debug_screen_summary">Paganahin o huwag paganahin ang mga opsyon sa pag-debug</string>
+            <string name="rivanced_debug_title">Pag-log sa pag-debug</string>
+            <string name="rivanced_debug_summary_on">Ang mga debug log ay pinagana</string>
+            <string name="rivanced_debug_summary_off">Ang mga debug log ay hindi pinagana</string>
+            <string name="rivanced_debug_stacktrace_title">Mga bakas ng stack ng log</string>
+            <string name="rivanced_debug_stacktrace_summary_on">Kasama sa mga debug log ang stack trace</string>
+            <string name="rivanced_debug_stacktrace_summary_off">Hindi kasama sa mga debug log ang stack trace</string>
+            <string name="rivanced_debug_toast_on_error_title">Ipakita ang toast sa RIVanced error</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">Ipinapakita ang Toast kung may naganap na error</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">Hindi ipinapakita ang Toast kung may naganap na error</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"Ang pag-off ng mga toast ng error ay nagtatago ng lahat ng mga abiso ng error ng RIVanced.
+
+Hindi ka aabisuhan ng anumang hindi inaasahang mga kaganapan."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">I-export ang mga debug log</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">Kinokopya ang mga RIVanced debug log sa clipboard</string>
+            <string name="rivanced_debug_logs_disabled">Hindi pinagana ang pag-log ng debug</string>
+            <string name="rivanced_debug_logs_none_found">Walang nakitang mga log</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">Nakopya ang mga log</string>
+            <string name="rivanced_debug_logs_failed_to_export">Nabigo ang pag-export ng mga log: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">I-clear ang mga debug log</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">Iki-clear ang lahat ng nakaimbak na RIVanced debug log</string>
+            <string name="rivanced_debug_logs_clear_toast">Na-clear ang mga log</string>
+            <string name="rivanced_debug_feature_flags_manager_title">Manager ng Mga Flag ng Tampok</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">Pamahalaan ang mga boolean na flag ng tampok</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">Mga aktibong flag (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">Mga harang na flag (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">Maghanap ng mga flag...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">Na-save ang mga flag</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">Na-reset ang mga flag</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">Nakopya ang mga flag sa clipboard</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">I-restart ang app para gamitin ang feature na ito</string>
+            <string name="rivanced_debug_protocolbuffer_title">Mag-log protocol buffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Kasama sa mga debug log ang proto buffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Ang mga debug log ay hindi kasama ang proto buffer</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Ang pagpapagana sa setting na ito ay magtatala ng karagdagang data ng layout, kabilang ang on-screen na teksto para sa ilang bahagi ng UI.\n\nMaaaring makatulong ito na matukoy ang mga bahagi kapag lumilikha ng mga custom na filter.\n\nGayunpaman, ang pagpapagana nito ay magtatala rin ng ilang data ng user gaya ng iyong IP address."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">Linisin ang mga link sa pagbabahagi</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">Ang parameter ng query sa pagsubaybay ay tinanggal mula sa mga ibinahaging link</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">Ang parameter ng query sa pagsubaybay ay hindi tinanggal mula sa mga ibinahaging link</string>
+            <string name="rivanced_replace_music_with_youtube_title">Baguhin ang mga link ng pagbabahagi sa youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">Gumagamit ang mga nakabahaging link ng youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">Gumagamit ang mga nakabahaging link ng music.youtube.com</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">Custom na filter</string>
+            <string name="rivanced_custom_filter_screen_summary">Itago ang mga bahagi gamit ang mga custom na filter</string>
+            <string name="rivanced_custom_filter_title">Paganahin ang custom na filter</string>
+            <string name="rivanced_custom_filter_summary_on">Naka-enable ang custom na filter</string>
+            <string name="rivanced_custom_filter_summary_off">Naka-disable ang custom na filter</string>
+            <string name="rivanced_custom_filter_strings_title">Custom na filter</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">Listahan ng mga string ng tagabuo ng bahagi ng path na i-filter na pinaghihiwalay ng bagong linya</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">Di-wastong custom na filter: %s</string>
+        </patch>
+    </app>
+</resources>

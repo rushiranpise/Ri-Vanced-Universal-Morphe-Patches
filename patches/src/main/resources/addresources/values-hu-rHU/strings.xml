@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">Alkalmazás neve</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">Egyéni</string>
+            <string name="rivanced_custom_branding_icon_title">Alkalmazás ikonja</string>
+            <string name="rivanced_custom_branding_icon_entry_1">Eredeti</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_3">RIVanced minimális</string>
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced méretezett</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">Egyéni</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">Az ellenőrzések sikertelenek</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">Hivatalos weboldal megnyitása</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">Mellőzés</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;Úgy tűnik, hogy ezt az alkalmazást nem te patchelted.&lt;/h5&gt;&lt;br&gt;Lehet, hogy az alkalmazás nem fog megfelelően működni, sőt, &lt;b&gt;ártalmas vagy akár veszélyes is lehet a használata&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Az alábbi ellenőrzések arra utalnak, hogy már előre patchelték az alkalmazást, vagy mástól szerezted be azt:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt;Ajánlott &lt;b&gt;letörölni és magadnak patchelni&lt;/b&gt; az alkalmazást a teljes biztonság érdekében.&lt;p&gt;&lt;br&gt;Ha ezt az értesítést mellőzöd, csak kétszer fog megjelenni.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">Patchelve egy másik eszközön</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">Nem a RIVanced Manager telepítette</string>
+            <string name="rivanced_check_environment_not_near_patch_time">Több mint 10 perce patchelve</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">%s napja patchelve</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">Az APK build dátuma sérült</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">RIVanced Értesítés</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">A megtekintési előzmények mentése nem történik meg.&lt;br&gt;&lt;br&gt;Ezt valószínűleg egy DNS-hirdetésblokkoló vagy hálózati proxy okozza.&lt;br&gt;&lt;br&gt;A probléma megoldásához vegye fel az engedélyezőlistára az &lt;b&gt;s.youtube.com&lt;/b&gt; domaint vagy kapcsolja ki az összes DNS-blokkolót és proxyt.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">Ne jelenjen meg többet</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">Beállítások</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">Biztosan folytatni szeretné?</string>
+            <string name="rivanced_settings_save">Mentés</string>
+            <string name="rivanced_settings_reset">Visszaállítás</string>
+            <string name="rivanced_settings_reset_color">Szín alaphelyzetbe állítása</string>
+            <string name="rivanced_settings_color_invalid">Érvénytelen szín</string>
+            <string name="rivanced_settings_restart_title">Újraindítás szükséges</string>
+            <string name="rivanced_settings_restart_dialog_message">Indítsa újra az alkalmazást, hogy a változás érvénybe lépjen.</string>
+            <string name="rivanced_settings_restart">Újraindítás</string>
+            <string name="rivanced_settings_import">Importálás</string>
+            <string name="rivanced_settings_import_copy">Másolás</string>
+            <string name="rivanced_settings_import_reset">A RIVanced beállítások visszaállnak az alapértelmezettre</string>
+            <string name="rivanced_settings_import_success">%d beállítás importálva</string>
+            <string name="rivanced_settings_import_failure_parse">Sikertelen importálás: %s</string>
+            <string name="rivanced_settings_search_hint">Beállítások keresése</string>
+            <string name="rivanced_settings_search_no_results_title">Nincs találat erre: „%s”</string>
+            <string name="rivanced_settings_search_no_results_summary">Próbáljon ki egy másik kulcsszót</string>
+            <string name="rivanced_settings_search_recent_searches">Legutóbbi keresések</string>
+            <string name="rivanced_settings_search_remove_message">Eltávolítja a keresési előzményekből?</string>
+            <string name="rivanced_settings_search_clear_history">Keresési előzmények törlése</string>
+            <string name="rivanced_settings_search_clear_history_message">Biztosan törölni szeretné az összes keresési előzményt?</string>
+            <string name="rivanced_settings_search_tips_title">Keresési tippek</string>
+            <string name="rivanced_settings_search_tips_summary">"• Érintse meg az útvonalat az oda navigáláshoz
+• Hosszan nyomja meg a beállítást az oda navigáláshoz
+• Nyomja meg az Entert a keresési lekérdezés előzményekbe mentéséhez
+• A keresés figyelmen kívül hagyja a kis- és nagybetűket, valamint az írásjeleket
+• A szülőbeállítások a letiltott gyermekbeállítások felett jelennek meg"</string>
+            <string name="rivanced_settings_search_empty_history_title">A keresési előzmények üresek</string>
+            <string name="rivanced_settings_search_empty_history_summary">A keresési előzmények mentéséhez írjon be egy keresési lekérdezést, majd nyomja meg az Entert</string>
+            <string name="rivanced_settings_search_history_title">Beállítások keresési előzményeinek megjelenítése</string>
+            <string name="rivanced_settings_search_history_summary_on">A beállítások keresési előzményei láthatók</string>
+            <string name="rivanced_settings_search_history_summary_off">A beállítások keresési előzményei nincsenek megjelenítve</string>
+            <string name="rivanced_settings_disable_bold_icons_title">Félkövér ikonok letiltása</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Az ikonok nem félkövérek</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Az ikonok félkövérek</string>
+            <string name="rivanced_show_menu_icons_title">RIVanced beállításikonok megjelenítése</string>
+            <string name="rivanced_show_menu_icons_summary_on">A beállításikonok láthatók</string>
+            <string name="rivanced_show_menu_icons_summary_off">A beállítások ikonjai nem jelennek meg</string>
+            <string name="rivanced_language_title">RIVanced nyelve</string>
+            <string name="rivanced_language_user_dialog_message">"Egyes nyelvek fordításai hiányozhatnak vagy hiányosak lehetnek.
+
+Új nyelvek fordításához vagy a meglévő fordítások javításához látogasson el a the RIVanced repository oldalra."</string>
+            <string name="rivanced_language_DEFAULT">Alkalmazás nyelve</string>
+            <string name="rivanced_pref_import_export_title">Importálás / exportálás</string>
+            <string name="rivanced_pref_import_export_summary">RIVanced beállítások importálása / exportálása</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">A RIVanced Patchek &lt;i&gt;%s&lt;i&gt; verzióját használja</string>
+            <string name="rivanced_settings_about_links_dev_header">Megjegyzés</string>
+            <string name="rivanced_settings_about_links_dev_body">Ez a verzió egy előzetes kiadás, és nem kívánt hibákat tapasztalhat</string>
+            <string name="rivanced_settings_about_links_header">Hivatalos linkek</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">A GmsCore beállításai</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore frissítések keresése</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">A frissítések ellenőrzése engedélyezve van</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">A frissítések keresése le van tiltva</string>
+            <string name="rivanced_gms_core_settings_title">GmsCore beállítások megnyitása</string>
+            <string name="rivanced_gms_core_settings_summary">A GmsCore beállításai</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore nincs telepítve. Telepítse.</string>
+            <string name="rivanced_gms_core_dialog_title">Művelet szükséges</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Nem sikerült ellenőrizni a MicroG GmsCore frissítéseit</string>
+            <string name="rivanced_gms_core_update_available_message">Elérhető a MicroG GmsCore új, %1$s verziója. Jelenleg a %2$s verziót használod.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"A MicroG GmsCore nem rendelkezik engedéllyel a háttérben történő futáshoz.
+
+Kövesse a \"Ne ölj meg az alkalmazásomat\" útmutatót a telefonján, és alkalmazza az utasításokat a MicroG telepítésére.
+
+Ez szükséges az alkalmazás működéséhez."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Webhely megnyitása</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Mégse</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"A MicroG GmsCore akkumulátor-optimalizálását le kell tiltani a problémák elkerülése érdekében.
+
+A MicroG akkumulátor-optimalizálásának letiltása nem befolyásolja negatívan az akkumulátor használatát.
+
+Kattintson a folytatás gombra, és engedélyezze az optimalizálási módosításokat."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Folytatás</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">Videó streamek hamisítása</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">A kliens videó streamek hamisítása a lejátszási problémák elkerülése érdekében</string>
+            <string name="rivanced_spoof_video_streams_title">Hamis videó stream</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"A videó adatfolyamok hamisítva vannak
+
+Ha Ön YouTube Premium felhasználó, ez a beállítás nem feltétlenül szükséges"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"A videó streamek nincsenek hamisítva
+
+A lejátszás nem működhet"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">Ennek a beállításnak a kikapcsolása lejátszási problémákat okozhat.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">Alapértelmezett kliens</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">Eredeti hang kikényszerítése</string>
+            <string name="rivanced_force_original_audio_summary_on">Eredeti hang használata a hang nyelvén</string>
+            <string name="rivanced_force_original_audio_summary_off">Alapértelmezett hang használata</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">A funkció használatához módosítsa a \"Videóstreamek hamisítása\" beállítást bármely kliensre, kivéve az Android Studiót</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">Hibakeresés</string>
+            <string name="rivanced_debug_screen_summary">Hibakeresési beállítások engedélyezése vagy letiltása</string>
+            <string name="rivanced_debug_title">Hibakeresési naplózás</string>
+            <string name="rivanced_debug_summary_on">A hibakeresési naplók engedélyezve vannak</string>
+            <string name="rivanced_debug_summary_off">A hibakeresési naplók le vannak tiltva</string>
+            <string name="rivanced_debug_stacktrace_title">Naplóverem nyomai</string>
+            <string name="rivanced_debug_stacktrace_summary_on">A hibakeresési naplók tartalmazzák a verem nyomkövetését</string>
+            <string name="rivanced_debug_stacktrace_summary_off">A hibakeresési naplók nem tartalmazzák a verem nyomkövetését</string>
+            <string name="rivanced_debug_toast_on_error_title">Üzenet megjelenítése RIVanced hiba esetén</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">A \"toast\" üzenet jelenik meg, ha hiba történik</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">Nem jelenik meg \"toast\" üzenet, ha hiba történik</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"A hibaüzenetek kikapcsolása elrejti az összes RIVanced hibaértesítést.
+
+Nem fog értesülni semmilyen váratlan eseményről."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">Hibakeresési naplók exportálása</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">A RIVanced hibakeresési naplóit a vágólapra másolja</string>
+            <string name="rivanced_debug_logs_disabled">A hibakeresési naplózás ki van kapcsolva</string>
+            <string name="rivanced_debug_logs_none_found">Nem találhatók naplók</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">Naplók másolva</string>
+            <string name="rivanced_debug_logs_failed_to_export">Nem sikerült exportálni a naplókat: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">Hibakeresési naplók törlése</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">Törli az összes tárolt RIVanced hibakeresési naplót</string>
+            <string name="rivanced_debug_logs_clear_toast">Naplók törölve</string>
+            <string name="rivanced_debug_feature_flags_manager_title">Funkciójelzők Manager</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">Logikai funkciójelzők kezelése</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">Aktív jelzők (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">Blokkolt jelzők (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">Jelzők keresése...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">Jelzők mentve</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">Jelzők visszaállítva</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">Jelzők vágólapra másolva</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Indítsa újra az alkalmazást a funkció használatához</string>
+            <string name="rivanced_debug_protocolbuffer_title">Napló protokoll puffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">A hibakeresési naplók protopuffert tartalmaznak</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">A hibakeresési naplók nem tartalmaznak protopuffert</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Ennek a beállításnak az engedélyezése további elrendezési adatokat fog naplózni, beleértve néhány felhasználói felületi komponens képernyőn megjelenő szövegét.
+
+Ez segíthet azonosítani az összetevőket egyedi szűrők létrehozásakor.
+
+Ez a funkció azonban néhány felhasználói adatot is naplóz, például az IP-címét."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">Megosztási linkek tisztítása</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">A követési lekérdezési paraméter eltávolításra kerül a megosztott linkekből</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">A követési lekérdezési paraméter nem kerül eltávolításra a megosztott linkekből</string>
+            <string name="rivanced_replace_music_with_youtube_title">Módosítsa a megosztási linkeket youtube.com-ra</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">A megosztott linkek a youtube.com-ot használják</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">A megosztott linkek a music.youtube.com-ot használják</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">Egyedi szűrő</string>
+            <string name="rivanced_custom_filter_screen_summary">Komponensek elrejtése egyedi szűrők használatával</string>
+            <string name="rivanced_custom_filter_title">Egyedi szűrők engedélyezése</string>
+            <string name="rivanced_custom_filter_summary_on">Az egyedi szűrő engedélyezve van</string>
+            <string name="rivanced_custom_filter_summary_off">Az egyedi szűrő ki van kapcsolva</string>
+            <string name="rivanced_custom_filter_strings_title">Egyedi szűrő</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">A szűrendő összetevő útvonal építő karakterláncok listája új sorral elválasztva</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">Érvénytelen egyedi szűrő: %s</string>
+        </patch>
+    </app>
+</resources>

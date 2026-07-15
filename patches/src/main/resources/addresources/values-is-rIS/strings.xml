@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">Slökkva á feitletruðum táknum</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Tákn eru ekki feitletruð</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Tákn eru feitletruð</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Stillingar tengdar GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Athuga með uppfærslur fyrir GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Að athuga með uppfærslur er virkt</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Slökkt er á athugun á uppfærslum</string>
+            <string name="rivanced_gms_core_settings_title">Opna GmsCore stillingar</string>
+            <string name="rivanced_gms_core_settings_summary">Stillingar GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore er ekki uppsett. Settu það upp.</string>
+            <string name="rivanced_gms_core_dialog_title">Þörf á aðgerð</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Tókst ekki að athuga hvort MicroG GmsCore væri með uppfærslur</string>
+            <string name="rivanced_gms_core_update_available_message">Ný útgáfa (%1$s) af MicroG GmsCore er fáanleg. Eins og er, ertu að nota útgáfu %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore hefur ekki leyfi til að keyra í bakgrunni.\n\nFylgdu leiðbeiningunum „Ekki drepa appið mitt“ fyrir símann þinn og beittu leiðbeiningunum á MicroG uppsetninguna þína.\n\nÞetta er nauðsynlegt til að appið virki."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Opna vefsíðu</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Hætta við</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Slökkva verður á rafhlöðubestun MicroG GmsCore til að koma í veg fyrir vandamál.\n\nAð slökkva á rafhlöðubestun fyrir MicroG mun ekki hafa neikvæð áhrif á rafhlöðunotkun.\n\nÝttu á áfram hnappinn og leyfðu breytingar á bestun."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Áfram</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Endurræstu forritið til að nota þennan eiginleika</string>
+            <string name="rivanced_debug_protocolbuffer_title">Skrá samskiptastaðal biðminni</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Villuleitarskrár innihalda samskiptastaðal biðminni</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Villuleitarskrár innihalda ekki samskiptastaðal biðminni</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Með því að virkja þessa stillingu verða skráð auka uppsetningargögn, þar á meðal texti á skjánum fyrir suma notendaviðmótshluta.
+
+Þetta getur hjálpað til við að auðkenna hluta þegar sérsniðnar síur eru búnar til.
+
+Hins vegar mun virkjun þessa einnig skrá notendagögn eins og IP tölu þína."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

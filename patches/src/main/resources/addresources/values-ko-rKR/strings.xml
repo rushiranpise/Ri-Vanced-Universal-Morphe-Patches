@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">앱 이름</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">사용자 정의</string>
+            <string name="rivanced_custom_branding_icon_title">앱 아이콘</string>
+            <string name="rivanced_custom_branding_icon_entry_1">원본</string>
+            <string name="rivanced_custom_branding_icon_entry_2">RIVanced</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_3">RIVanced 최소화</string>
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced 스케일</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">사용자 정의</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">환경 검사에 실패하였습니다</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">공식 홈페이지 열기</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">닫기</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5&gt;이 앱은 사용자가 패치하지 않은 것 같습니다.&lt;/h5&gt;&lt;br&gt;이 앱은 제대로 작동하지 않을 수 있으며, &lt;b&gt;사용 시 해롭거나 심지어 위험할 수도 있습니다&lt;/b&gt;.&lt;br&gt;&lt;br&gt;이러한 검사는 이 앱이 다른 사람에 의하여 패치되었거나 다른 사람으로부터 받은 것임을 의미합니다:&lt;br&gt;&lt;br&gt;&lt;small&gt;%1$s&lt;/small&gt;&lt;br&gt;검증되고 안전한 앱을 사용하고 있는지 확인하려면 &lt;b&gt;이 앱을 제거하고 직접 패치하는 것&lt;/b&gt;을 강력히 권장합니다.&lt;p&gt;&lt;br&gt;이 경고는 두 번만 표시됩니다.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">다른 기기에서 패치되었습니다</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">RIVanced Manager에 의해 설치되지 않았습니다</string>
+            <string name="rivanced_check_environment_not_near_patch_time">10분 이상 전에 패치되었습니다</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">%s 일 전에 패치되었습니다</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">APK 빌드 날짜가 손상되었습니다</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">RIVanced 알림</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">시청 기록이 저장되지 않습니다.&lt;br&gt;&lt;br&gt; DNS 광고 차단기 또는 네트워크 프록시로 인하여 발생한 문제일 가능성이 높습니다.&lt;br&gt;&lt;br&gt; 이 문제를 해결하려면 &lt;b&gt;s.youtube.com&lt;/b&gt;을 허용 목록에서 제외하거나 모든 DNS 차단기 및 프록시를 해제하세요.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">다시 보지 않기</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">설정</string>
+            <string name="rivanced_settings_title">RIVanced</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">계속하시겠습니까?</string>
+            <string name="rivanced_settings_save">저장</string>
+            <string name="rivanced_settings_reset">초기화</string>
+            <string name="rivanced_settings_reset_color">색상 초기화</string>
+            <string name="rivanced_settings_color_invalid">잘못된 색상입니다</string>
+            <string name="rivanced_settings_restart_title">다시 시작하세요</string>
+            <string name="rivanced_settings_restart_dialog_message">이 변경 사항을 적용하려면 앱을 다시 시작하세요.</string>
+            <string name="rivanced_settings_restart">다시 시작</string>
+            <string name="rivanced_settings_import">가져오기</string>
+            <string name="rivanced_settings_import_copy">복사하기</string>
+            <string name="rivanced_settings_import_reset">RIVanced 설정을 기본값으로 초기화합니다</string>
+            <string name="rivanced_settings_import_success">%d 개의 설정을 가져왔습니다</string>
+            <string name="rivanced_settings_import_failure_parse">설정을 가져올 수 없습니다: %s</string>
+            <string name="rivanced_settings_search_hint">설정 검색</string>
+            <string name="rivanced_settings_search_no_results_title">\'%s\'에 대한 검색 결과가 없습니다</string>
+            <string name="rivanced_settings_search_no_results_summary">다른 키워드를 검색해 보세요</string>
+            <string name="rivanced_settings_search_recent_searches">최근 검색어</string>
+            <string name="rivanced_settings_search_remove_message">검색 기록에서 제거하시겠습니까?</string>
+            <string name="rivanced_settings_search_clear_history">검색 기록 지우기</string>
+            <string name="rivanced_settings_search_clear_history_message">모든 검색 기록을 지우시겠습니까?</string>
+            <string name="rivanced_settings_search_tips_title">검색 팁</string>
+            <string name="rivanced_settings_search_tips_summary">"• 경로를 탭하여 설정 카테고리로 이동할 수 있습니다
+• 설정을 길게 탭하여 설정 위치로 이동할 수 있습니다
+• 엔터키를 눌러서 검색어를 기록에 저장할 수 있습니다
+• 검색할 경우에 대소문자와 구두점이 무시됩니다
+• 상위 설정이 비활성화된 하위 설정 위에 표시됩니다"</string>
+            <string name="rivanced_settings_search_empty_history_title">검색 기록이 비어 있습니다</string>
+            <string name="rivanced_settings_search_empty_history_summary">검색 기록을 저장하려면 검색어를 입력하고 엔터키를 누르세요</string>
+            <string name="rivanced_settings_search_history_title">설정 검색 기록 표시하기</string>
+            <string name="rivanced_settings_search_history_summary_on">설정 검색 기록을 표시합니다</string>
+            <string name="rivanced_settings_search_history_summary_off">설정 검색 기록을 표시하지 않습니다</string>
+            <string name="rivanced_settings_disable_bold_icons_title">굵은 아이콘 비활성화하기</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">아이콘을 굵게 표시하지 않습니다</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">아이콘을 굵게 표시합니다</string>
+            <string name="rivanced_show_menu_icons_title">RIVanced 설정 아이콘 표시하기</string>
+            <string name="rivanced_show_menu_icons_summary_on">설정 아이콘을 표시합니다</string>
+            <string name="rivanced_show_menu_icons_summary_off">설정 아이콘을 표시하지 않습니다</string>
+            <string name="rivanced_language_title">RIVanced 언어</string>
+            <string name="rivanced_language_user_dialog_message">"일부 언어의 번역이 누락되었거나 완료되지 않았을 수 있습니다.
+
+새 언어를 번역하거나 기존 번역을 개선하려면 the RIVanced repository 를 방문하세요."</string>
+            <string name="rivanced_language_DEFAULT">앱 언어</string>
+            <string name="rivanced_pref_import_export_title">가져오기 / 내보내기</string>
+            <string name="rivanced_pref_import_export_summary">RIVanced 설정을 가져오거나 내보낼 수 있습니다</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">RIVanced Patches &lt;i&gt;%s&lt;/i&gt;&lt;br&gt;버전을 사용하는 중입니다</string>
+            <string name="rivanced_settings_about_links_dev_header">알림</string>
+            <string name="rivanced_settings_about_links_dev_body">Pre-release 버전이므로&lt;br&gt;예상되지 않은 문제점이&lt;br&gt;발생할 수 있습니다</string>
+            <string name="rivanced_settings_about_links_header">공식 링크</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">GmsCore 관련 설정을 할 수 있습니다</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore 업데이트 확인</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">앱 시작 시 GmsCore 업데이트를 확인합니다</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">앱 시작 시 GmsCore 업데이트를 확인하지 않습니다</string>
+            <string name="rivanced_gms_core_settings_title">GmsCore 설정 열기</string>
+            <string name="rivanced_gms_core_settings_summary">GmsCore 설정을 실행할 수 있습니다</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore가 설치되어 있지 않습니다. 설치하세요.</string>
+            <string name="rivanced_gms_core_dialog_title">필수 조치</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore 업데이트를 확인할 수 없습니다</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore의 새 버전(%1$s)을 업데이트할 수 있습니다. 현재 %2$s 버전을 사용 중입니다.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore에 백그라운드에서 실행할 수 있는 권한이 없습니다.
+
+이 기기에 대한 \"Don't kill my app\" 가이드를 읽어보고, MicroG 설치 지침을 적용하세요.
+
+앱이 실행하려면 이 과정이 필요합니다."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">웹사이트 열기</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">취소하기</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"MicroG GmsCore 앱 배터리 최적화를 비활성화(제한 없음)하여 앱 문제를 방지할 수 있습니다.
+
+MicroG GmsCore 앱 배터리 최적화를 비활성화(제한 없음)하더라도, 배터리 사용량에 부정적인 영향을 미치지 않습니다.
+
+앱 배터리 최적화를 비활성화(제한 없음)하려면 '계속하기' 버튼을 탭하세요."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">계속하기</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">동영상 스트림 속이기</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">클라이언트 동영상 스트림을 속여서 재생 문제를 방지할 수 있습니다</string>
+            <string name="rivanced_spoof_video_streams_screen_title">동영상 스트림 속이기</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">클라이언트 동영상 스트림을 속여서 재생 문제를 방지할 수 있습니다</string>
+            <string name="rivanced_spoof_video_streams_title">동영상 스트림 속이기</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"동영상 스트림이 속여집니다
+
+YouTube Premium 사용자라면 이 설정은 필요하지 않을 수 있습니다"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"동영상 스트림이 속여지지 않습니다
+
+재생 문제가 발생할 수 있습니다"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">이 설정을 비활성화하면 재생 문제가 발생할 수 있습니다.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">기본 클라이언트</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">원본 오디오 언어 강제로 활성화하기</string>
+            <string name="rivanced_force_original_audio_summary_on">원본 오디오 언어를 활성화합니다</string>
+            <string name="rivanced_force_original_audio_summary_off">기본 오디오 언어를 활성화합니다</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">이 기능을 사용하려면, \'동영상 스트림 속이기\'에서 기본 클라이언트를 Android Studio를 제외한 다른 클라이언트로 변경하세요</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">디버그</string>
+            <string name="rivanced_debug_screen_summary">디버그 옵션을 활성화하거나 비활성화할 수 있습니다</string>
+            <string name="rivanced_debug_title">디버그 로그</string>
+            <string name="rivanced_debug_summary_on">디버그 로그를 활성화합니다</string>
+            <string name="rivanced_debug_summary_off">디버그 로그를 비활성화합니다</string>
+            <string name="rivanced_debug_stacktrace_title">로그 스택 트레이스</string>
+            <string name="rivanced_debug_stacktrace_summary_on">디버그 로그에 로그 스택 트레이스를 포함합니다</string>
+            <string name="rivanced_debug_stacktrace_summary_off">디버그 로그에 로그 스택 트레이스를 포함하지 않습니다</string>
+            <string name="rivanced_debug_toast_on_error_title">RIVanced 오류 메시지 표시하기</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">오류가 발생하면 팝업 메시지를 표시합니다</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">오류가 발생하면 팝업 메시지를 표시하지 않습니다</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"오류 메시지를 비활성화하면 모든 RIVanced 오류 알림이 숨겨집니다.
+
+예상되지 않은 이벤트에 대한 알림을 받지 못할 수 있습니다."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">디버그 로그 내보내기</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">RIVanced 디버그 로그를 클립보드에 복사할 수 있습니다</string>
+            <string name="rivanced_debug_logs_disabled">디버그 로그가 비활성화되어 있습니다</string>
+            <string name="rivanced_debug_logs_none_found">디버그 로그를 찾을 수 없습니다</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">디버그 로그를 복사하였습니다</string>
+            <string name="rivanced_debug_logs_failed_to_export">디버그 로그를 내보낼 수 없습니다: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">디버그 로그 지우기</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">저장된 모든 RIVanced 디버그 로그를 지울 수 있습니다</string>
+            <string name="rivanced_debug_logs_clear_toast">디버그 로그가 지워졌습니다</string>
+            <string name="rivanced_debug_feature_flags_manager_title">기능 플래그 관리자</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">부울 기능 플래그를 관리할 수 있습니다</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">허용된 플래그 (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">차단된 플래그 (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">플래그 검색...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">플래그를 저장하였습니다</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">플래그를 초기화하였습니다</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">플래그를 클립보드에 복사하였습니다</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">이 기능을 사용하려면 앱을 다시 시작하세요</string>
+            <string name="rivanced_debug_protocolbuffer_title">로그 프로토콜 버퍼</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">디버그 로그에 프로토콜 버퍼를 포함합니다</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">디버그 로그에 프로토콜 버퍼를 포함하지 않습니다</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"이 설정을 활성화하면 일부 UI 구성 요소에 대한 화면 텍스트를 포함한 추가 레이아웃 데이터가 기록됩니다.
+
+이 설정은 사용자 정의 필터를 만들 경우에 구성 요소를 식별하는 데 도움이 될 수 있습니다.
+
+그러나 이 설정을 활성화하면 IP 주소와 같은 일부 사용자 데이터도 기록됩니다."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">추적 쿼리를 제거한 링크 공유하기</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">링크를 공유할 경우에 URL에서 추적 쿼리 매개변수를 제거합니다</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">링크를 공유할 경우에 URL에서 추적 쿼리 매개변수를 제거하지 않습니다</string>
+            <string name="rivanced_replace_music_with_youtube_title">공유 링크를 \'youtube.com\'으로 변경하기</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">공유 링크를 \'youtube.com\'으로 사용합니다</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">공유 링크를 \'music.youtube.com\'으로 사용합니다</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">사용자 정의 필터</string>
+            <string name="rivanced_custom_filter_screen_summary">사용자 정의 필터를 사용하여 구성요소를 숨길 수 있습니다</string>
+            <string name="rivanced_custom_filter_title">사용자 정의 필터 활성화하기</string>
+            <string name="rivanced_custom_filter_summary_on">사용자 정의 필터를 활성화합니다</string>
+            <string name="rivanced_custom_filter_summary_off">사용자 정의 필터를 비활성화합니다</string>
+            <string name="rivanced_custom_filter_strings_title">사용자 정의 필터</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">필터링할 컴포넌트 패스 빌더 문자열을 줄바꿈으로 구분하여 설정합니다</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">잘못된 사용자 정의 필터 값입니다: %s</string>
+        </patch>
+    </app>
+</resources>

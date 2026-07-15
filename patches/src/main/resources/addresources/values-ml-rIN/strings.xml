@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">കട്ടിയുള്ള ഐക്കണുകൾ പ്രവർത്തനരഹിതമാക്കുക</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">ഐക്കണുകൾ കട്ടിയുള്ളതല്ല</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">ഐക്കണുകൾ കട്ടിയുള്ളതാണ്</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">GmsCore-മായി ബന്ധപ്പെട്ട ക്രമീകരണങ്ങൾ</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുക</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുന്നത് പ്രവർത്തനക്ഷമമാക്കിയിരിക്കുന്നു</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുന്നത് പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നു.</string>
+            <string name="rivanced_gms_core_settings_title">GmsCore ക്രമീകരണങ്ങൾ തുറക്കുക</string>
+            <string name="rivanced_gms_core_settings_summary">GmsCore-ൻ്റെ ക്രമീകരണങ്ങൾ</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല. ഇൻസ്റ്റാൾ ചെയ്യുക.</string>
+            <string name="rivanced_gms_core_dialog_title">നടപടി ആവശ്യമാണ്</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുന്നതിൽ പരാജയപ്പെട്ടു</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore-ന്റെ ഒരു പുതിയ പതിപ്പ് (%1$s) ലഭ്യമാണ്. നിലവിൽ, നിങ്ങൾ ഉപയോഗിക്കുന്നത് %2$s പതിപ്പാണ്.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore-ന് പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കാൻ അനുമതിയില്ല.
+
+നിങ്ങളുടെ ഫോണിനായുള്ള \"എൻ്റെ ആപ്പ് നിർത്തരുത്\" എന്ന ഗൈഡ് പിന്തുടരുക, നിർദ്ദേശങ്ങൾ നിങ്ങളുടെ MicroG ഇൻസ്റ്റലേഷനിൽ പ്രയോഗിക്കുക.
+
+ആപ്പ് പ്രവർത്തിക്കുന്നതിന് ഇത് ആവശ്യമാണ്."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">വെബ്സൈറ്റ് തുറക്കുക</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">റദ്ദാക്കുക</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"പ്രശ്‌നങ്ങൾ ഒഴിവാക്കാൻ MicroG GmsCore ബാറ്ററി ഒപ്റ്റിമൈസേഷനുകൾ പ്രവർത്തനരഹിതമാക്കണം.
+
+MicroG-യുടെ ബാറ്ററി ഒപ്റ്റിമൈസേഷനുകൾ പ്രവർത്തനരഹിതമാക്കുന്നത് ബാറ്ററി ഉപയോഗത്തെ പ്രതികൂലമായി ബാധിക്കില്ല.
+
+തുടരുക ബട്ടണിൽ ടാപ്പുചെയ്ത് ഒപ്റ്റിമൈസേഷൻ മാറ്റങ്ങൾ അനുവദിക്കുക."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">തുടരുക</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">ഈ ഫീച്ചർ ഉപയോഗിക്കാൻ ആപ്പ് പുനരാരംഭിക്കുക</string>
+            <string name="rivanced_debug_protocolbuffer_title">പ്രോട്ടോക്കോൾ ബഫർ ലോഗ് ചെയ്യുക</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">ഡീബഗ് ലോഗുകളിൽ പ്രോട്ടോ ബഫർ ഉൾപ്പെടുന്നു</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">ഡീബഗ് ലോഗുകളിൽ പ്രോട്ടോ ബഫർ ഉൾപ്പെടുന്നില്ല</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"ഈ ക്രമീകരണം പ്രവർത്തനക്ഷമമാക്കുന്നത് അധിക ലേഔട്ട് ഡാറ്റ രേഖപ്പെടുത്താൻ സഹായിക്കും, ചില UI ഘടകങ്ങളുടെ ഓൺ-സ്ക്രീൻ ടെക്സ്റ്റ് ഉൾപ്പെടെ.
+
+ഇത് കസ്റ്റം ഫിൽട്ടറുകൾ നിർമ്മിക്കുമ്പോൾ ഘടകങ്ങളെ തിരിച്ചറിയാൻ സഹായിക്കും.
+
+എന്നിരുന്നാലും, ഇത് പ്രവർത്തനക്ഷമമാക്കുന്നത് നിങ്ങളുടെ IP വിലാസം പോലുള്ള ചില ഉപയോക്തൃ ഡാറ്റയും രേഖപ്പെടുത്തും."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">Desgaitu ikono lodiak</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Ikonoak ez dira lodiak</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Ikonoak lodiak dira</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">GmsCorerekin lotutako ezarpenak</string>
+            <string name="rivanced_gms_core_check_updates_title">GmsCore eguneratzeak egiaztatu</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Eguneratzeak egiaztatzea gaituta dago</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Eguneraketak bilatzea desgaituta dago</string>
+            <string name="rivanced_gms_core_settings_title">Ireki GmsCore ezarpenak</string>
+            <string name="rivanced_gms_core_settings_summary">GmsCore-ren ezarpenak</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore ez dago instalatuta. Instalatu.</string>
+            <string name="rivanced_gms_core_dialog_title">Ekintza beharrezkoa</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore eguneraketak bilatzean huts egin du</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore-ren bertsio berri bat (%1$s) eskuragarri dago. Une honetan, %2$s bertsioa erabiltzen ari zara.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore-k ez du atzealdean exekutatzeko baimenik.
+
+Jarraitu \"Ez hil nire aplikazioa\" gida zure telefonoarentzat, eta aplikatu argibideak zure MicroG instalazioari.
+
+Hau beharrezkoa da aplikazioak funtziona dezan."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Ireki webgunea</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Utzi</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"MicroG GmsCore-ren bateria optimizazioak desgaitu behar dira arazoak ekiditeko.
+
+MicroG-rako bateria optimizazioak desgaitzeak ez du bateriaren erabilera negatiboki eragingo.
+
+Sakatu jarraitzeko botoia eta baimendu optimizazio aldaketak."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Jarraitu</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Aplikazioa berrabiarazi eginbide hau erabiltzeko</string>
+            <string name="rivanced_debug_protocolbuffer_title">Log protokolo-bufferra</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Arazketa-erregistroek proto-bufferra barne hartzen dute</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Arazketa-erregistroek ez dute proto-bufferra barne hartzen</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Ezarpen hau gaitzeak diseinu-datu gehigarriak erregistratuko ditu, UI osagai batzuen pantailako testua barne.
+
+Honek osagaiak identifikatzen lagun dezake iragazki pertsonalizatuak sortzean.
+
+Hala ere, hau gaitzeak erabiltzailearen datu batzuk ere erregistratuko ditu, adibidez, zure IP helbidea."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

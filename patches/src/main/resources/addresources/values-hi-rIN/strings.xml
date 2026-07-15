@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">बोल्ड आइकन अक्षम करें</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">आइकन बोल्ड नहीं हैं</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">आइकन बोल्ड हैं</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">जीएमएस कोर से संबंधित सेटिंग्स</string>
+            <string name="rivanced_gms_core_check_updates_title">जीएमएस कोर अपडेट के लिए जांचें</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">अपडेट के लिए जांच सक्षम है</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">अपडेट की जांच करना अक्षम है</string>
+            <string name="rivanced_gms_core_settings_title">जीएमएसकोर सेटिंग्स खोलें</string>
+            <string name="rivanced_gms_core_settings_summary">जीएमएसकोर की सेटिंग्स</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore स्थापित नहीं है। इसे स्थापित करें।</string>
+            <string name="rivanced_gms_core_dialog_title">कार्रवाई आवश्यक है</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">MicroG GmsCore अपडेट की जांच करने में विफल रहा</string>
+            <string name="rivanced_gms_core_update_available_message">MicroG GmsCore का एक नया संस्करण (%1$s) उपलब्ध है। वर्तमान में, आप संस्करण %2$s का उपयोग कर रहे हैं।</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore को बैकग्राउंड में चलने की अनुमति नहीं है।
+
+अपने फोन के लिए \"मेरे ऐप को न मारें\" मार्गदर्शिका का पालन करें, और निर्देशों को अपनी MicroG इंस्टॉलेशन पर लागू करें।
+
+यह ऐप के काम करने के लिए आवश्यक है।"</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">वेबसाइट खोलें</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">रद्द करें</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"समस्याओं को रोकने के लिए MicroG GmsCore बैटरी अनुकूलन अक्षम होना चाहिए।
+
+MicroG के लिए बैटरी अनुकूलन अक्षम करने से बैटरी उपयोग पर नकारात्मक प्रभाव नहीं पड़ेगा।
+
+जारी रखें बटन पर टैप करें और अनुकूलन परिवर्तनों की अनुमति दें।"</string>
+            <string name="rivanced_gms_core_dialog_continue_text">जारी रखें</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_summary">प्लेबैक समस्याओं को रोकने के लिए क्लाइंट वीडियो स्ट्रीम को स्पूफ करें</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">इस सुविधा का उपयोग करने के लिए ऐप को पुनरारंभ करें।</string>
+            <string name="rivanced_debug_protocolbuffer_title">प्रोटोकॉल बफर लॉग करें</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">डीबग लॉग में प्रोटो बफर शामिल हैं</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">डीबग लॉग में प्रोटो बफर शामिल नहीं हैं</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"इस सेटिंग को सक्षम करने से अतिरिक्त लेआउट डेटा लॉग होगा, जिसमें कुछ यूआई घटकों के लिए ऑन-स्क्रीन टेक्स्ट भी शामिल है।
+
+यह कस्टम फ़िल्टर बनाते समय घटकों की पहचान करने में मदद कर सकता है।
+
+हालांकि, इसे सक्षम करने से आपका आईपी पता जैसे कुछ उपयोगकर्ता डेटा भी लॉग होगा।"</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>

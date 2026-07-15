@@ -1,21 +1,38 @@
-group = "app.template"
+group = "app.rivanced"
+
+tasks.withType<Jar>().configureEach {
+    includeEmptyDirs = false
+}
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
+        name = "RIVanced Universal Patches"
+        description = "Universal patches ported from ReVanced and adapted for Morphe"
+        source = "git@github.com:rushiranpise/RI-Vanced-Universal-Morphe-Patches.git"
+        author = "RIVanced"
         contact = "na"
-        website = "na"
-        license = "GPLv3"
+        website = "https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches"
+        license = "GNU General Public License v3.0"
     }
+}
+
+dependencies {
+    compileOnly(libs.gson)
+
+    // Required due to smali, or build fails. Can be removed once smali is bumped.
+    implementation(libs.guava)
+
+    implementation(libs.apksig)
+
+    // Android API stubs defined here.
+    compileOnly(project(":patches:stub"))
 }
 
 kotlin {
     compilerOptions {
-        freeCompilerArgs.add("-Xcontext-parameters")
+        freeCompilerArgs.addAll(
+            "-Xcontext-parameters"
+        )
     }
 }
 
@@ -24,7 +41,6 @@ kotlin {
 val patchListGeneratorClasspath: Configuration by configurations.creating
 
 dependencies {
-    compileOnly(libs.gson)
     patchListGeneratorClasspath(libs.gson)
 }
 
@@ -43,3 +59,5 @@ tasks {
         dependsOn("generatePatchesList")
     }
 }
+
+apply(from = "strings-processing.gradle.kts")

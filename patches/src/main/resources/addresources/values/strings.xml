@@ -1,0 +1,227 @@
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+-->
+<resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <string name="rivanced_custom_branding_name_title">App name</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <string name="rivanced_custom_branding_name_entry_5">Custom</string>
+            <string name="rivanced_custom_branding_icon_title">App icon</string>
+            <string name="rivanced_custom_branding_icon_entry_1">Original</string>
+            <string name="rivanced_custom_branding_icon_entry_2" translatable="false">RIVanced</string>
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_3">RIVanced minimal</string>
+            <string name="rivanced_custom_branding_icon_entry_4">RIVanced scaled</string>
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+            <string name="rivanced_custom_branding_icon_entry_5">Custom</string>
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch">
+            <string name="rivanced_check_environment_failed_title">Checks failed</string>
+            <string name="rivanced_check_environment_dialog_open_official_source_button">Open official website</string>
+            <string name="rivanced_check_environment_dialog_ignore_button">Ignore</string>
+            <string name="rivanced_check_environment_failed_message">&lt;h5>This app does not appear to be patched by you.&lt;/h5>&lt;br>This app may not function correctly, &lt;b>could be harmful or even dangerous to use&lt;/b>.&lt;br>&lt;br>These checks imply this app is pre-patched or obtained from someone else:&lt;br>&lt;br>&lt;small>%1$s&lt;/small>&lt;br>It is strongly recommended to &lt;b>uninstall this app and patch it yourself&lt;/b> to ensure you are using a validated and secure app.&lt;p>&lt;br>If ignored, this warning will only be shown twice.</string>
+            <string name="rivanced_check_environment_not_same_patching_device">Patched on a different device</string>
+            <string name="rivanced_check_environment_manager_not_expected_installer">Not installed by Morphe Manager</string>
+            <string name="rivanced_check_environment_not_near_patch_time">Patched more than 10 minutes ago</string>
+            <string name="rivanced_check_environment_not_near_patch_time_days">Patched %s days ago</string>
+            <string name="rivanced_check_environment_not_near_patch_time_invalid">APK build date is corrupted</string>
+        </patch>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch">
+            <string name="rivanced_check_watch_history_domain_name_dialog_title">RIVanced Notice</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_message">Your watch history is not being saved.&lt;br>&lt;br>This most likely is caused by a DNS ad blocker or network proxy.&lt;br>&lt;br>To fix this, whitelist &lt;b>s.youtube.com&lt;/b> or turn off all DNS blockers and proxies.</string>
+            <string name="rivanced_check_watch_history_domain_name_dialog_ignore">Do not show again</string>
+        </patch>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_submenu_title">Settings</string>
+            <string name="rivanced_settings_title" translatable="false">RIVanced</string>
+            <string name="rivanced_settings_confirm_user_dialog_title">Are you sure you want to proceed?</string>
+            <string name="rivanced_settings_save">Save</string>
+            <string name="rivanced_settings_reset">Reset</string>
+            <string name="rivanced_settings_reset_color">Reset color</string>
+            <string name="rivanced_settings_color_invalid">Invalid color</string>
+            <string name="rivanced_settings_restart_title">Restart required</string>
+            <string name="rivanced_settings_restart_dialog_message">Restart the app for this change to take effect.</string>
+            <string name="rivanced_settings_restart">Restart</string>
+            <string name="rivanced_settings_import">Import</string>
+            <string name="rivanced_settings_import_copy">Copy</string>
+            <string name="rivanced_settings_import_reset">RIVanced settings reset to default</string>
+            <string name="rivanced_settings_import_success">Imported %d settings</string>
+            <string name="rivanced_settings_import_failure_parse">Import failed: %s</string>
+            <string name="rivanced_settings_search_hint">Search settings</string>
+            <string name="rivanced_settings_search_no_results_title">No results found for \'%s\'</string>
+            <string name="rivanced_settings_search_no_results_summary">Try another keyword</string>
+            <string name="rivanced_settings_search_recent_searches">Recent searches</string>
+            <string name="rivanced_settings_search_remove_message">Remove from search history?</string>
+            <string name="rivanced_settings_search_clear_history">Clear search history</string>
+            <string name="rivanced_settings_search_clear_history_message">Are you sure you want to clear all search history?</string>
+            <string name="rivanced_settings_search_tips_title">Search Tips</string>
+            <string name="rivanced_settings_search_tips_summary">"• Tap a path to navigate to it
+• Long-press a setting to navigate to it
+• Press Enter to save a search query to history
+• Search ignores casing and punctuation
+• Parent settings appear above disabled child settings"</string>
+            <string name="rivanced_settings_search_empty_history_title">Search history is empty</string>
+            <string name="rivanced_settings_search_empty_history_summary">To save search history, type a search query and press Enter</string>
+            <string name="rivanced_settings_search_history_title">Show settings search history</string>
+            <string name="rivanced_settings_search_history_summary_on">Settings search history is shown</string>
+            <string name="rivanced_settings_search_history_summary_off">Settings search history is not shown</string>
+            <string name="rivanced_settings_disable_bold_icons_title">Disable bold icons</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Icons are not bold</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Icons are bold</string>
+            <string name="rivanced_show_menu_icons_title">Show RIVanced setting icons</string>
+            <string name="rivanced_show_menu_icons_summary_on">Setting icons are shown</string>
+            <string name="rivanced_show_menu_icons_summary_off">Setting icons are not shown</string>
+            <string name="rivanced_language_title">RIVanced language</string>
+            <string name="rivanced_language_user_dialog_message">"Translations for some languages may be missing or incomplete.
+
+To translate new languages or improve the existing translations, visit the RIVanced repository."</string>
+            <string name="rivanced_language_DEFAULT">App language</string>
+            <string name="rivanced_pref_import_export_title">Import / Export</string>
+            <string name="rivanced_pref_import_export_summary">Import / Export RIVanced settings</string>
+            <!-- Settings about dialog. -->
+            <string name="rivanced_settings_about_links_body">You are using RIVanced Patches version &lt;i>%s&lt;/i></string>
+            <string name="rivanced_settings_about_links_dev_header">Note</string>
+            <string name="rivanced_settings_about_links_dev_body">This version is a pre-release and you may experience unexpected issues</string>
+            <string name="rivanced_settings_about_links_header">Official links</string>
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Settings related to GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Check for GmsCore updates</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Checking for updates is enabled</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Checking for updates is disabled</string>
+            <string name="rivanced_gms_core_settings_title">Open GmsCore Settings</string>
+            <string name="rivanced_gms_core_settings_summary">Settings of GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore is not installed. Install it.</string>
+            <string name="rivanced_gms_core_dialog_title">Action needed</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Failed to check for MicroG GmsCore updates</string>
+            <string name="rivanced_gms_core_update_available_message">A new version (%1$s) of MicroG GmsCore is available. Currently, you are using version %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore does not have permission to run in the background.
+
+Follow the \"Don\'t kill my app\" guide for your phone, and apply the instructions to your MicroG installation.
+
+This is required for the app to work."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Open website</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Cancel</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"MicroG GmsCore battery optimizations must be disabled to prevent issues.
+
+Disabling battery optimizations for MicroG will not negatively affect battery usage.
+
+Tap the continue button and allow optimization changes."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Continue</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch">
+            <string name="rivanced_spoof_video_streams_screen_title">Spoof video streams</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">Spoof the client video streams to prevent playback issues</string>
+            <string name="rivanced_spoof_video_streams_screen_title">Spoof video streams</string>
+            <string name="rivanced_spoof_video_streams_screen_summary">Spoof the client video streams to prevent playback issues</string>
+            <string name="rivanced_spoof_video_streams_title">Spoof video streams</string>
+            <string name="rivanced_spoof_video_streams_summary_on">"Video streams are spoofed
+
+If you are a YouTube Premium user, this setting may not be required"</string>
+            <string name="rivanced_spoof_video_streams_summary_off">"Video streams are not spoofed
+
+Playback may not work"</string>
+            <string name="rivanced_spoof_video_streams_user_dialog_message">Turning off this setting may cause playback issues.</string>
+            <string name="rivanced_spoof_video_streams_client_type_title">Default client</string>
+
+            <string name="rivanced_spoof_video_streams_about_experimental">• Experimental client and may stop working anytime</string>
+            <string name="rivanced_spoof_video_streams_about_playback_failure">• Video may stop at 1:00, or may not be available in some regions</string>
+            <string name="rivanced_spoof_video_streams_about_no_audio_tracks">• Audio track menu is missing</string>
+            <string name="rivanced_spoof_video_streams_about_no_av1">• No AV1 video codec</string>
+            <string name="rivanced_spoof_video_streams_about_no_immersive_mode">• 360° VR immersive mode is not available</string>
+            <string name="rivanced_spoof_video_streams_about_no_stable_volume">• Stable volume is not available</string>
+            <string name="rivanced_spoof_video_streams_about_title">Spoofing side effects</string>
+            <!-- "Force original audio" should use the same text as rivanced_force_original_audio_title -->
+            <string name="rivanced_spoof_video_streams_about_no_force_original_audio">• Force original audio is not available</string>
+        </patch>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <string name="rivanced_force_original_audio_title">Force original audio language</string>
+            <string name="rivanced_force_original_audio_summary_on">Using original audio language</string>
+            <string name="rivanced_force_original_audio_summary_off">Using default audio</string>
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+            <string name="rivanced_force_original_audio_not_available">To use this feature, change \'Spoof video streams\' to any client except Android Studio</string>
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_screen_title">Debugging</string>
+            <string name="rivanced_debug_screen_summary">Enable or disable debugging options</string>
+            <string name="rivanced_debug_title">Debug logging</string>
+            <string name="rivanced_debug_summary_on">Debug logs are enabled</string>
+            <string name="rivanced_debug_summary_off">Debug logs are disabled</string>
+            <string name="rivanced_debug_stacktrace_title">Log stack traces</string>
+            <string name="rivanced_debug_stacktrace_summary_on">Debug logs include stack trace</string>
+            <string name="rivanced_debug_stacktrace_summary_off">Debug logs do not include stack trace</string>
+            <string name="rivanced_debug_toast_on_error_title">Show toast on RIVanced error</string>
+            <string name="rivanced_debug_toast_on_error_summary_on">Toast is shown if error occurs</string>
+            <string name="rivanced_debug_toast_on_error_summary_off">Toast is not shown if error occurs</string>
+            <string name="rivanced_debug_toast_on_error_user_dialog_message">"Turning off error toasts hides all RIVanced error notifications.
+
+You will not be notified of any unexpected events."</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_title">Export debug logs</string>
+            <string name="rivanced_debug_export_logs_to_clipboard_summary">Copies RIVanced debug logs to the clipboard</string>
+            <string name="rivanced_debug_logs_disabled">Debug logging is disabled</string>
+            <string name="rivanced_debug_logs_none_found">No logs found</string>
+            <string name="rivanced_debug_logs_copied_to_clipboard">Logs copied</string>
+            <string name="rivanced_debug_logs_failed_to_export">Failed to export logs: %s</string>
+            <string name="rivanced_debug_logs_clear_buffer_title">Clear debug logs</string>
+            <string name="rivanced_debug_logs_clear_buffer_summary">Clears all stored RIVanced debug logs</string>
+            <string name="rivanced_debug_logs_clear_toast">Logs cleared</string>
+            <string name="rivanced_debug_feature_flags_manager_title">Feature flags manager</string>
+            <string name="rivanced_debug_feature_flags_manager_summary">Manage boolean feature flags</string>
+            <string name="rivanced_debug_feature_flags_manager_active_header">Active flags (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_blocked_header">Blocked flags (%d)</string>
+            <string name="rivanced_debug_feature_flags_manager_search_hint">Search flags...</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_saved">Flags saved</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_reset">Flags reset</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_copied">Flags copied to clipboard</string>
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Restart the app to use this feature</string>
+            <string name="rivanced_debug_protocolbuffer_title">Log protocol buffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Debug logs include proto buffer</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Debug logs do not include proto buffer</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Enabling this setting will log additional layout data, including on-screen text for some UI components.
+
+This can help identify components when creating custom filters.
+
+However, enabling this will also log some user data such as your IP address."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch">
+            <string name="rivanced_sanitize_sharing_links_title">Sanitize sharing links</string>
+            <string name="rivanced_sanitize_sharing_links_summary_on">Tracking query parameter is removed from shared links</string>
+            <string name="rivanced_sanitize_sharing_links_summary_off">Tracking query parameter is not removed from shared links</string>
+            <string name="rivanced_replace_music_with_youtube_title">Change share links to youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_on">Shared links use youtube.com</string>
+            <string name="rivanced_replace_music_with_youtube_summary_off">Shared links use music.youtube.com</string>
+        </patch>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <string name="rivanced_custom_filter_screen_title">Custom filter</string>
+            <string name="rivanced_custom_filter_screen_summary">Hide components using custom filters</string>
+            <string name="rivanced_custom_filter_title">Enable custom filter</string>
+            <string name="rivanced_custom_filter_summary_on">Custom filter is enabled</string>
+            <string name="rivanced_custom_filter_summary_off">Custom filter is disabled</string>
+            <string name="rivanced_custom_filter_strings_title">Custom filter</string>
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+            <string name="rivanced_custom_filter_strings_summary">List of component path builder strings to filter separated by new line</string>
+            <string name="rivanced_custom_filter_toast_invalid_syntax">Invalid custom filter: %s</string>
+        </patch>
+    </app>
+</resources>

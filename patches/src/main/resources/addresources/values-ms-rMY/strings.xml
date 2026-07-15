@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+    All strings must have a unique path, even if the same string is declared in two different apps.
+    This is because Crowdin requires temporarily flattening this file and removing the <app> and <patch> elements.
+
+    Strings with new lines must be raw strings where they're wrapped in quotes and new lines are not encoded.
+    Raw strings still requires escaping embedded double quotes but escaping embedded single quotes is optional.
+
+    Raw strings are required because Crowdin AI translations regularly gets confused and
+    replace \n with an encoded new line character.
+
+    Bad:
+        <string name="summary_key">First \'item\' text\nSecond \"item\" text</string>
+
+    Good:
+        <string name="summary_key">"First 'item' text
+Second \"item\" text"</string>
+
+--><resources>
+    <app id="shared">
+        <patch id="layout.branding.baseCustomBrandingPatch">
+            <!-- Translations of this should be identical to rivanced_custom_branding_icon_entry_5 -->
+            <!-- Translation of this should be identical to rivanced_header_logo_entry_5 -->
+            <!-- Translations of this should be identical to rivanced_custom_branding_name_entry_5 -->
+        </patch>
+        <patch id="misc.checks.checkEnvironmentPatch"/>
+        <patch id="misc.dns.checkWatchHistoryDomainNameResolutionPatch"/>
+        <patch id="misc.settings.settingsResourcePatch">
+            <string name="rivanced_settings_disable_bold_icons_title">Lumpuhkan ikon tebal</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_on">Ikon tidak tebal</string>
+            <string name="rivanced_settings_disable_bold_icons_summary_off">Ikon tebal</string>
+            <!-- Settings about dialog. -->
+            <!-- NOTE: the about strings above are duplicated in the TikTok about screen code,
+                 and changes made here must also be made there. -->
+        </patch>
+        <patch id="misc.gms.gmsCoreSupportResourcePatch">
+            <string name="rivanced_gms_core_screen_title">GmsCore</string>
+            <string name="rivanced_gms_core_screen_summary">Tetapan berkaitan GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_title">Semak kemas kini GmsCore</string>
+            <string name="rivanced_gms_core_check_updates_summary_on">Semakan kemas kini didayakan</string>
+            <string name="rivanced_gms_core_check_updates_summary_off">Pemeriksaan kemas kini dilumpuhkan</string>
+            <string name="rivanced_gms_core_settings_title">Buka Tetapan GmsCore</string>
+            <string name="rivanced_gms_core_settings_summary">Tetapan GmsCore</string>
+            <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
+            <string name="rivanced_gms_core_toast_not_installed_message">MicroG GmsCore tidak dipasang. Pasang.</string>
+            <string name="rivanced_gms_core_dialog_title">Tindakan diperlukan</string>
+            <string name="rivanced_gms_core_toast_update_check_failed_message">Gagal menyemak kemas kini MicroG GmsCore</string>
+            <string name="rivanced_gms_core_update_available_message">Versi baharu (%1$s) MicroG GmsCore tersedia. Pada masa ini, anda menggunakan versi %2$s.</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore tiada kebenaran untuk berjalan di latar belakang.
+
+Ikuti panduan \"Jangan bunuh apl saya\" untuk telefon anda, dan gunakan arahan pada pemasangan MicroG anda.
+
+Ini diperlukan agar apl berfungsi."</string>
+            <string name="rivanced_gms_core_dialog_open_website_text">Buka laman web</string>
+            <string name="rivanced_gms_core_dialog_cancel_text">Batal</string>
+            <string name="rivanced_gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Pengoptimuman bateri MicroG GmsCore mesti dilumpuhkan untuk mengelakkan isu.
+
+Melumpuhkan pengoptimuman bateri untuk MicroG tidak akan menjejaskan penggunaan bateri secara negatif.
+
+Sentuh butang teruskan dan benarkan perubahan pengoptimuman."</string>
+            <string name="rivanced_gms_core_dialog_continue_text">Teruskan</string>
+        </patch>
+        <patch id="misc.fix.playback.spoofVideoStreamsPatch"/>
+        <patch id="misc.audio.forceOriginalAudioPatch">
+            <!-- 'Spoof video streams' should be the same translation used for 'rivanced_spoof_video_streams_screen_title'. -->
+        </patch>
+        <patch id="misc.debugging.enableDebuggingPatch">
+            <string name="rivanced_debug_feature_flags_manager_toast_no_flags">Mulakan semula aplikasi untuk menggunakan ciri ini</string>
+            <string name="rivanced_debug_protocolbuffer_title">Log penampan protokol</string>
+            <string name="rivanced_debug_protocolbuffer_summary_on">Log nyahpepijat termasuk penampan proto</string>
+            <string name="rivanced_debug_protocolbuffer_summary_off">Log nyahpepijat tidak termasuk penampan proto</string>
+            <string name="rivanced_debug_protocolbuffer_user_dialog_message">"Mendayakan tetapan ini akan mencatat data susun atur tambahan, termasuk teks pada skrin untuk beberapa komponen UI.
+
+Ini boleh membantu mengenal pasti komponen semasa membuat penapis tersuai.
+
+Walau bagaimanapun, mendayakan ini juga akan mencatat beberapa data pengguna seperti alamat IP anda."</string>
+        </patch>
+        <patch id="misc.privacy.sanitizeSharingLinksPatch"/>
+        <patch id="layout.hide.general.hideLayoutComponentsPatch">
+            <!-- 'Component path builder strings' is the technical name for identifying the Litho UI layout items to hide. This is an advanced feature and most users will never use this. -->
+        </patch>
+    </app>
+</resources>
