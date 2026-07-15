@@ -109,6 +109,7 @@ jobs:
                   updated = data
                   for old, new in replacements:
                       updated = updated.replace(old, new)
+                  updated = updated.replace(".rve", ".mpe")
                   updated = updated.replace("\n    apply {\n", "\n    execute {\n")
                   updated = updated.replace("use = false,", "default = false,")
                   updated = updated.replace("use = false)", "default = false)")
@@ -162,6 +163,19 @@ jobs:
               )
               for path in dirs:
                   path.rename(path.with_name("morphe"))
+
+          for build_file in Path("extensions").rglob("build.gradle.kts"):
+              if build_file.parts[-3:] in {
+                  ("shared", "library", "build.gradle.kts"),
+                  ("shared", "protobuf", "build.gradle.kts"),
+              }:
+                  continue
+              data = build_file.read_text(encoding="utf-8")
+              if "extension {" in data:
+                  continue
+              relative = build_file.parent.relative_to(Path(".")).as_posix()
+              updated = f'extension {{\n    name = "{relative}.mpe"\n}}\n\n{data}'
+              build_file.write_text(updated, encoding="utf-8", newline="")
           PY
 
       - name: Preserve Morphe compatibility bridges
@@ -188,6 +202,42 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew :patches:buildAndroid --no-daemon
+
+      - name: Verify bundled extension paths
+        run: |
+          set -euo pipefail
+
+          if grep -R '\.rve' patches/src/main/kotlin extensions --include='*.kt' --include='*.kts' --include='*.java'; then
+            echo "::error::Generated source still references .rve extension artifacts. Morphe bundles .mpe files."
+            exit 1
+          fi
+
+          MPP="$(ls -t patches/build/libs/*.mpp | head -n 1)"
+          jar tf "$MPP" > /tmp/mpp-entries.txt
+
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          bundled = set(Path("/tmp/mpp-entries.txt").read_text(encoding="utf-8").splitlines())
+          missing = []
+          pattern = re.compile(r'extendWith\("([^"]+)"\)')
+
+          for path in Path("patches/src/main/kotlin").rglob("*.kt"):
+              if "app/template/" in path.as_posix():
+                  continue
+              text = path.read_text(encoding="utf-8")
+              for extension_path in pattern.findall(text):
+                  if "$" in extension_path:
+                      continue
+                  if extension_path not in bundled:
+                      missing.append(f"{path}: {extension_path}")
+
+          if missing:
+              print("The following extendWith paths are not present in the .mpp bundle:")
+              print("\n".join(missing))
+              raise SystemExit(1)
+          PY
 
       - name: Create pull request
         env:
