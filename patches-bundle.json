@@ -1,7 +1,7 @@
 {
-  "created_at": "",
-  "description": "",
-  "download_url": "",
+  "created_at": "2026-07-15T20:30:52",
+  "description": "## 1.0.0-dev.1 (2026-07-15)\n\n### Bug Fixes\n\n* Crowdin skip and update workflow YAML ([70c4173](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/commit/70c4173800e3b55d5ee01dd65536b4277d701a17))",
+  "download_url": "https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/download/v1.0.0-dev.1/patches-1.0.0-dev.1.mpp",
   "signature_download_url": "",
-  "version": ""
+  "version": "1.0.0-dev.1"
 }
