@@ -10,7 +10,11 @@ import org.w3c.dom.Element
 import java.io.File
 
 @Suppress("unused")
-val customNetworkSecurityPatch = resourcePatch("Custom network security", "Allows trusting custom certificate authorities for a specific domain.", false) {
+val customNetworkSecurityPatch = resourcePatch(
+    name = "Custom network security",
+    description = "Allows trusting custom certificate authorities for a specific domain.",
+    default = false,
+) {
 
     val targetDomains by stringsOption(
         key = "Target domains",

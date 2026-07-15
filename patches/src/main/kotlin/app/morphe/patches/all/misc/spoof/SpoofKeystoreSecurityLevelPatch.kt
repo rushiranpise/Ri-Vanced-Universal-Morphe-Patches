@@ -5,7 +5,11 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.util.forEachInstructionAsSequence
 
 @Suppress("unused")
-val spoofKeystoreSecurityLevelPatch = bytecodePatch("Spoof keystore security level", "Forces apps to see Keymaster and Attestation security levels as 'StrongBox' (Level 2).", false) {
+val spoofKeystoreSecurityLevelPatch = bytecodePatch(
+    name = "Spoof keystore security level",
+    description = "Forces apps to see Keymaster and Attestation security levels as 'StrongBox' (Level 2).",
+    default = false
+) {
     execute {
         forEachInstructionAsSequence(
             match = { _, method, _, _ ->
