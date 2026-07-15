@@ -14,8 +14,12 @@ private const val EXTENSION_CLASS_DESCRIPTOR_PREFIX =
 private const val EXTENSION_CLASS_DESCRIPTOR = "$EXTENSION_CLASS_DESCRIPTOR_PREFIX;"
 
 @Suppress("unused")
-val removeScreenshotRestrictionPatch = bytecodePatch("Remove screenshot restriction", "Removes the restriction of taking screenshots in apps that normally wouldn't allow it.", false) {
-    extendWith("extensions/all/misc/screenshot/remove-screenshot-restriction.mpe")
+val removeScreenshotRestrictionPatch = bytecodePatch(
+    name = "Remove screenshot restriction",
+    description = "Removes the restriction of taking screenshots in apps that normally wouldn't allow it.",
+    default = false,
+) {
+    extendWith("extensions/all/misc/screenshot/remove-screenshot-restriction.rve")
 
     dependsOn(
         // Remove the restriction of taking screenshots.

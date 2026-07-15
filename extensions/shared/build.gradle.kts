@@ -1,7 +1,3 @@
-extension {
-    name = "extensions/shared.mpe"
-}
-
 dependencies {
     implementation(project(":extensions:shared:library"))
     compileOnly(libs.okhttp)

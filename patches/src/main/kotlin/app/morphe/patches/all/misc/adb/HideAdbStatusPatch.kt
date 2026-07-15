@@ -31,8 +31,12 @@ private val getIntMethodReferences = listOf(
 )
 
 @Suppress("unused")
-val hideADBStatusPatch = bytecodePatch("Hide ADB status", "Hides enabled development settings and/or ADB.", false) {
-    extendWith("extensions/all/misc/adb/hide-adb.mpe")
+val hideADBStatusPatch = bytecodePatch(
+    name = "Hide ADB status",
+    description = "Hides enabled development settings and/or ADB.",
+    default = false,
+) {
+    extendWith("extensions/all/misc/adb/hide-adb.rve")
 
     dependsOn(
         transformInstructionsPatch(

@@ -3,7 +3,11 @@ package app.morphe.patches.all.misc.activity.exportall
 import app.morphe.patcher.patch.resourcePatch
 
 @Suppress("unused")
-val exportAllActivitiesPatch = resourcePatch("Export all activities", "Makes all app activities exportable.", false) {
+val exportAllActivitiesPatch = resourcePatch(
+    name = "Export all activities",
+    description = "Makes all app activities exportable.",
+    default = false,
+) {
     execute {
         val exportedFlag = "android:exported"
 

@@ -300,16 +300,16 @@ class AboutLinksRoutes {
     /**
      * Backup icon url if the API call fails.
      */
-    public static volatile String aboutLogoUrl = "";
+    public static volatile String aboutLogoUrl = "https://rivanced.app/favicon.ico";
 
     /**
      * Links to use if fetch links api call fails.
      */
     private static final WebLink[] NO_CONNECTION_STATIC_LINKS = {
-            new WebLink(true, "RIVanced", "https://github.com/rushiranpise/De-Vanced-Extended")
+            new WebLink(true, "RIVanced.app", "https://rivanced.app")
     };
 
-    private static final String SOCIAL_LINKS_PROVIDER = "https://github.com";
+    private static final String SOCIAL_LINKS_PROVIDER = "https://api.rivanced.app/v4";
     private static final Route.CompiledRoute GET_SOCIAL = new Route(GET, "/about").compile();
 
     @Nullable

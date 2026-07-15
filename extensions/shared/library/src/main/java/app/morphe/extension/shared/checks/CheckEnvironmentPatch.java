@@ -76,7 +76,7 @@ public final class CheckEnvironmentPatch {
      * <br>
      * Does not conclusively
      * If the app is installed by the manager or the app store, it is likely, the app was patched using the manager,
-     * or installed manually via ADB (in the case of Morphe CLI for example).
+     * or installed manually via ADB (in the case of RIVanced CLI for example).
      * <br>
      * If the app is not installed by the manager or the app store, then the app was likely downloaded pre-patched
      * and installed by the browser or another unknown app.

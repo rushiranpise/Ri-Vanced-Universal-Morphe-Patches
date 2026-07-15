@@ -6,7 +6,11 @@ import app.morphe.util.getNode
 import org.w3c.dom.Element
 
 @Suppress("unused")
-val disableSentryTelemetryPatch = resourcePatch("Disable Sentry telemetry", "Disables Sentry telemetry. See https://sentry.io/for/android/ for more information.", false) {
+val disableSentryTelemetryPatch = resourcePatch(
+    name = "Disable Sentry telemetry",
+    description = "Disables Sentry telemetry. See https://sentry.io/for/android/ for more information.",
+    default = false,
+) {
     execute {
         fun Element.replaceOrCreate(tagName: String, attributeName: String, attributeValue: String) {
             val childElements = getElementsByTagName(tagName).asSequence().filterIsInstance<Element>()

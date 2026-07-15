@@ -7,7 +7,11 @@ import org.w3c.dom.Element
 import java.util.logging.Logger
 
 @Suppress("unused")
-val hideAppIconPatch = resourcePatch("Hide app icon", "Hides the app icon from the Android launcher.", false) {
+val hideAppIconPatch = resourcePatch(
+    name = "Hide app icon",
+    description = "Hides the app icon from the Android launcher.",
+    default = false,
+) {
     execute {
         document("AndroidManifest.xml").use { document ->
             var changed = false

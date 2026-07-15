@@ -7,7 +7,11 @@ import app.morphe.util.returnEarly
 import java.util.logging.Logger
 
 @Suppress("unused")
-val disablePairIPLicenseCheckPatch = bytecodePatch("Disable PairIP license check", "Disable PairIP license and VM checks.", false) {
+val disablePairIPLicenseCheckPatch = bytecodePatch(
+    name = "Disable PairIP license check",
+    description = "Disable PairIP license and VM checks.",
+    default = false,
+) {
     val enableVmLogging by booleanOption(
         key = "Enable VM logging",
         description = "Enables detailed native library and VM logging for debugging PairIP.",
