@@ -81,8 +81,10 @@ jobs:
 
           python3 - <<'PY'
           from pathlib import Path
+          import re
 
           roots = [Path("patches/src/main"), Path("extensions")]
+          project_url = "https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches"
           replacements = [
               ("app.revanced.com.android.tools.smali.dexlib2.mutable", "app.morphe.patcher.util.proxy.mutableTypes"),
               ("app.revanced.com.android.tools.smali.dexlib2.iface.value", "app.morphe.patcher.util.proxy.mutableTypes.encodedValue"),
@@ -101,6 +103,8 @@ jobs:
           for root in roots:
               for path in root.rglob("*"):
                   if not path.is_file():
+                      continue
+                  if "branding-license" in path.parts:
                       continue
                   try:
                       data = path.read_text(encoding="utf-8")
@@ -121,6 +125,19 @@ jobs:
                   updated = updated.replace("    extensionPatch: Patch,", "    extensionPatch: Patch<*>,")
                   updated = updated.replace("    patch: Patch,", "    patch: Patch<*>,")
                   updated = updated.replace("    parseIds: (Patch) -> Map<AppId, Set<PatchId>> = {", "    parseIds: (Patch<*>) -> Map<AppId, Set<PatchId>> = {")
+                  updated = updated.replace('Uri.parse("https://rivanced.app")', f'Uri.parse("{project_url}")')
+                  updated = updated.replace('public static volatile String aboutLogoUrl = "https://rivanced.app/favicon.ico";', 'public static volatile String aboutLogoUrl = "";')
+                  updated = updated.replace('new WebLink(true, "RIVanced.app", "https://rivanced.app")', f'new WebLink(true, "RIVanced", "{project_url}")')
+                  updated = updated.replace('private static final String SOCIAL_LINKS_PROVIDER = "https://api.rivanced.app/v4";', 'private static final String SOCIAL_LINKS_PROVIDER = "";')
+                  if "SOCIAL_LINKS_PROVIDER.isEmpty()" not in updated:
+                      updated = updated.replace(
+                          "            // Check if there is no internet connection.\n"
+                          "            if (!Utils.isNetworkConnected()) return NO_CONNECTION_STATIC_LINKS;",
+                          "            // Skip fetching links if no provider is configured.\n"
+                          "            if (SOCIAL_LINKS_PROVIDER.isEmpty()) return NO_CONNECTION_STATIC_LINKS;\n\n"
+                          "            // Check if there is no internet connection.\n"
+                          "            if (!Utils.isNetworkConnected()) return NO_CONNECTION_STATIC_LINKS;",
+                      )
                   if path.suffix == ".kt":
                       option_calls = ("booleanOption(", "intOption(", "longOption(", "stringOption(", "stringsOption(")
                       lines = updated.splitlines(keepends=True)
@@ -143,6 +160,34 @@ jobs:
                           if in_option and depth <= 0:
                               in_option = False
                       updated = "".join(rewritten)
+
+                      if path.name == "BaseSpoofBuildInfoPatch.kt":
+                          helper = '''private fun String.toSmaliStringLiteral() = buildString {
+    append('"')
+    this@toSmaliStringLiteral.forEach { char ->
+        when (char) {
+            '\\' -> append("\\\\")
+            '"' -> append("\\\"")
+            '\n' -> append("\\n")
+            '\r' -> append("\\r")
+            '\t' -> append("\\t")
+            else -> append(char)
+        }
+    }
+    append('"')
+}
+
+'''
+                          if "toSmaliStringLiteral()" not in updated:
+                              updated = updated.replace(
+                                  'private const val BUILD_CLASS_DESCRIPTOR = "Landroid/os/Build;"\n\n',
+                                  'private const val BUILD_CLASS_DESCRIPTOR = "Landroid/os/Build;"\n\n' + helper,
+                              )
+                          updated = re.sub(
+                              r'to "\\"\$([A-Za-z][A-Za-z0-9_]*)\\""',
+                              r'to \1.toSmaliStringLiteral()',
+                              updated,
+                          )
                   if updated != data:
                       path.write_text(updated, encoding="utf-8", newline="")
 
@@ -176,6 +221,17 @@ jobs:
               relative = build_file.parent.relative_to(Path(".")).as_posix()
               updated = f'extension {{\n    name = "{relative}.mpe"\n}}\n\n{data}'
               build_file.write_text(updated, encoding="utf-8", newline="")
+
+          branding_license = Path("patches/src/main/resources/branding-license/LICENSE_RIVANCED.TXT")
+          branding_license.parent.mkdir(parents=True, exist_ok=True)
+          branding_license_text = (
+              "RIVanced branding assets are included by RI-Vanced Universal Morphe Patches.\n\n"
+              "These assets are not part of the ReVanced project and are not licensed under the\n"
+              "same terms as ReVanced patches. Do not reuse or redistribute the branding outside\n"
+              "this project without permission from the branding owner.\n"
+          )
+          if not branding_license.exists() or branding_license.read_text(encoding="utf-8") != branding_license_text:
+              branding_license.write_text(branding_license_text, encoding="utf-8", newline="")
           PY
 
       - name: Preserve Morphe compatibility bridges
