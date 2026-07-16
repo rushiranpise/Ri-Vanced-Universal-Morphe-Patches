@@ -54,26 +54,37 @@ jobs:
         run: |
           set -euo pipefail
 
-          rm -rf patches/src/main/kotlin/app/morphe/patches/all
-          rm -rf patches/src/main/kotlin/app/morphe/patches/shared
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/all
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared
+          rm -rf patches/src/main/resources
           rm -rf extensions/all
           rm -rf extensions/shared
 
-          mkdir -p patches/src/main/kotlin/app/morphe/patches
-          cp -R /tmp/revanced-patches/patches/src/main/kotlin/app/revanced/patches/all patches/src/main/kotlin/app/morphe/patches/all
-          cp -R /tmp/revanced-patches/patches/src/main/kotlin/app/revanced/patches/shared patches/src/main/kotlin/app/morphe/patches/shared
+          mkdir -p patches/src/main/kotlin/app/rivanced/patches
+          cp -R /tmp/revanced-patches/patches/src/main/kotlin/app/revanced/patches/all patches/src/main/kotlin/app/rivanced/patches/all
+          cp -R /tmp/revanced-patches/patches/src/main/kotlin/app/revanced/patches/shared patches/src/main/kotlin/app/rivanced/patches/shared
 
           cp -R /tmp/revanced-patches/extensions/all extensions/all
           cp -R /tmp/revanced-patches/extensions/shared extensions/shared
 
-          if [ -d /tmp/revanced-patches/patches/src/main/resources/addresources ]; then
-            rm -rf patches/src/main/resources/addresources
-            cp -R /tmp/revanced-patches/patches/src/main/resources/addresources patches/src/main/resources/addresources
-          fi
-          if [ -d /tmp/revanced-patches/patches/src/main/resources/settings ]; then
-            rm -rf patches/src/main/resources/settings
-            cp -R /tmp/revanced-patches/patches/src/main/resources/settings patches/src/main/resources/settings
-          fi
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/layout
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/litho/filter
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/all/misc/resources
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/checks
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/debugging
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/dns
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/fix/verticalscroll
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/mapping
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/string
+          rm -f patches/src/main/kotlin/app/rivanced/patches/shared/misc/privacy/SanitizeSharingLinksPatch.kt
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/gms
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/settings
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/spoof
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/extension
+          rm -rf patches/src/main/kotlin/app/rivanced/patches/shared/misc/audio
+          rm -rf extensions/shared/protobuf
+          rm -rf extensions/shared/library
+          rm -f extensions/shared/build.gradle.kts
 
       - name: Adapt namespace for Morphe
         run: |
@@ -88,9 +99,12 @@ jobs:
           replacements = [
               ("app.revanced.com.android.tools.smali.dexlib2.mutable", "app.morphe.patcher.util.proxy.mutableTypes"),
               ("app.revanced.com.android.tools.smali.dexlib2.iface.value", "app.morphe.patcher.util.proxy.mutableTypes.encodedValue"),
-              ("app.revanced.patches", "app.morphe.patches"),
-              ("app.revanced.patcher", "app.morphe.patcher"),
-              ("app.revanced.util", "app.morphe.util"),
+              ("app.revanced.patches", "app.rivanced.patches"),
+              ("app.revanced.patcher.patch", "app.morphe.patcher.patch"),
+              ("app.revanced.patcher.util", "app.morphe.patcher.util"),
+              ("app.revanced.patcher.extensions", "app.rivanced.patcher.extensions"),
+              ("app.revanced.patcher", "app.rivanced.patcher"),
+              ("app.revanced.util", "app.rivanced.util"),
               ("app.revanced.extension", "app.morphe.extension"),
               ("app/revanced/extension", "app/morphe/extension"),
               ("app.revanced", "app.rivanced"),
@@ -229,16 +243,6 @@ jobs:
               updated = f'extension {{\n    name = "{relative}.mpe"\n}}\n\n{data}'
               build_file.write_text(updated, encoding="utf-8", newline="")
 
-          branding_license = Path("patches/src/main/resources/branding-license/LICENSE_RIVANCED.TXT")
-          branding_license.parent.mkdir(parents=True, exist_ok=True)
-          branding_license_text = (
-              "RIVanced branding assets are included by RI-Vanced Universal Morphe Patches.\n\n"
-              "These assets are not part of the ReVanced project and are not licensed under the\n"
-              "same terms as ReVanced patches. Do not reuse or redistribute the branding outside\n"
-              "this project without permission from the branding owner.\n"
-          )
-          if not branding_license.exists() or branding_license.read_text(encoding="utf-8") != branding_license_text:
-              branding_license.write_text(branding_license_text, encoding="utf-8", newline="")
           PY
 
       - name: Preserve Morphe compatibility bridges
@@ -248,18 +252,12 @@ jobs:
           # These files carry Morphe-specific compatibility glue for APIs where
           # ReVanced dev has moved ahead of the current Morphe patcher/runtime.
           git checkout -- \
-            patches/src/main/kotlin/app/morphe/patches/all/misc/connectivity/telephony/sim/spoof/SpoofSimProviderPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/all/misc/connectivity/wifi/spoof/SpoofWifiPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/all/misc/directory/documentsprovider/ExportInternalDataDocumentsProviderPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/all/misc/shortcut/sharetargets/RemoveShareTargetsPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/all/misc/transformation/TransformInstructionsPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/layout/branding/BaseCustomBrandingPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/layout/hide/general/HideLayoutComponentsPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/misc/checks/BaseCheckEnvironmentPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/misc/debugging/EnableDebuggingPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/misc/extension/SharedExtensionPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/misc/gms/GmsCoreSupportPatch.kt \
-            patches/src/main/kotlin/app/morphe/patches/shared/misc/hex/HexPatchBuilder.kt
+            patches/src/main/kotlin/app/rivanced/patches/all/misc/connectivity/telephony/sim/spoof/SpoofSimProviderPatch.kt \
+            patches/src/main/kotlin/app/rivanced/patches/all/misc/connectivity/wifi/spoof/SpoofWifiPatch.kt \
+            patches/src/main/kotlin/app/rivanced/patches/all/misc/directory/documentsprovider/ExportInternalDataDocumentsProviderPatch.kt \
+            patches/src/main/kotlin/app/rivanced/patches/all/misc/shortcut/sharetargets/RemoveShareTargetsPatch.kt \
+            patches/src/main/kotlin/app/rivanced/patches/all/misc/transformation/TransformInstructionsPatch.kt \
+            patches/src/main/kotlin/app/rivanced/patches/shared/misc/hex/HexPatchBuilder.kt
 
       - name: Build
         env:
