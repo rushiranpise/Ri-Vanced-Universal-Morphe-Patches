@@ -86,6 +86,14 @@ jobs:
           rm -rf extensions/shared/library
           rm -f extensions/shared/build.gradle.kts
 
+          # Keep removed ReVanced utility/resource helpers from coming back if
+          # upstream sync rules are widened later. The universal patches only
+          # need the small local helpers kept under app/rivanced/util.
+          rm -f patches/src/main/kotlin/app/rivanced/util/FreeRegisterProvider.kt
+          rm -f patches/src/main/kotlin/app/rivanced/util/BytecodeUtils.kt
+          rm -f patches/src/main/kotlin/app/rivanced/util/ResourceUtils.kt
+          rm -rf patches/src/main/kotlin/app/rivanced/util/resource
+
       - name: Adapt namespace for Morphe
         run: |
           set -euo pipefail
@@ -128,6 +136,15 @@ jobs:
                   for old, new in replacements:
                       updated = updated.replace(old, new)
                   updated = updated.replace(".rve", ".mpe")
+                  if path.name == "DeclarativeCompatibility.kt":
+                      updated = updated.replace(
+                          "Compatibility bridge derived from RIVanced patcher-style declarative helpers,",
+                          "Compatibility bridge derived from ReVanced patcher-style declarative helpers,",
+                      )
+                      updated = updated.replace(
+                          "adapted so RIVanced patch code can run against the Morphe patcher APIs.",
+                          "adapted so ReVanced patch code can run against the Morphe patcher APIs.",
+                      )
                   updated = re.sub(
                       r"Copyright ([0-9]{4}) RIVanced\. Not licensed under GPL\. See https://github\.com/RIVanced/rivanced-branding",
                       r"Copyright \1 ReVanced. Not licensed under GPL. See https://github.com/ReVanced/revanced-branding",
