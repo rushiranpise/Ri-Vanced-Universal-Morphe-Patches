@@ -198,41 +198,6 @@
       ]
     },
     {
-      "name": "Example Patch",
-      "description": "Example patch to start with.",
-      "default": true,
-      "dependencies": [
-        "BytecodePatch"
-      ],
-      "compatiblePackages": [
-        {
-          "packageName": "com.example.app",
-          "name": "XYZ app",
-          "description": null,
-          "apkFileType": "APK",
-          "appIconColor": "#FF0045",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "2.0.0",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "1.0.2",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
       "name": "Export all activities",
       "description": "Makes all app activities exportable.",
       "default": false,
@@ -648,7 +613,7 @@
             "Turkmenistan": "TM",
             "Tunisia": "TN",
             "Tonga": "TO",
-            "Türkiye": "TR",
+            "Turkey": "TR",
             "Trinidad & Tobago": "TT",
             "Tuvalu": "TV",
             "Taiwan": "TW",
@@ -925,7 +890,7 @@
             "Turkmenistan": "TM",
             "Tunisia": "TN",
             "Tonga": "TO",
-            "Türkiye": "TR",
+            "Turkey": "TR",
             "Trinidad & Tobago": "TT",
             "Tuvalu": "TV",
             "Taiwan": "TW",
