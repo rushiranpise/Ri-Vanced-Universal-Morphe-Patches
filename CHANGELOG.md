@@ -1,3 +1,9 @@
+## [1.0.0-dev.3](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-07-16)
+
+### Bug Fixes
+
+* preserve ReVanced branding copyright ([cf8cbf1](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/commit/cf8cbf1f773334e1c3a906f86b5473f2f1fd9176))
+
 ## [1.0.0-dev.2](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-07-16)
 
 ### Updated App Support
