@@ -7,7 +7,11 @@ import app.morphe.patches.shared.misc.hex.hexPatch
 import app.morphe.util.Utils.trimIndentMultiline
 
 @Suppress("unused")
-val Hex = rawResourcePatch("Hex", "Replaces a hexadecimal patterns of bytes of files in an APK.", false) {
+val Hex = rawResourcePatch(
+    name = "Hex",
+    description = "Replaces a hexadecimal patterns of bytes of files in an APK.",
+    default = false,
+) {
     val replacements by stringsOption(
         key = "Replacements",
         description = """

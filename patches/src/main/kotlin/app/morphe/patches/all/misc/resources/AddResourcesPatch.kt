@@ -359,7 +359,7 @@ val addResourcesPatch = resourcePatch(
                 }
 
             getOrPut(resourceFileName) {
-                this@finalize.get("res/$value/$resourceFileName.xml").also {
+                this@finalize["res/$value/$resourceFileName.xml"].also {
                     it.parentFile?.mkdirs()
 
                     if (it.createNewFile()) {

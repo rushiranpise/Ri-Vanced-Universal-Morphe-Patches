@@ -8,6 +8,7 @@ import app.morphe.patches.all.misc.resources.addResource
 import app.morphe.patches.all.misc.resources.addResources
 import app.morphe.patches.all.misc.resources.addResourcesPatch
 import app.morphe.patches.shared.misc.extension.EXTENSION_CLASS_DESCRIPTOR
+import app.morphe.patches.shared.layout.branding.addBrandLicensePatch
 import app.morphe.patches.shared.misc.settings.preference.BasePreference
 import app.morphe.patches.shared.misc.settings.preference.PreferenceCategory
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference
@@ -22,7 +23,7 @@ private var lightThemeColor: String? = null
 private var darkThemeColor: String? = null
 
 /**
- * Sets the default theme colors used in various RIVanced settings menus.
+ * Sets the default theme colors used in various RIVanced specific settings menus.
  * By default, these colors are white and black, but instead can be set to the
  * same color the target app uses for its own settings.
  */
@@ -57,6 +58,7 @@ fun settingsPatch(
     dependsOn(
         addResourcesPatch,
         settingsColorPatch,
+        addBrandLicensePatch,
     )
 
     execute {

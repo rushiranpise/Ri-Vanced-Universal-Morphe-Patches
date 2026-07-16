@@ -306,10 +306,10 @@ class AboutLinksRoutes {
      * Links to use if fetch links api call fails.
      */
     private static final WebLink[] NO_CONNECTION_STATIC_LINKS = {
-            new WebLink(true, "RIVanced", "https://github.com/rushiranpise/De-Vanced-Extended")
+            new WebLink(true, "RIVanced", "https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches")
     };
 
-    private static final String SOCIAL_LINKS_PROVIDER = "https://github.com";
+    private static final String SOCIAL_LINKS_PROVIDER = "";
     private static final Route.CompiledRoute GET_SOCIAL = new Route(GET, "/about").compile();
 
     @Nullable
@@ -322,6 +322,9 @@ class AboutLinksRoutes {
     static WebLink[] fetchAboutLinks() {
         try {
             if (hasFetchedLinks()) return fetchedLinks;
+
+            // Skip fetching links if no provider is configured.
+            if (SOCIAL_LINKS_PROVIDER.isEmpty()) return NO_CONNECTION_STATIC_LINKS;
 
             // Check if there is no internet connection.
             if (!Utils.isNetworkConnected()) return NO_CONNECTION_STATIC_LINKS;
