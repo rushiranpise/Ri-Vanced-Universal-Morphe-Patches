@@ -1,4 +1,4 @@
-﻿package app.morphe.patches.all.misc.transformation
+package app.morphe.patches.all.misc.transformation
 
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.patcher.extensions.replaceInstruction

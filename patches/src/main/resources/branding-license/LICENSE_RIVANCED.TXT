@@ -1,0 +1,5 @@
+RIVanced branding assets are included by RI-Vanced Universal Morphe Patches.
+
+These assets are not part of the ReVanced project and are not licensed under the
+same terms as ReVanced patches. Do not reuse or redistribute the branding outside
+this project without permission from the branding owner.

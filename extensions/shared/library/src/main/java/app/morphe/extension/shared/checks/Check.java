@@ -36,7 +36,7 @@ abstract class Check {
     private static final int SECONDS_BEFORE_SHOWING_IGNORE_BUTTON = 15;
     private static final int SECONDS_BEFORE_SHOWING_WEBSITE_BUTTON = 10;
 
-    private static final Uri GOOD_SOURCE = Uri.parse("https://github.com/rushiranpise/De-Vanced-Extended");
+    private static final Uri GOOD_SOURCE = Uri.parse("https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches");
 
     /**
      * @return If the check conclusively passed or failed. A null value indicates it neither passed nor failed.

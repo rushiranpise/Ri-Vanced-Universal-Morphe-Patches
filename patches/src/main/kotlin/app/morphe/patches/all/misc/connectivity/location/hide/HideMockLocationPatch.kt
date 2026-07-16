@@ -9,7 +9,11 @@ import app.morphe.patches.all.misc.transformation.transformInstructionsPatch
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 
 @Suppress("unused")
-val hideMockLocationPatch = bytecodePatch("Hide mock location", "Prevents the app from knowing the device location is being mocked by a third party app.", false) {
+val hideMockLocationPatch = bytecodePatch(
+    name = "Hide mock location",
+    description = "Prevents the app from knowing the device location is being mocked by a third party app.",
+    default = false,
+) {
     dependsOn(
         transformInstructionsPatch(
             filterMap = filter@{ _, _, instruction, instructionIndex ->

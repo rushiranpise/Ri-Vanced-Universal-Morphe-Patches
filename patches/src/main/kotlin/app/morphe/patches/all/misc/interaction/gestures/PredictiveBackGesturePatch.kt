@@ -3,7 +3,11 @@ package app.morphe.patches.all.misc.interaction.gestures
 import app.morphe.patcher.patch.resourcePatch
 
 @Suppress("unused")
-val predictiveBackGesturePatch = resourcePatch("Predictive back gesture", "Enables the predictive back gesture introduced on Android 13.", false) {
+val predictiveBackGesturePatch = resourcePatch(
+    name = "Predictive back gesture",
+    description = "Enables the predictive back gesture introduced on Android 13.",
+    default = false,
+) {
     execute {
         val flag = "android:enableOnBackInvokedCallback"
 
