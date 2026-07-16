@@ -1,7 +1,7 @@
 @file:Suppress("UNCHECKED_CAST", "NOTHING_TO_INLINE")
 
-// Compatibility bridge derived from ReVanced patcher-style declarative helpers,
-// adapted so ReVanced patch code can run against the Morphe patcher APIs.
+// Compatibility bridge derived from RIVanced patcher-style declarative helpers,
+// adapted so RIVanced patch code can run against the Morphe patcher APIs.
 package app.rivanced.patcher
 
 import app.morphe.patcher.*
