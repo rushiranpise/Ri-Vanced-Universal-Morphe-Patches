@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0-dev.1",
+  "version": "1.0.0-dev.2",
   "patches": [
     {
       "name": "Change package name",
@@ -1026,6 +1026,233 @@
       ],
       "compatiblePackages": null,
       "options": []
+    },
+    {
+      "name": "Spoof build info",
+      "description": "Spoofs the information about the current build.",
+      "default": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": null,
+      "options": [
+        {
+          "key": "Board",
+          "title": null,
+          "description": "The name of the underlying board, like \"goldfish\".",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Bootloader",
+          "title": null,
+          "description": "The system bootloader version number.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Brand",
+          "title": null,
+          "description": "The consumer-visible brand with which the product/hardware will be associated, if any.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "CPU ABI",
+          "title": null,
+          "description": "This field was deprecated in API level 21. Use SUPPORTED_ABIS instead.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "CPU ABI 2",
+          "title": null,
+          "description": "This field was deprecated in API level 21. Use SUPPORTED_ABIS instead.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Device",
+          "title": null,
+          "description": "The name of the industrial design.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Display",
+          "title": null,
+          "description": "A build ID string meant for displaying to the user.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Fingerprint",
+          "title": null,
+          "description": "A string that uniquely identifies this build.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Hardware",
+          "title": null,
+          "description": "The name of the hardware (from the kernel command line or /proc).",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Host",
+          "title": null,
+          "description": "The host.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "ID",
+          "title": null,
+          "description": "Either a changelist number, or a label like \"M4-rc20\".",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Manufacturer",
+          "title": null,
+          "description": "The manufacturer of the product/hardware.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Model",
+          "title": null,
+          "description": "The end-user-visible name for the end product.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "ODM SKU",
+          "title": null,
+          "description": "The SKU of the device as set by the original design manufacturer (ODM).",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Product",
+          "title": null,
+          "description": "The name of the overall product.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Radio",
+          "title": null,
+          "description": "This field was deprecated in API level 15. The radio firmware version is frequently not available when this class is initialized, leading to a blank or \"unknown\" value for this string. Use getRadioVersion() instead.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Serial",
+          "title": null,
+          "description": "This field was deprecated in API level 26. Use getSerial() instead.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "SKU",
+          "title": null,
+          "description": "The SKU of the hardware (from the kernel command line).",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "SOC manufacturer",
+          "title": null,
+          "description": "The manufacturer of the device's primary system-on-chip.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "SOC model",
+          "title": null,
+          "description": "The model name of the device's primary system-on-chip.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Tags",
+          "title": null,
+          "description": "Comma-separated tags describing the build, like \"unsigned,debug\".",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Time",
+          "title": null,
+          "description": "The time at which the build was produced, given in milliseconds since the UNIX epoch.",
+          "required": false,
+          "type": "kotlin.Long",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "Type",
+          "title": null,
+          "description": "The type of build, like \"user\" or \"eng\".",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "User",
+          "title": null,
+          "description": "The user.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": null,
+          "values": null
+        }
+      ]
     },
     {
       "name": "Spoof keystore security level",

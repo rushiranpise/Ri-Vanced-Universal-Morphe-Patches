@@ -14,7 +14,7 @@ APIs, bundle format, and extension layout.
 ## Universal Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-dev.1](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;27 patches total
+> **[v1.0.0-dev.2](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;28 patches total
 <details open>
 <summary>📦 XYZ app&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
@@ -31,7 +31,7 @@ APIs, bundle format, and extension layout.
 </details>
 
 <details open>
-<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;26 patches</summary>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;27 patches</summary>
 <br>
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
@@ -60,6 +60,7 @@ APIs, bundle format, and extension layout.
 | [Spoof Play Age Signals](#spoof-play-age-signals) | Spoofs Google Play data about the user's age and verification status. | • Lower age bound<br>• Upper age bound<br>• User status |
 | [Spoof SIM provider](#spoof-sim-provider) | Spoofs information about the SIM card provider. | • ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code.<br>• MCC+MNC network operator code<br>• Network operator name<br>• ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code.<br>• MCC+MNC SIM operator code<br>• SIM operator name<br>• IMEI value<br>• MEID value<br>• IMSI (Subscriber ID)<br>• ICCID (SIM Serial)<br>• Phone number |
 | [Spoof Wi-Fi connection](#spoof-wi-fi-connection) | Spoofs an existing Wi-Fi connection. |  |
+| [Spoof build info](#spoof-build-info) | Spoofs the information about the current build. | • Board<br>• Bootloader<br>• Brand<br>• CPU ABI<br>• CPU ABI 2<br>• Device<br>• Display<br>• Fingerprint<br>• Hardware<br>• Host<br>• ID<br>• Manufacturer<br>• Model<br>• ODM SKU<br>• Product<br>• Radio<br>• Serial<br>• SKU<br>• SOC manufacturer<br>• SOC model<br>• Tags<br>• Time<br>• Type<br>• User |
 | [Spoof keystore security level](#spoof-keystore-security-level) | Forces apps to see Keymaster and Attestation security levels as 'StrongBox' (Level 2). |  |
 | [Spoof root of trust](#spoof-root-of-trust) | Spoofs device integrity states (Locked Bootloader, Verified OS) for apps that perform local certificate attestation. |  |
 
