@@ -287,8 +287,6 @@ jobs:
           pattern = re.compile(r'extendWith\("([^"]+)"\)')
 
           for path in Path("patches/src/main/kotlin").rglob("*.kt"):
-              if "app/template/" in path.as_posix():
-                  continue
               text = path.read_text(encoding="utf-8")
               for extension_path in pattern.findall(text):
                   if "$" in extension_path:

@@ -1,35 +1,25 @@
-# RIVanced Universal Patches
+<p align="center">
+<img src="patches-bundle.png" width="190">
+</p>
 
-RIVanced Universal Patches is a Morphe patch source for universal and
-shared patches ported from [ReVanced](https://github.com/ReVanced/revanced-patches).
+# Ri-Vanced Universal Patches
+
+Ri-Vanced Universal Patches is a universal Morphe patch source
+containing shared patches ported from
+[ReVanced](https://github.com/ReVanced/revanced-patches).
 
 ## About
 
-This repo only focuses on patches that are useful across apps or support
-shared patch behavior.
+This repo provides universal patches ported to Morphe, focusing on
+patches that are useful across apps or support shared patch behavior.
 
-Most patch logic is ported from ReVanced and adapted for Morphe's patcher
-APIs, bundle format, and extension layout.
+Most patch logic is ported from ReVanced and adapted for Morphe's
+patcher APIs, bundle format, and extension layout.
 
 ## Universal Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;28 patches total
-<details open>
-<summary>📦 XYZ app&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
-<br>
-
-**🎯 Supported versions:**
-
-| 2.0.0 | 1.0.2 |
-| :---: | :---: |
-
-| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
-|----------|----------------|-----------|
-| [Example Patch](#example-patch) | Example patch to start with. |  |
-
-</details>
-
+> **[v1.0.0](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;27 patches total
 <details open>
 <summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;27 patches</summary>
 <br>
@@ -78,35 +68,37 @@ https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches
 
 Or use the quick add link:
 
-```text
-https://morphe.software/add-source?github=rushiranpise/RI-Vanced-Universal-Morphe-Patches
-```
+Quick add: [Add to
+Morphe](https://morphe.software/add-source?github=rushiranpise/RI-Vanced-Universal-Morphe-Patches)
 
 ## Building
 
 Build the patch bundle with:
 
-```bash
+``` bash
 ./gradlew :patches:buildAndroid
 ```
 
 The `.mpp` file will be in:
 
-```text
+``` text
 patches/build/libs
 ```
 
-For setup help, use the
-[Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+For setup help, use the [Morphe
+documentation](https://github.com/MorpheApp/morphe-documentation).
 
 ## Reporting Bugs
 
-These patches are ports, so some patches may not work exactly as expected in
-Morphe yet. If something fails, please report it so it can be fixed.
+These patches are ports, so some patches may not work exactly as
+expected in Morphe yet. If something fails, please report it so it can
+be fixed.
 
-Open a [bug report](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/issues/new/choose)
-and include the patch name, RIVanced Universal Patches version or commit,
-Morphe version, target app version, and the full error or patcher log.
+Open a [bug
+report](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/issues/new/choose)
+and include the patch name, RIVanced Universal Patches version or
+commit, Morphe version, target app version, and the full error or
+patcher log.
 
 Reports with logs are much easier to fix.
 
@@ -114,12 +106,12 @@ Reports with logs are much easier to fix.
 
 Thanks to:
 
-- [Morphe](https://github.com/MorpheApp/)
-- [ReVanced](https://github.com/revanced)
-- Contributors
-- Everyone who reports bugs and tests patches
+-   [Morphe](https://github.com/MorpheApp/)
+-   [ReVanced](https://github.com/revanced)
+-   Contributors
+-   Everyone who reports bugs and tests patches
 
 ## License
 
-RIVanced Universal Patches are licensed under the
-[GNU General Public License v3.0](LICENSE).
+Ri-Vanced Universal Patches are licensed under the [GNU General Public
+License v3.0](LICENSE).

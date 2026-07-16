@@ -1,16 +1,10 @@
 name: Open a PR to main
 
 on:
+  push:
+    branches:
+      - dev
   workflow_dispatch:
-    inputs:
-      source_branch:
-        description: "Branch to merge from"
-        required: false
-        default: "dev"
-      target_branch:
-        description: "Branch to merge into"
-        required: false
-        default: "main"
 
 permissions:
   pull-requests: write
@@ -27,30 +21,19 @@ jobs:
       - name: Open pull request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SOURCE_BRANCH: ${{ inputs.source_branch || 'dev' }}
-          TARGET_BRANCH: ${{ inputs.target_branch || 'main' }}
+          SOURCE_BRANCH: ${{ github.ref_name }}
+          TARGET_BRANCH: main
         run: |
-          set -euo pipefail
-
-          # Check whether GitHub can compare the two branches.
-          # In clean/template-derived repos, main and dev may be unrelated until
-          # the branch history is aligned. That is not a CI failure.
-          if ! COMPARE_JSON="$(gh api "repos/${{ github.repository }}/compare/${TARGET_BRANCH}...${SOURCE_BRANCH}" 2>/tmp/compare-error.txt)"; then
-            echo "Could not compare $TARGET_BRANCH...$SOURCE_BRANCH."
-            cat /tmp/compare-error.txt
-            echo "Skipping PR creation. Align the branch histories first, or run this workflow with comparable branches."
-            exit 0
-          fi
-
-          COMMITS="$(echo "$COMPARE_JSON" | jq '.total_commits')"
-          if [ "$COMMITS" -eq 0 ]; then
-            echo "No commits between $TARGET_BRANCH and $SOURCE_BRANCH. Skipping PR creation."
-            exit 0
-          fi
-
-          # Check if PR already exists.
+          # Check if PR already exists (base=main, head=dev)
           if gh pr list --base "$TARGET_BRANCH" --head "$SOURCE_BRANCH" --json number | jq -e '. | length > 0' >/dev/null; then
             echo "Pull request already exists."
+            exit 0
+          fi
+
+          # Check if there are any commits between branches
+          COMMITS=$(gh api "repos/${{ github.repository }}/compare/${TARGET_BRANCH}...${SOURCE_BRANCH}" --jq '.total_commits')
+          if [ "$COMMITS" -eq 0 ]; then
+            echo "No commits between $TARGET_BRANCH and $SOURCE_BRANCH. Skipping PR creation."
             exit 0
           fi
 
