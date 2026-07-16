@@ -1,86 +1,125 @@
-# 👋🧩 Morphe Patches template
+# RIVanced Universal Patches
 
-Template repository for Morphe Patches.
+RIVanced Universal Patches is a Morphe patch source for universal and
+shared patches ported from [ReVanced](https://github.com/ReVanced/revanced-patches).
 
-## ❓ About
+## About
 
-Patches for apps I like.
+This repo only focuses on patches that are useful across apps or support
+shared patch behavior.
 
-TODO: Update this about section with a brief introduction/summary about this repo and what it offers.
+Most patch logic is ported from ReVanced and adapted for Morphe's patcher
+APIs, bundle format, and extension layout.
 
-## 🩹 Patches list
+## Universal Patches
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0-dev.3](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.0-dev.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;28 patches total
+<details open>
+<summary>📦 XYZ app&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-     
-     If you wish for the patches list to be collapsed, then remove the word 'EXPANDED' from the comment tag above.
+**🎯 Supported versions:**
 
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END 
-     comment blocks entirely. -->
+| 2.0.0 | 1.0.2 |
+| :---: | :---: |
 
-#### A list of your patches will automatically be shown here after your first patches release is created.
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Example Patch](#example-patch) | Example patch to start with. |  |
 
-&nbsp;
+</details>
 
-## 🚀 Get started
+<details open>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;27 patches</summary>
+<br>
 
-To start using this template, follow these steps:
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Change package name](#change-package-name) | Appends ".rivanced" to the package name by default. Changing the package name of the app can lead to unexpected issues. | • Package name<br>• Update permissions<br>• Update providers |
+| [Change version code](#change-version-code) | Changes the version code of the app. This will turn off app store updates and allows downgrading an existing app install to an older app version. | • Version code |
+| [Custom network security](#custom-network-security) | Allows trusting custom certificate authorities for a specific domain. | • Target domains<br>• Include subdomains<br>• Custom CA file paths<br>• Trust user added CAs<br>• Trust system CAs<br>• Allow cleartext traffic (HTTP)<br>• Override certificate pinning |
+| [Disable PairIP license check](#disable-pairip-license-check) | Disable PairIP license and VM checks. | • Enable VM logging |
+| [Disable Play Integrity](#disable-play-integrity) | Prevents apps from using Play Integrity by pretending it is not available. |  |
+| [Disable Sentry telemetry](#disable-sentry-telemetry) | Disables Sentry telemetry. See https://sentry.io/for/android/ for more information. |  |
+| [Enable Android debugging](#enable-android-debugging) | Enables Android debugging capabilities. This can slow down the app. |  |
+| [Enable ROM signature spoofing](#enable-rom-signature-spoofing) | Spoofs the signature via the manifest meta-data "fake-signature". This patch only works with ROMs that support signature spoofing. | • Signature or APK file path |
+| [Export all activities](#export-all-activities) | Makes all app activities exportable. |  |
+| [Export internal data documents provider](#export-internal-data-documents-provider) | Exports a documents provider that grants access to the internal data directory of this app to file managers and other apps that support the Storage Access Framework. |  |
+| [Hex](#hex) | Replaces a hexadecimal patterns of bytes of files in an APK. | • Replacements |
+| [Hide ADB status](#hide-adb-status) | Hides enabled development settings and/or ADB. |  |
+| [Hide app icon](#hide-app-icon) | Hides the app icon from the Android launcher. |  |
+| [Hide mock location](#hide-mock-location) | Prevents the app from knowing the device location is being mocked by a third party app. |  |
+| [Override certificate pinning](#override-certificate-pinning) | Overrides certificate pinning, allowing to inspect traffic via a proxy. |  |
+| [Predictive back gesture](#predictive-back-gesture) | Enables the predictive back gesture introduced on Android 13. |  |
+| [Prevent screenshot detection](#prevent-screenshot-detection) | Removes the registration of all screen capture callbacks. This prevents the app from detecting screenshots. |  |
+| [Remove screen capture restriction](#remove-screen-capture-restriction) | Removes the restriction of capturing audio from apps that normally wouldn't allow it. |  |
+| [Remove screenshot restriction](#remove-screenshot-restriction) | Removes the restriction of taking screenshots in apps that normally wouldn't allow it. |  |
+| [Remove share targets](#remove-share-targets) | Removes share targets like directly sharing to a frequent contact. |  |
+| [Set target SDK version 34](#set-target-sdk-version-34) | Changes the target SDK to version 34 (Android 14). For devices running Android 15+, this will disable edge-to-edge display. |  |
+| [Spoof Play Age Signals](#spoof-play-age-signals) | Spoofs Google Play data about the user's age and verification status. | • Lower age bound<br>• Upper age bound<br>• User status |
+| [Spoof SIM provider](#spoof-sim-provider) | Spoofs information about the SIM card provider. | • ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code.<br>• MCC+MNC network operator code<br>• Network operator name<br>• ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code.<br>• MCC+MNC SIM operator code<br>• SIM operator name<br>• IMEI value<br>• MEID value<br>• IMSI (Subscriber ID)<br>• ICCID (SIM Serial)<br>• Phone number |
+| [Spoof Wi-Fi connection](#spoof-wi-fi-connection) | Spoofs an existing Wi-Fi connection. |  |
+| [Spoof build info](#spoof-build-info) | Spoofs the information about the current build. | • Board<br>• Bootloader<br>• Brand<br>• CPU ABI<br>• CPU ABI 2<br>• Device<br>• Display<br>• Fingerprint<br>• Hardware<br>• Host<br>• ID<br>• Manufacturer<br>• Model<br>• ODM SKU<br>• Product<br>• Radio<br>• Serial<br>• SKU<br>• SOC manufacturer<br>• SOC model<br>• Tags<br>• Time<br>• Type<br>• User |
+| [Spoof keystore security level](#spoof-keystore-security-level) | Forces apps to see Keymaster and Attestation security levels as 'StrongBox' (Level 2). |  |
+| [Spoof root of trust](#spoof-root-of-trust) | Spoofs device integrity states (Locked Bootloader, Verified OS) for apps that perform local certificate attestation. |  |
 
-1. [Setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md) your development environment including adding a GitHub PAT as described [here](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp). Select create a new repository, and **enable 'Include all branches'** 
-3. Enable "Allow GitHub Actions to create and approve pull requests" in your repo Settings > Actions > General > Workflow permissions
-4. Update the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
-   [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L6-L11))
-5. Update the [README.md](README.md) file to be specific of your repo, and update the links in the [issue templates](.github/ISSUE_TEMPLATE).
-6. Choose a name for your patches project. Keep in mind you must use a name that does not 
-   imply authorship by the Morphe open source project. If unsure, then simply name these
-   patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
-7. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
+</details>
 
-🎉 You are now ready to start creating patches!
-
-## 🧑‍💻 Usage
-
-To develop and release your Patches using this template:
-
-- Do all development work in the `dev` branch.
-- For local development work build your patches using the gradle task `./gradlew buildAndroid` to generate the mpp file found in `patches/build/libs/patches-*.mpp`. Apply your patches locally using Morphe CLI tool like any other patch bundle.
-- Always use [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages for commits. To keep it simple use only 3 commit message types: `feat: Added a new feature`, `fix: Some problem now fixed`, `chore: Random change you do not want in the user facing changelog`
-- Commits of `fix:` and `feat:` will automatically generate new pre-releases and `chore:` will not create a new release.
-- Users can apply your dev branch releases by enabling `pre-release` in Morphe Manager patch sources.
-- When your dev branch is ready and you want a stable release, merge dev branch to main (do not squash, and only merge).
-- **Always use semantic release (release.yml)**. Do not manually upload or creating releases by hand because many files must be updated and release.yml handles everything.
-
-## 🤓 Tips
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md)
-  for more examples of creating patches and fingerprints.
-- Do not manually edit any generated files such as: `patches-list.json`, `patches-bundle.json`, `CHANGELOG.md`.
-  These files will be automatically updated in the release action.
-- Do not force push any semantic release commits or you will break the release. To 'redo' the last release then:
-  - Git drop the last dev/main semantic release commit you want to redo.
-  - Delete the release from the release area of this repo and delete the tag   
-  - Make any other changes you wish to do
-  - Force push dev/main branch
-  - A new replacement release will be created by `release.yml`
-
-
-<!-- The patches end tag is intentionally placed here so the first release will cleanup 
-     this readme of all developer instructions above. -->
 <!-- PATCHES_END -->
 
-#### How to use these patches
+## Get Started
 
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
+Add this patch source in Morphe:
 
-Or manually add this repository url as a patch source in Morphe: https://github.com/xyz-user/xyz-patches
+```text
+https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches
+```
 
-### 🛠️ Building
+Or use the quick add link:
 
-To build UserXYZ Patches,
-you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+```text
+https://morphe.software/add-source?github=rushiranpise/RI-Vanced-Universal-Morphe-Patches
+```
 
-## 📜 License
+## Building
 
-UserXYZ Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+Build the patch bundle with:
+
+```bash
+./gradlew :patches:buildAndroid
+```
+
+The `.mpp` file will be in:
+
+```text
+patches/build/libs
+```
+
+For setup help, use the
+[Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+
+## Reporting Bugs
+
+These patches are ports, so some patches may not work exactly as expected in
+Morphe yet. If something fails, please report it so it can be fixed.
+
+Open a [bug report](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/issues/new/choose)
+and include the patch name, RIVanced Universal Patches version or commit,
+Morphe version, target app version, and the full error or patcher log.
+
+Reports with logs are much easier to fix.
+
+## Credits
+
+Thanks to:
+
+- [Morphe](https://github.com/MorpheApp/)
+- [ReVanced](https://github.com/revanced)
+- Contributors
+- Everyone who reports bugs and tests patches
+
+## License
+
+RIVanced Universal Patches are licensed under the
+[GNU General Public License v3.0](LICENSE).

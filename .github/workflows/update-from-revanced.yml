@@ -1,0 +1,339 @@
+name: Update from ReVanced
+
+on:
+  workflow_dispatch:
+    inputs:
+      upstream:
+        description: "Upstream repository URL"
+        required: false
+        default: "https://gitlab.com/ReVanced/revanced-patches.git"
+      upstream_branch:
+        description: "Upstream branch"
+        required: false
+        default: "dev"
+      target_branch:
+        description: "Branch to open the update PR against"
+        required: false
+        default: "dev"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    name: Update universal patches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.target_branch }}
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Fetch upstream
+        env:
+          UPSTREAM: ${{ inputs.upstream }}
+          UPSTREAM_BRANCH: ${{ inputs.upstream_branch }}
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/revanced-patches
+          if ! git clone --depth 1 --branch "$UPSTREAM_BRANCH" "$UPSTREAM" /tmp/revanced-patches; then
+            echo "Primary upstream failed, trying GitHub mirror."
+            git clone --depth 1 --branch "$UPSTREAM_BRANCH" https://github.com/revanced/revanced-patches.git /tmp/revanced-patches
+          fi
+          git -C /tmp/revanced-patches rev-parse HEAD > .revanced-upstream-commit
+
+      - name: Sync universal source
+        run: |
+          set -euo pipefail
+
+          rm -rf patches/src/main/kotlin/app/morphe/patches/all
+          rm -rf patches/src/main/kotlin/app/morphe/patches/shared
+          rm -rf extensions/all
+          rm -rf extensions/shared
+
+          mkdir -p patches/src/main/kotlin/app/morphe/patches
+          cp -R /tmp/revanced-patches/patches/src/main/kotlin/app/revanced/patches/all patches/src/main/kotlin/app/morphe/patches/all
+          cp -R /tmp/revanced-patches/patches/src/main/kotlin/app/revanced/patches/shared patches/src/main/kotlin/app/morphe/patches/shared
+
+          cp -R /tmp/revanced-patches/extensions/all extensions/all
+          cp -R /tmp/revanced-patches/extensions/shared extensions/shared
+
+          if [ -d /tmp/revanced-patches/patches/src/main/resources/addresources ]; then
+            rm -rf patches/src/main/resources/addresources
+            cp -R /tmp/revanced-patches/patches/src/main/resources/addresources patches/src/main/resources/addresources
+          fi
+          if [ -d /tmp/revanced-patches/patches/src/main/resources/settings ]; then
+            rm -rf patches/src/main/resources/settings
+            cp -R /tmp/revanced-patches/patches/src/main/resources/settings patches/src/main/resources/settings
+          fi
+
+      - name: Adapt namespace for Morphe
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          roots = [Path("patches/src/main"), Path("extensions")]
+          project_url = "https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches"
+          replacements = [
+              ("app.revanced.com.android.tools.smali.dexlib2.mutable", "app.morphe.patcher.util.proxy.mutableTypes"),
+              ("app.revanced.com.android.tools.smali.dexlib2.iface.value", "app.morphe.patcher.util.proxy.mutableTypes.encodedValue"),
+              ("app.revanced.patches", "app.morphe.patches"),
+              ("app.revanced.patcher", "app.morphe.patcher"),
+              ("app.revanced.util", "app.morphe.util"),
+              ("app.revanced.extension", "app.morphe.extension"),
+              ("app/revanced/extension", "app/morphe/extension"),
+              ("app.revanced", "app.rivanced"),
+              ("REVANCED", "RIVANCED"),
+              ("ReVanced", "RIVanced"),
+              ("Revanced", "Rivanced"),
+              ("revanced", "rivanced"),
+          ]
+
+          for root in roots:
+              for path in root.rglob("*"):
+                  if not path.is_file():
+                      continue
+                  if "branding-license" in path.parts:
+                      continue
+                  try:
+                      data = path.read_text(encoding="utf-8")
+                  except UnicodeDecodeError:
+                      continue
+                  updated = data
+                  for old, new in replacements:
+                      updated = updated.replace(old, new)
+                  updated = updated.replace(".rve", ".mpe")
+                  updated = re.sub(
+                      r"Copyright ([0-9]{4}) RIVanced\. Not licensed under GPL\. See https://github\.com/RIVanced/rivanced-branding",
+                      r"Copyright \1 ReVanced. Not licensed under GPL. See https://github.com/ReVanced/revanced-branding",
+                      updated,
+                  )
+                  updated = updated.replace("\n    apply {\n", "\n    execute {\n")
+                  updated = updated.replace("use = false,", "default = false,")
+                  updated = updated.replace("use = false)", "default = false)")
+                  updated = updated.replace("use = false\n", "default = false\n")
+                  updated = updated.replace("afterDependents {", "finalize {")
+                  updated = updated.replace("return@afterDependents", "return@finalize")
+                  updated = updated.replace("this@afterDependents", "this@finalize")
+                  updated = updated.replace("fun hexPatch(ignoreMissingTargetFiles: Boolean = false, block: HexPatchBuilder.() -> Unit): Patch {", "fun hexPatch(ignoreMissingTargetFiles: Boolean = false, block: HexPatchBuilder.() -> Unit): Patch<*> {")
+                  updated = updated.replace("    extensionPatch: Patch,", "    extensionPatch: Patch<*>,")
+                  updated = updated.replace("    patch: Patch,", "    patch: Patch<*>,")
+                  updated = updated.replace("    parseIds: (Patch) -> Map<AppId, Set<PatchId>> = {", "    parseIds: (Patch<*>) -> Map<AppId, Set<PatchId>> = {")
+                  updated = updated.replace('Uri.parse("https://rivanced.app")', f'Uri.parse("{project_url}")')
+                  updated = updated.replace('public static volatile String aboutLogoUrl = "https://rivanced.app/favicon.ico";', 'public static volatile String aboutLogoUrl = "";')
+                  updated = updated.replace('new WebLink(true, "RIVanced.app", "https://rivanced.app")', f'new WebLink(true, "RIVanced", "{project_url}")')
+                  updated = updated.replace('private static final String SOCIAL_LINKS_PROVIDER = "https://api.rivanced.app/v4";', 'private static final String SOCIAL_LINKS_PROVIDER = "";')
+                  if "SOCIAL_LINKS_PROVIDER.isEmpty()" not in updated:
+                      updated = updated.replace(
+                          "            // Check if there is no internet connection.\n"
+                          "            if (!Utils.isNetworkConnected()) return NO_CONNECTION_STATIC_LINKS;",
+                          "            // Skip fetching links if no provider is configured.\n"
+                          "            if (SOCIAL_LINKS_PROVIDER.isEmpty()) return NO_CONNECTION_STATIC_LINKS;\n\n"
+                          "            // Check if there is no internet connection.\n"
+                          "            if (!Utils.isNetworkConnected()) return NO_CONNECTION_STATIC_LINKS;",
+                      )
+                  if path.suffix == ".kt":
+                      option_calls = ("booleanOption(", "intOption(", "longOption(", "stringOption(", "stringsOption(")
+                      lines = updated.splitlines(keepends=True)
+                      rewritten = []
+                      in_option = False
+                      depth = 0
+                      for line in lines:
+                          starts_option = any(call in line for call in option_calls)
+                          if starts_option:
+                              in_option = True
+                              depth = line.count("(") - line.count(")")
+                          elif in_option:
+                              depth += line.count("(") - line.count(")")
+
+                          if in_option and line.lstrip().startswith("name = "):
+                              indent = line[:len(line) - len(line.lstrip())]
+                              line = indent + line.lstrip().replace("name = ", "key = ", 1)
+
+                          rewritten.append(line)
+                          if in_option and depth <= 0:
+                              in_option = False
+                      updated = "".join(rewritten)
+
+                      if path.name == "BaseSpoofBuildInfoPatch.kt":
+                          helper = "\n".join([
+                              'private fun String.toSmaliStringLiteral() = buildString {',
+                              '    append(\'"\')',
+                              '    this@toSmaliStringLiteral.forEach { char ->',
+                              '        when (char) {',
+                              '            \'\\\\\' -> append("\\\\\\\\")',
+                              '            \'"\' -> append("\\\\\\"")',
+                              '            \'\\n\' -> append("\\\\n")',
+                              '            \'\\r\' -> append("\\\\r")',
+                              '            \'\\t\' -> append("\\\\t")',
+                              '            else -> append(char)',
+                              '        }',
+                              '    }',
+                              '    append(\'"\')',
+                              '}',
+                              '',
+                              '',
+                          ])
+                          if "toSmaliStringLiteral()" not in updated:
+                              updated = updated.replace(
+                                  'private const val BUILD_CLASS_DESCRIPTOR = "Landroid/os/Build;"\n\n',
+                                  'private const val BUILD_CLASS_DESCRIPTOR = "Landroid/os/Build;"\n\n' + helper,
+                              )
+                          updated = re.sub(
+                              r'to "\\"\$([A-Za-z][A-Za-z0-9_]*)\\""',
+                              r'to \1.toSmaliStringLiteral()',
+                              updated,
+                          )
+                  if updated != data:
+                      path.write_text(updated, encoding="utf-8", newline="")
+
+          for root in roots:
+              files = sorted(
+                  [p for p in root.rglob("*") if p.is_file() and "revanced" in p.name.lower()],
+                  key=lambda p: len(p.parts),
+                  reverse=True,
+              )
+              for path in files:
+                  path.rename(path.with_name(path.name.replace("revanced", "rivanced").replace("Revanced", "Rivanced").replace("ReVanced", "RIVanced")))
+
+          for root in roots:
+              dirs = sorted(
+                  [p for p in root.rglob("*") if p.is_dir() and p.name == "revanced"],
+                  key=lambda p: len(p.parts),
+                  reverse=True,
+              )
+              for path in dirs:
+                  path.rename(path.with_name("morphe"))
+
+          for build_file in Path("extensions").rglob("build.gradle.kts"):
+              if build_file.parts[-3:] in {
+                  ("shared", "library", "build.gradle.kts"),
+                  ("shared", "protobuf", "build.gradle.kts"),
+              }:
+                  continue
+              data = build_file.read_text(encoding="utf-8")
+              if "extension {" in data:
+                  continue
+              relative = build_file.parent.relative_to(Path(".")).as_posix()
+              updated = f'extension {{\n    name = "{relative}.mpe"\n}}\n\n{data}'
+              build_file.write_text(updated, encoding="utf-8", newline="")
+
+          branding_license = Path("patches/src/main/resources/branding-license/LICENSE_RIVANCED.TXT")
+          branding_license.parent.mkdir(parents=True, exist_ok=True)
+          branding_license_text = (
+              "RIVanced branding assets are included by RI-Vanced Universal Morphe Patches.\n\n"
+              "These assets are not part of the ReVanced project and are not licensed under the\n"
+              "same terms as ReVanced patches. Do not reuse or redistribute the branding outside\n"
+              "this project without permission from the branding owner.\n"
+          )
+          if not branding_license.exists() or branding_license.read_text(encoding="utf-8") != branding_license_text:
+              branding_license.write_text(branding_license_text, encoding="utf-8", newline="")
+          PY
+
+      - name: Preserve Morphe compatibility bridges
+        run: |
+          set -euo pipefail
+
+          # These files carry Morphe-specific compatibility glue for APIs where
+          # ReVanced dev has moved ahead of the current Morphe patcher/runtime.
+          git checkout -- \
+            patches/src/main/kotlin/app/morphe/patches/all/misc/connectivity/telephony/sim/spoof/SpoofSimProviderPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/all/misc/connectivity/wifi/spoof/SpoofWifiPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/all/misc/directory/documentsprovider/ExportInternalDataDocumentsProviderPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/all/misc/shortcut/sharetargets/RemoveShareTargetsPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/all/misc/transformation/TransformInstructionsPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/layout/branding/BaseCustomBrandingPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/layout/hide/general/HideLayoutComponentsPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/misc/checks/BaseCheckEnvironmentPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/misc/debugging/EnableDebuggingPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/misc/extension/SharedExtensionPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/misc/gms/GmsCoreSupportPatch.kt \
+            patches/src/main/kotlin/app/morphe/patches/shared/misc/hex/HexPatchBuilder.kt
+
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew :patches:buildAndroid --no-daemon
+
+      - name: Verify bundled extension paths
+        run: |
+          set -euo pipefail
+
+          if grep -R '\.rve' patches/src/main/kotlin extensions --include='*.kt' --include='*.kts' --include='*.java'; then
+            echo "::error::Generated source still references .rve extension artifacts. Morphe bundles .mpe files."
+            exit 1
+          fi
+
+          MPP="$(ls -t patches/build/libs/*.mpp | head -n 1)"
+          jar tf "$MPP" > /tmp/mpp-entries.txt
+
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          bundled = set(Path("/tmp/mpp-entries.txt").read_text(encoding="utf-8").splitlines())
+          missing = []
+          pattern = re.compile(r'extendWith\("([^"]+)"\)')
+
+          for path in Path("patches/src/main/kotlin").rglob("*.kt"):
+              if "app/template/" in path.as_posix():
+                  continue
+              text = path.read_text(encoding="utf-8")
+              for extension_path in pattern.findall(text):
+                  if "$" in extension_path:
+                      continue
+                  if extension_path not in bundled:
+                      missing.append(f"{path}: {extension_path}")
+
+          if missing:
+              print("The following extendWith paths are not present in the .mpp bundle:")
+              print("\n".join(missing))
+              raise SystemExit(1)
+          PY
+
+      - name: Create pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_BRANCH: ${{ inputs.target_branch }}
+          UPSTREAM_BRANCH: ${{ inputs.upstream_branch }}
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet; then
+            echo "No upstream changes to propose."
+            exit 0
+          fi
+
+          UPSTREAM_COMMIT="$(cat .revanced-upstream-commit)"
+          UPDATE_BRANCH="automation/revanced-${UPSTREAM_COMMIT:0:12}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$UPDATE_BRANCH"
+          git add -A
+          git commit -m "chore: update universal patches from ReVanced"
+          git push --force-with-lease origin "$UPDATE_BRANCH"
+
+          if gh pr list --base "$TARGET_BRANCH" --head "$UPDATE_BRANCH" --json number | jq -e 'length > 0' >/dev/null; then
+            echo "Pull request already exists."
+            exit 0
+          fi
+
+          gh pr create \
+            --base "$TARGET_BRANCH" \
+            --head "$UPDATE_BRANCH" \
+            --title "chore: update universal patches from ReVanced" \
+            --body "Automated universal/shared patch update from ReVanced ${UPSTREAM_BRANCH} at ${UPSTREAM_COMMIT}.
+
+            This PR only syncs universal/shared patch and extension areas, applies the RIVanced/Morphe namespace adaptation, and requires the Gradle build to pass before opening."
