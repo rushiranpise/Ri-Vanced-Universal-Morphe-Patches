@@ -19,7 +19,7 @@ patcher APIs, bundle format, and extension layout.
 ## Universal Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0](https://github.com/rushiranpise/RI-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;27 patches total
+> **[v1.0.1](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/releases/tag/v1.0.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;27 patches total
 <details open>
 <summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;27 patches</summary>
 <br>

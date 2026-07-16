@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/compare/v1.0.0...v1.0.1) (2026-07-16)
+
+### Updated App Support
+
+* Merge branch `dev` to `main` ([e12f763](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/commit/e12f7630f03b16110384c3b1eec9969f2d8ed738))
+
 ## 1.0.0 (2026-07-16)
 
 ### Bug Fixes
