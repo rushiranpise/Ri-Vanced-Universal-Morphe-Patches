@@ -114,6 +114,11 @@ jobs:
                   for old, new in replacements:
                       updated = updated.replace(old, new)
                   updated = updated.replace(".rve", ".mpe")
+                  updated = re.sub(
+                      r"Copyright ([0-9]{4}) RIVanced\. Not licensed under GPL\. See https://github\.com/RIVanced/rivanced-branding",
+                      r"Copyright \1 ReVanced. Not licensed under GPL. See https://github.com/ReVanced/revanced-branding",
+                      updated,
+                  )
                   updated = updated.replace("\n    apply {\n", "\n    execute {\n")
                   updated = updated.replace("use = false,", "default = false,")
                   updated = updated.replace("use = false)", "default = false)")
