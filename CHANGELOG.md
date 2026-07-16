@@ -1,3 +1,9 @@
+## [1.0.2-dev.1](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/compare/v1.0.1...v1.0.2-dev.1) (2026-07-16)
+
+### Bug Fixes
+
+* preserve ReVanced origin notice in updater ([2eee327](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/commit/2eee327db68d50b301903eb37b4a27e38fe81140))
+
 ## [1.0.1](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/compare/v1.0.0...v1.0.1) (2026-07-16)
 
 ### Updated App Support
