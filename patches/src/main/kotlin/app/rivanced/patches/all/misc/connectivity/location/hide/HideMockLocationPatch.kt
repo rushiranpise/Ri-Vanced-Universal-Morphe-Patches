@@ -1,0 +1,47 @@
+package app.rivanced.patches.all.misc.connectivity.location.hide
+
+import app.rivanced.patcher.extensions.methodReference
+import app.rivanced.patcher.extensions.replaceInstruction
+import app.morphe.patcher.patch.bytecodePatch
+import app.rivanced.patches.all.misc.transformation.IMethodCall
+import app.rivanced.patches.all.misc.transformation.fromMethodReference
+import app.rivanced.patches.all.misc.transformation.transformInstructionsPatch
+import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
+
+@Suppress("unused")
+val hideMockLocationPatch = bytecodePatch(
+    name = "Hide mock location",
+    description = "Prevents the app from knowing the device location is being mocked by a third party app.",
+    default = false,
+) {
+    dependsOn(
+        transformInstructionsPatch(
+            filterMap = filter@{ _, _, instruction, instructionIndex ->
+                val reference = instruction.methodReference ?: return@filter null
+                if (fromMethodReference<MethodCall>(reference) == null) return@filter null
+
+                instruction to instructionIndex
+            },
+            transform = { method, entry ->
+                val (instruction, index) = entry
+                instruction as FiveRegisterInstruction
+
+                // Replace return value with a constant `false` boolean.
+                method.replaceInstruction(
+                    index + 1,
+                    "const/4 v${instruction.registerC}, 0x0",
+                )
+            },
+        ),
+    )
+}
+
+private enum class MethodCall(
+    override val definedClassName: String,
+    override val methodName: String,
+    override val methodParams: Array<String>,
+    override val returnType: String,
+) : IMethodCall {
+    IsMock("Landroid/location/Location;", "isMock", emptyArray(), "Z"),
+    IsFromMockProvider("Landroid/location/Location;", "isFromMockProvider", emptyArray(), "Z"),
+}

@@ -16,6 +16,10 @@ patches that are useful across apps or support shared patch behavior.
 Most patch logic is ported from ReVanced and adapted for Morphe's
 patcher APIs, bundle format, and extension layout.
 
+Original upstream source is available from the ReVanced patches
+repository on [GitLab](https://gitlab.com/ReVanced/revanced-patches)
+and [GitHub](https://github.com/ReVanced/revanced-patches).
+
 ## Universal Patches
 
 <!-- PATCHES_START EXPANDED -->
