@@ -2,7 +2,7 @@
 
 // Compatibility bridge derived from ReVanced patcher-style declarative helpers,
 // adapted so ReVanced patch code can run against the Morphe patcher APIs.
-// Source: https://github.com/ReVanced/revanced-patcher
+// Source: https://github.com/RIVanced/rivanced-patcher
 package app.rivanced.patcher
 
 import app.morphe.patcher.*
