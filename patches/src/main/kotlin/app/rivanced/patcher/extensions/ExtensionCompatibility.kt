@@ -1,3 +1,5 @@
+// Compatibility bridge for ReVanced patcher extension helpers.
+// Source: https://github.com/ReVanced/revanced-patcher
 package app.rivanced.patcher.extensions
 
 import app.morphe.patcher.util.smali.ExternalLabel as MorpheExternalLabel

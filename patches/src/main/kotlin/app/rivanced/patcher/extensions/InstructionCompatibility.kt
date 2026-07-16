@@ -1,5 +1,7 @@
 @file:Suppress("UNCHECKED_CAST")
 
+// Compatibility bridge for ReVanced patcher instruction helpers.
+// Source: https://github.com/ReVanced/revanced-patcher
 package app.rivanced.patcher.extensions
 
 import app.morphe.patcher.extensions.InstructionExtensions
