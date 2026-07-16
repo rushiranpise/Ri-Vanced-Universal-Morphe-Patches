@@ -162,22 +162,24 @@ jobs:
                       updated = "".join(rewritten)
 
                       if path.name == "BaseSpoofBuildInfoPatch.kt":
-                          helper = '''private fun String.toSmaliStringLiteral() = buildString {
-    append('"')
-    this@toSmaliStringLiteral.forEach { char ->
-        when (char) {
-            '\\' -> append("\\\\")
-            '"' -> append("\\\"")
-            '\n' -> append("\\n")
-            '\r' -> append("\\r")
-            '\t' -> append("\\t")
-            else -> append(char)
-        }
-    }
-    append('"')
-}
-
-'''
+                          helper = "\n".join([
+                              'private fun String.toSmaliStringLiteral() = buildString {',
+                              '    append(\'"\')',
+                              '    this@toSmaliStringLiteral.forEach { char ->',
+                              '        when (char) {',
+                              '            \'\\\\\' -> append("\\\\\\\\")',
+                              '            \'"\' -> append("\\\\\\"")',
+                              '            \'\\n\' -> append("\\\\n")',
+                              '            \'\\r\' -> append("\\\\r")',
+                              '            \'\\t\' -> append("\\\\t")',
+                              '            else -> append(char)',
+                              '        }',
+                              '    }',
+                              '    append(\'"\')',
+                              '}',
+                              '',
+                              '',
+                          ])
                           if "toSmaliStringLiteral()" not in updated:
                               updated = updated.replace(
                                   'private const val BUILD_CLASS_DESCRIPTOR = "Landroid/os/Build;"\n\n',
