@@ -120,7 +120,24 @@ jobs:
               ("ReVanced", "RIVanced"),
               ("Revanced", "Rivanced"),
               ("revanced", "rivanced"),
+              (".rve", ".mpe"),
           ]
+
+          def replace_outside_line_comments(text: str) -> str:
+              lines = text.splitlines(keepends=True)
+              replaced = []
+
+              for line in lines:
+                  if line.lstrip().startswith("//"):
+                      replaced.append(line)
+                      continue
+
+                  updated_line = line
+                  for old, new in replacements:
+                      updated_line = updated_line.replace(old, new)
+                  replaced.append(updated_line)
+
+              return "".join(replaced)
 
           for root in roots:
               for path in root.rglob("*"):
@@ -132,24 +149,7 @@ jobs:
                       data = path.read_text(encoding="utf-8")
                   except UnicodeDecodeError:
                       continue
-                  updated = data
-                  for old, new in replacements:
-                      updated = updated.replace(old, new)
-                  updated = updated.replace(".rve", ".mpe")
-                  if path.name == "DeclarativeCompatibility.kt":
-                      updated = updated.replace(
-                          "Compatibility bridge derived from RIVanced patcher-style declarative helpers,",
-                          "Compatibility bridge derived from ReVanced patcher-style declarative helpers,",
-                      )
-                      updated = updated.replace(
-                          "adapted so RIVanced patch code can run against the Morphe patcher APIs.",
-                          "adapted so ReVanced patch code can run against the Morphe patcher APIs.",
-                      )
-                  updated = re.sub(
-                      r"Copyright ([0-9]{4}) RIVanced\. Not licensed under GPL\. See https://github\.com/RIVanced/rivanced-branding",
-                      r"Copyright \1 ReVanced. Not licensed under GPL. See https://github.com/ReVanced/revanced-branding",
-                      updated,
-                  )
+                  updated = replace_outside_line_comments(data)
                   updated = updated.replace("\n    apply {\n", "\n    execute {\n")
                   updated = updated.replace("use = false,", "default = false,")
                   updated = updated.replace("use = false)", "default = false)")
