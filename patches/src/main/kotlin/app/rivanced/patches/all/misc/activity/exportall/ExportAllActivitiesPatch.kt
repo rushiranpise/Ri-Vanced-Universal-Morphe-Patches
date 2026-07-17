@@ -24,7 +24,7 @@ val exportAllActivitiesPatch = resourcePatch(
                         }
                     }
                     // Reason why the attribute is added in the case it does not exist:
-                    // https://github.com/rivanced/rivanced-patches/pull/1751/files#r1141481604
+                    // https://github.com/revanced/revanced-patches/pull/1751/files#r1141481604
                     else {
                         document.createAttribute(exportedFlag)
                             .apply { value = "true" }
