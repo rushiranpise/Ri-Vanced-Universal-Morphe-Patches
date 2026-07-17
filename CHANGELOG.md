@@ -1,3 +1,9 @@
+## [1.0.3-dev.1](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/compare/v1.0.2...v1.0.3-dev.1) (2026-07-17)
+
+### Bug Fixes
+
+* preserve upstream line comments in updater ([a566cce](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/commit/a566cce74f98ff790de381dd23ceff9bbed88b6c))
+
 ## [1.0.2](https://github.com/rushiranpise/Ri-Vanced-Universal-Morphe-Patches/compare/v1.0.1...v1.0.2) (2026-07-16)
 
 ### Bug Fixes
