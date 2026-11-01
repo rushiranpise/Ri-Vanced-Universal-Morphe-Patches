@@ -14,7 +14,7 @@ apksig = "9.0.1"
 protobuf = "master-SNAPSHOT"
 protoc = "4.34.1"
 shadow = "9.4.0"
-hiddenapibypass = "6.1"
+hiddenapibypass = "6.2"
 gson = "2.14.0"
 
 [libraries]
